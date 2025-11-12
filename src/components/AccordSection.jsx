@@ -73,7 +73,7 @@ export default function AccordSection() {
           <div className="relative w-full flex justify-center">
             {/* Responsive globe wrapper */}
             <div className="aspect-square mx-auto w-[95vw] sm:w-[80vw] md:w-[600px] lg:w-[750px] xl:w-[900px] flex justify-center">
-              <Globe
+              {/* <Globe
                 ref={globeRef}
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
@@ -98,7 +98,7 @@ export default function AccordSection() {
                 atmosphereAltitude={0.25}
                 width={900}
                 height={900}
-              />
+              /> */}
             </div>
           </div>
         </div>

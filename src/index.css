@@ -19,3 +19,7 @@
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(226, 0, 79, 0.25);
 }
+
+body {
+  @apply font-sans;
+}
