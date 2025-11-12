@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
-import logo from "../assets/logo/ivexia-logoooo.png";
+import logo from "../assets/logo/ivexiaa-logoo.png";
 
 export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);

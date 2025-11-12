@@ -1,5 +1,5 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from "../assets/logo/ivexia-logoooo.png";
+import logo from "../assets/logo/ivexiaa-logoo.png";
 
 export default function Footer() {
   return (
