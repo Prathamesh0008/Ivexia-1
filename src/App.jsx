@@ -3,13 +3,14 @@ import { useEffect } from "react";
 
 import Home from "./pages/Home";
 import NewsDetail from "./pages/NewsDetail";
-import About from "./pages/About";
+// import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
 
 // ✅ Layout Wrapper handles DOM manipulation and page-based logic
 function LayoutWrapper() {
@@ -35,7 +36,7 @@ function LayoutWrapper() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/news/:id" element={<NewsDetail />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutUs/>} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           {/* full-page standalone routes */}

@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-[70vh] md:h-[50vh] overflow-hidden"
+      className="relative  w-full h-[70vh] md:h-[55vh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
