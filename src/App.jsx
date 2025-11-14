@@ -45,6 +45,7 @@ function LayoutWrapper() {
          <Route path="/news/:id" element={<NewsDetail />} />
          <Route path="/about" element={<AboutUs/>} />
          <Route path="/products" element={<Products />} />
+         <Route path="/products/:slug" element={<FinishedProductDetail />} />
          <Route path="/contact" element={<Contact />} />
          <Route path="/products/:slug" element={<FinishedProductDetail />} />
           {/* full-page standalone routes */}

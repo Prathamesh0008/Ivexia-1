@@ -56,7 +56,8 @@ export default function ProductDetail() {
   return (
     <>
       {/* MAIN PRODUCT SECTION */}
-      <section className="bg-white">
+      {/* 🔹 Added top padding so it's not under the navbar */}
+      <section className="bg-white pt-24 md:pt-28">
         <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
           {/* Breadcrumbs */}
           <nav className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6">
@@ -73,7 +74,7 @@ export default function ProductDetail() {
             / <span className="text-gray-500">{product.name}</span>
           </nav>
 
-          <div className="rounded-3xl bg-[#FFF8F5] shadow-sm border border-gray-100 px-5 md:px-8 py-8 md:py-10">
+          <div className=" bg-[#FFF8F5] shadow-sm border border-gray-100 px-5 md:px-8 py-8 md:py-10">
             {/* TOP: image left, info right */}
             <div className="grid gap-10 lg:grid-cols-[1.1fr_1.4fr] items-start">
               {/* Image block */}
