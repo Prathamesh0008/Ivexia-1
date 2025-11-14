@@ -11,6 +11,11 @@ import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AboutUs from "./pages/AboutUs";
+import Ingredient from "./pages/Products/Ingredient";
+import ProductDetail from "./pages/Products/ProductDetail"; 
+import FinishedProductDetail from "./pages/Products/FinishedProductDetail";
+
+
 
 // ✅ Layout Wrapper handles DOM manipulation and page-based logic
 function LayoutWrapper() {
@@ -35,10 +40,13 @@ function LayoutWrapper() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/news/:id" element={<NewsDetail />} />
-          <Route path="/about" element={<AboutUs/>} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/products/ingredient" element={<Ingredient />} />
+          <Route path="/portfolio/:slug" element={<ProductDetail />} />
+         <Route path="/news/:id" element={<NewsDetail />} />
+         <Route path="/about" element={<AboutUs/>} />
+         <Route path="/products" element={<Products />} />
+         <Route path="/contact" element={<Contact />} />
+         <Route path="/products/:slug" element={<FinishedProductDetail />} />
           {/* full-page standalone routes */}
           <Route path="/login" element={<div className="p-20 text-center">Login Page</div>} />
           <Route path="/register" element={<div className="p-20 text-center">Register Page</div>} />

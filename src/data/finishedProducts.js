@@ -1,0 +1,103 @@
+// src/data/finishedProducts.js
+import commonImage from "../assets/logo/capsuleimage.jpg"; // your single product image
+
+const FINISHED_PRODUCTS = [
+  {
+    id: "fp-1",
+    name: "Atorvastatin 10 mg",
+    category: "Cardiology",
+    form: "Tablet",
+    strength: "10 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-2",
+    name: "Atorvastatin 20 mg",
+    category: "Cardiology",
+    form: "Tablet",
+    strength: "20 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-3",
+    name: "Metformin 500 mg",
+    category: "Diabetes",
+    form: "Tablet",
+    strength: "500 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-4",
+    name: "Metformin 1000 mg",
+    category: "Diabetes",
+    form: "Tablet",
+    strength: "1000 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-5",
+    name: "Omeprazole 20 mg",
+    category: "Gastroenterology",
+    form: "Capsule",
+    strength: "20 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-6",
+    name: "Amoxicillin 500 mg",
+    category: "Antibiotic",
+    form: "Capsule",
+    strength: "500 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-7",
+    name: "Cefixime 200 mg",
+    category: "Antibiotic",
+    form: "Tablet",
+    strength: "200 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-8",
+    name: "Losartan 50 mg",
+    category: "Cardiology",
+    form: "Tablet",
+    strength: "50 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-9",
+    name: "Amlodipine 5 mg",
+    category: "Cardiology",
+    form: "Tablet",
+    strength: "5 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-10",
+    name: "Gabapentin 300 mg",
+    category: "Neurology",
+    form: "Capsule",
+    strength: "300 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-11",
+    name: "Sertraline 50 mg",
+    category: "Psychiatry",
+    form: "Tablet",
+    strength: "50 mg",
+    image: commonImage,
+  },
+  {
+    id: "fp-12",
+    name: "Pantoprazole 40 mg",
+    category: "Gastroenterology",
+    form: "Tablet",
+    strength: "40 mg",
+    image: commonImage,
+  },
+];
+
+export default FINISHED_PRODUCTS;
