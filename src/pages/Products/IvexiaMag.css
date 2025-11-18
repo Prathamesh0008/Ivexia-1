@@ -1,0 +1,294 @@
+/* =============================== */
+/*   IVEXIA MAG — SMOOTH VERSION  */
+/* =============================== */
+
+/* Same bg as Contact page */
+.mag-page {
+  background: #fff8f5;
+  min-height: 150vh;
+  padding: 140px 24px 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Shared max width */
+.mag-header,
+.mag-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER — NO STICKY NOW (so content never slides under it) */
+.mag-header {
+  position: relative;         /* normal flow, no sticky */
+  z-index: 1;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  background: #fff8f5;
+}
+
+/* Header text */
+.mag-breadcrumb {
+  font-size: 14px;
+  color: #5f6c82;
+  margin-bottom: 4px;
+}
+
+.mag-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0;
+  color: #0d2d47;
+}
+
+.mag-subtitle {
+  font-size: 16px;
+  color: #3c4a61;
+  max-width: 700px;
+  margin-top: 10px;
+}
+
+/* Layout: sidebar + article column */
+.mag-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* ================== LEFT: RECENT ARTICLES ================== */
+
+.mag-sidebar {
+  background: #ffffff;
+  padding: 16px 16px 10px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+
+  max-height: 260px;          /* 🔽 smaller so scroll is obvious */
+  overflow-y: auto;
+  align-self: flex-start;
+}
+
+/* hidden scrollbar but still scrollable */
+.mag-sidebar {
+  scrollbar-width: none;
+}
+.mag-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.mag-sidebar-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0d2d47;
+  border-left: 4px solid #0d2d47;
+  padding-left: 10px;
+}
+
+.mag-recent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mag-recent-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.mag-recent-date {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.mag-recent-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 2px;
+  text-align: left;
+  font-size: 13px;
+  color: #0d2d47;
+  cursor: pointer;
+}
+
+.mag-recent-link:hover {
+  color: #1c4d7a;
+  text-decoration: underline;
+}
+
+/* ================== RIGHT: ARTICLE SCROLL CONTAINER ================== */
+
+/* Outer scroll area only for articles */
+.mag-articles-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(250vh - 260px); /* box height */
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* hide scrollbar but allow scroll */
+.mag-articles-wrapper {
+  scrollbar-width: none;
+}
+.mag-articles-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* inner list */
+.mag-content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Article cards — SAME TEXT, TALLER HEIGHT */
+.mag-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 26px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mag-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+}
+
+/* taller image area, like before but slightly increased */
+.mag-card-bg {
+  position: relative;
+  width: 100%;
+  height: 360px; /* adjust if you want more/less */
+  background-size: cover;
+  background-position: center;
+}
+
+/* overlay with text on top */
+.mag-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 20px 22px 22px;
+  background: rgba(255, 255, 255, 0.82);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* meta row */
+.mag-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.mag-card-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(13, 45, 71, 0.1);
+  color: #0d2d47;
+  font-weight: 600;
+}
+
+.mag-card-date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* text */
+.mag-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 6px 0 10px;
+  color: #0d2d47;
+}
+
+.mag-card-excerpt {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* button */
+.mag-card-button {
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  border: 1px solid #0d2d47;
+  color: #0d2d47;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  transition: 0.18s ease;
+  align-self: flex-start;
+}
+
+.mag-card-button:hover {
+  background: #0d2d47;
+  color: #ffffff;
+}
+
+/* ================== PAGINATION ================== */
+
+.mag-pagination {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mag-page-btn {
+  min-width: 38px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.mag-page-btn--active {
+  background: #0d2d47;
+  color: white;
+  border-color: #0d2d47;
+}
+
+.mag-page-btn:hover:not(.mag-page-btn--active) {
+  border-color: #0d2d47;
+  color: #0d2d47;
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 768px) {
+  .mag-page {
+    padding: 110px 16px 40px;
+  }
+
+  .mag-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* On mobile, fall back to normal page scrolling */
+  .mag-sidebar,
+  .mag-articles-wrapper {
+    max-height: none;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .mag-card-bg {
+    height: 260px;
+  }
+}

@@ -1,6 +1,8 @@
+// src/components/Navbar.jsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import logo from "../assets/logo/ivexiaa-logoo.png";
 
 export default function Navbar() {
@@ -9,10 +11,24 @@ export default function Navbar() {
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
   const [topBarHeight, setTopBarHeight] = useState(0);
   const [showLanguages, setShowLanguages] = useState(false);
-  const [language, setLanguage] = useState("English");
-  const navigate = useNavigate();
 
-  // === Detect TopBar height dynamically ===
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation("common");
+
+  const [language, setLanguage] = useState("English");
+
+  const languages = [
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "nl", label: "Dutch", flag: "🇳🇱" },
+    { code: "es", label: "Spanish", flag: "🇪🇸" },
+    { code: "de", label: "German", flag: "🇩🇪" },
+    { code: "pt", label: "Portuguese", flag: "🇵🇹" },
+    { code: "fr", label: "French", flag: "🇫🇷" },
+    { code: "zh", label: "Chinese", flag: "🇨🇳" },
+    { code: "ja", label: "Japanese", flag: "🇯🇵" },
+    { code: "ar", label: "Arabic", flag: "🇸🇦" }
+  ];
+
   useEffect(() => {
     const topBar = document.getElementById("topbar");
     if (topBar) {
@@ -23,7 +39,6 @@ export default function Navbar() {
     }
   }, []);
 
-  // === Track TopBar visibility ===
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
@@ -44,21 +59,18 @@ export default function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const selectLanguage = (lang) => {
-    setLanguage(lang);
+  const selectLanguage = (langCode, label) => {
+    i18n.changeLanguage(langCode);
+    setLanguage(label);
     setShowLanguages(false);
   };
 
   return (
     <nav
       className="fixed left-0 right-0 bg-white/95 backdrop-blur-md shadow-md border-t border-gray-200 z-30 transition-all duration-500 ease-in-out"
-      style={{
-        top: isTopBarVisible ? `${topBarHeight}px` : "0px",
-        transition: "top 0.4s ease-in-out",
-      }}
+      style={{ top: isTopBarVisible ? `${topBarHeight}px` : "0px" }}
     >
       <div className="flex justify-between items-center px-4 md:px-8 h-16">
-        {/* === Logo === */}
         <div className="flex items-center cursor-pointer" onClick={() => goTo("/")}>
           <img
             src={logo}
@@ -67,179 +79,137 @@ export default function Navbar() {
           />
         </div>
 
-        {/* === Desktop Menu === */}
-        <ul className=" italic hidden lg:flex gap-8 font-medium text-gray-800 items-center">
+        {/* Desktop menu */}
+        <ul className="italic hidden lg:flex gap-8 font-medium text-gray-800 items-center">
           <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
-            Home
+            {t("nav.home")}
           </li>
 
           <li
             onClick={() => goTo("/products/ingredient")}
             className="hover:text-[#0d2d47] cursor-pointer"
           >
-            Active Pharmaceutical Ingredients
+            {t("nav.api")}
           </li>
 
-          {/* Pharmaceutical Products + SAME CATEGORIES AS FILTER */}
           <li className="relative group hover:text-[#0d2d47] cursor-pointer">
-            <span
-              onClick={() => goTo("/products")}
-              className="inline-flex items-center gap-1"
-            >
-              Pharmaceutical Products ▾
+            <span onClick={() => goTo("/products")} className="inline-flex items-center gap-1">
+              {t("nav.products")} ▾
             </span>
-
             <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-56 font-normal">
-              <li
-                onClick={() => goTo("/products?category=Cardiology")}
-                className="px-4 py-2 hover:bg-gray-100"
-              >
+              <li onClick={() => goTo("/products?category=Cardiology")} className="px-4 py-2 hover:bg-gray-100">
                 Cardiology
               </li>
-              <li
-                onClick={() => goTo("/products?category=Oncology")}
-                className="px-4 py-2 hover:bg-gray-100"
-              >
+              <li onClick={() => goTo("/products?category=Oncology")} className="px-4 py-2 hover:bg-gray-100">
                 Oncology
               </li>
-              <li
-                onClick={() => goTo("/products?category=Diabetes")}
-                className="px-4 py-2 hover:bg-gray-100"
-              >
+              <li onClick={() => goTo("/products?category=Diabetes")} className="px-4 py-2 hover:bg-gray-100">
                 Diabetes
               </li>
-              <li
-                onClick={() => goTo("/products?category=Neurology")}
-                className="px-4 py-2 hover:bg-gray-100"
-              >
+              <li onClick={() => goTo("/products?category=Neurology")} className="px-4 py-2 hover:bg-gray-100">
                 Neurology
               </li>
             </ul>
           </li>
 
           <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
-            About Us
+            {t("nav.about")}
           </li>
 
           <li className="relative group hover:text-[#0d2d47] cursor-pointer">
-            <span>Ivexia Magazine ▾</span>
-            <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-48 font-normal">
-              <li onClick={() => goTo("/magazine/news")} className="px-4 py-2 hover:bg-gray-100">
-                News
+            <span onClick={() => goTo("/ivexia-mag")} className="inline-flex items-center gap-1">
+              {t("nav.mag")} ▾
+            </span>
+            <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-56 font-normal">
+              <li onClick={() => goTo("/ivexia-mag?category=news")} className="px-4 py-2 hover:bg-gray-100">
+                {t("nav.mag_news")}
               </li>
-              <li onClick={() => goTo("/magazine/health")} className="px-4 py-2 hover:bg-gray-100">
-                Health Magazine
+              <li onClick={() => goTo("/ivexia-mag?category=health")} className="px-4 py-2 hover:bg-gray-100">
+                {t("nav.mag_health")}
               </li>
             </ul>
           </li>
 
           <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
-            Contact Us
+            {t("nav.contact")}
           </li>
         </ul>
 
-        {/* === Right Side Icons === */}
+        {/* Right side: search + language + mobile button */}
         <div className="flex items-center gap-4 relative">
           <FaSearch
-            className="cursor-pointer text-gray-600 hover:text-[#0d2d47] transition-transform duration-300 hover:scale-110"
+            className="cursor-pointer text-gray-600 hover:text-[#0d2d47]"
             onClick={() => setShowSearch(!showSearch)}
           />
 
-          {/* Language Selector */}
           <div className="relative">
             <div
               className="flex items-center gap-1 cursor-pointer text-gray-600 hover:text-[#0d2d47]"
               onClick={() => setShowLanguages(!showLanguages)}
             >
-              <FaGlobe className="transition-transform hover:scale-110" />
+              <FaGlobe />
               <span className="text-sm">{language}</span>
             </div>
-
             {showLanguages && (
-              <ul className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-md text-sm font-medium z-50">
-                <li
-                  onClick={() => selectLanguage("English")}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  🇬🇧 English
-                </li>
-                <li
-                  onClick={() => selectLanguage("हिन्दी")}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  🇮🇳 हिन्दी
-                </li>
-                <li
-                  onClick={() => selectLanguage("Македонски")}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  🇲🇰 Македонски
-                </li>
-                <li
-                  onClick={() => selectLanguage("Español")}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  🇪🇸 Español
-                </li>
+              <ul className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-md text-sm font-medium z-50">
+                {languages.map((lng) => (
+                  <li
+                    key={lng.code}
+                    onClick={() => selectLanguage(lng.code, lng.label)}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2"
+                  >
+                    <span>{lng.flag}</span>
+                    <span>{lng.label}</span>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
 
-          {/* Mobile Menu Icon */}
           <div className="lg:hidden">
             {menuOpen ? (
-              <FaTimes
-                className="text-gray-700 text-xl cursor-pointer"
-                onClick={() => setMenuOpen(false)}
-              />
+              <FaTimes className="text-gray-700 text-xl cursor-pointer" onClick={() => setMenuOpen(false)} />
             ) : (
-              <FaBars
-                className="text-gray-700 text-xl cursor-pointer"
-                onClick={() => setMenuOpen(true)}
-              />
+              <FaBars className="text-gray-700 text-xl cursor-pointer" onClick={() => setMenuOpen(true)} />
             )}
           </div>
         </div>
       </div>
 
-      {/* === Search Bar === */}
+      {/* Search bar */}
       {showSearch && (
-        <div className="px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200 transition-all duration-300">
+        <div className="px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200">
           <input
             type="text"
-            placeholder="Search..."
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#0d2d47]"
+            placeholder={t("search.placeholder")}
+            className="w-full border border-gray-300 rounded-md px-4 py-2"
           />
         </div>
       )}
 
-      {/* === Mobile Menu === */}
+      {/* Mobile menu */}
       {menuOpen && (
         <ul className="lg:hidden flex flex-col gap-4 bg-white shadow-md border-t border-gray-100 px-6 py-4 font-medium text-gray-800">
           <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
-            Home
+            {t("nav.home")}
           </li>
           <li
             onClick={() => goTo("/products/ingredient")}
             className="hover:text-[#0d2d47] cursor-pointer"
           >
-            Active Pharmaceutical Ingredients
+            {t("nav.api")}
           </li>
-          {/* mobile: generic products page, user can filter there */}
-          <li
-            onClick={() => goTo("/products")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
-            Pharmaceutical Products
+          <li onClick={() => goTo("/products")} className="hover:text-[#0d2d47] cursor-pointer">
+            {t("nav.products")}
           </li>
           <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
-            About Us
+            {t("nav.about")}
           </li>
-          <li onClick={() => goTo("/magazine")} className="hover:text-[#0d2d47] cursor-pointer">
-            Ivexia Magazine
+          <li onClick={() => goTo("/ivexia-mag")} className="hover:text-[#0d2d47] cursor-pointer">
+            {t("nav.mag")}
           </li>
           <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
-            Contact Us
+            {t("nav.contact")}
           </li>
         </ul>
       )}

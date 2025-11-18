@@ -20,16 +20,17 @@ export default function CustomerStrip() {
           Our Customers
         </h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
           {customers.map((c) => (
             <img
               key={c.name}
               src={c.logo}
               alt={c.name}
               className="
-                h-16 md:h-20
+                h-24 md:h-28    /* Increased logo size */
                 w-auto 
                 object-contain
+                transition-transform duration-300 hover:scale-105
               "
             />
           ))}

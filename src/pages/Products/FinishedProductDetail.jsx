@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FINISHED_PRODUCTS from "../../data/finishedProducts"; // your data
 import fallbackImage from "../../assets/logo/medicineproduct.jpg"; // same image as overview
+import capsuleIcon from "../../assets/logo/capsule.svg";
 
 // 🔹 Single accordion item – light by default, turns blue on hover
 function AccordionItem({ item, isOpen, onToggle }) {
@@ -184,20 +185,15 @@ export default function FinishedProductDetail() {
             / <span>{product.name}</span>
           </nav>
 
-          <div className=" bg-white border border-gray-100 shadow-sm px-5 md:px-10 py-8 md:py-10">
+          <div className="bg-white border border-gray-100 shadow-sm px-5 md:px-10 py-8 md:py-10">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_1.4fr] items-start">
-              {/* Image left */}
+              {/* Image left – now clean, no white card / shadow */}
               <div className="flex justify-center">
-                <div className="relative w-full max-w-sm">
-                  <div className="absolute -inset-3 bg-gradient-to-br from-[#19a6b5]/12 via-[#FF7A00]/8 to-[#E2004F]/8 rounded-3xl blur-sm" />
-                  <div className="relative rounded-3xl bg-white border border-[#0d2d47]/10 p-6 flex items-center justify-center">
-                    <img
-                      src={imgSrc}
-                      alt={product.name}
-                      className="w-full max-h-[320px] object-contain drop-shadow-md"
-                    />
-                  </div>
-                </div>
+                <img
+                  src={imgSrc}
+                  alt={product.name}
+                  className="w-full max-w-sm max-h-[320px] object-contain"
+                />
               </div>
 
               {/* Text + tabs right */}
@@ -231,32 +227,33 @@ export default function FinishedProductDetail() {
                 </div>
 
                 {/* Tabs: Introduction / Indications / Maintenance */}
-                <div className="mt-6 border-b border-gray-200 flex gap-6 text-sm md:text-base">
-                  {[
-                    { id: "introduction", label: "Introduction" },
-                    { id: "indications", label: "Indications" },
-                    { id: "maintenance", label: "Maintenance" },
-                  ].map((tab) => {
-                    const active = activeTab === tab.id;
-                    return (
-                      <button
-                        key={tab.id}
-                        type="button"
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`
-                          pb-2 -mb-px border-b-2
-                          ${
-                            active
-                              ? "border-[#19a6b5] text-[#0d2d47] font-semibold"
-                              : "border-transparent text-gray-500 hover:text-[#0d2d47]"
-                          }
-                        `}
-                      >
-                        {tab.label}
-                      </button>
-                    );
-                  })}
-                </div>
+               <div className="mt-6 border-b border-gray-200 flex gap-6 text-sm md:text-base">
+  {[
+    { id: "introduction", label: "Introduction" },
+    { id: "indications", label: "Indications" },
+    { id: "maintenance", label: "Maintenance" },
+  ].map((tab) => {
+    const active = activeTab === tab.id;
+    return (
+      <button
+        key={tab.id}
+        type="button"
+        onClick={() => setActiveTab(tab.id)}
+        className={`
+          pb-2 -mb-px border-b-2 cursor-pointer
+          ${
+            active
+              ? "border-[#19a6b5] text-[#0d2d47] font-semibold"
+              : "border-transparent text-gray-500 hover:text-[#0d2d47]"
+          }
+        `}
+      >
+        {tab.label}
+      </button>
+    );
+  })}
+</div>
+
 
                 <div className="mt-4 text-sm md:text-[15px] text-gray-700 space-y-3">
                   {activeTab === "introduction" && <p>{introText}</p>}
@@ -283,8 +280,8 @@ export default function FinishedProductDetail() {
                       inline-flex items-center justify-center
                       px-5 py-2.5 rounded-full
                       text-sm font-semibold
-                      bg-gradient-to-r from-[#0d2d47] to-[#19a6b5]
-                      text-white hover:opacity-90
+                      bg-gradient-to-r from-[#FF7A00] to-[#E2004F]
+                      text-white shadow-md hover:opacity-90
                     "
                   >
                     Request quote
@@ -340,17 +337,13 @@ export default function FinishedProductDetail() {
             </div>
           </div>
 
+          {/* Right image – also clean, no bg card / shadow */}
           <div className="hidden lg:flex justify-center">
-            <div className="relative w-full max-w-xs">
-              <div className="absolute -inset-4 bg-[#19a6b5]/6 rounded-3xl" />
-              <div className="relative bg-white rounded-3xl border border-[#0d2d47]/10 p-5 flex items-center justify-center shadow-sm">
-                <img
-                  src={imgSrc}
-                  alt={product.name}
-                  className="w-full max-h-[260px] object-contain"
-                />
-              </div>
-            </div>
+            <img
+              src={imgSrc}
+              alt={product.name}
+              className="w-full max-w-xs max-h-[260px] object-contain"
+            />
           </div>
         </div>
       </section>
@@ -367,18 +360,24 @@ export default function FinishedProductDetail() {
               <div
                 key={idx}
                 className="
+                  bg-white border border-gray-100 shadow-sm
+                  p-5 md:p-6
                   flex flex-col items-center text-center
-                  py-4
                 "
               >
-                {/* Just icon, no white card/border background */}
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-2xl">💊</span>
+                {/* Capsule icon */}
+                <div className="w-14 h-14 flex items-center justify-center mb-3">
+                  <img
+                    src={capsuleIcon}
+                    alt="Capsule Icon"
+                    className="w-10 h-10 object-contain"
+                  />
                 </div>
+
                 <p className="font-semibold text-[#0d2d47] mb-2 text-sm md:text-base">
                   {typeof ph === "string" ? ph : ph.name}
                 </p>
-                {/* Button kept simple, no big card-style container */}
+
                 <button
                   type="button"
                   className="

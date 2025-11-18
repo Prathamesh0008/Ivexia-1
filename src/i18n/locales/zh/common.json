@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "首页",
+    "api": "原料药 (API)",
+    "products": "制剂产品",
+    "about": "关于我们",
+    "mag": "Ivexia 杂志",
+    "mag_news": "新闻",
+    "mag_health": "健康杂志",
+    "contact": "联系我们"
+  },
+  "search": {
+    "placeholder": "搜索产品、文章、新闻..."
+  },
+  "products": {
+    "page_title": "制剂产品",
+    "page_subtitle": "覆盖主要治疗领域的制剂产品，并提供法规与质量文件支持。",
+    "count_label": "显示 {{visible}} / {{total}} 个产品"
+  }
+}

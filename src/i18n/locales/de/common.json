@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "api": "Wirkstoffe (API)",
+    "products": "Pharmazeutische Produkte",
+    "about": "Über uns",
+    "mag": "Ivexia Magazin",
+    "mag_news": "News",
+    "mag_health": "Gesundheitsmagazin",
+    "contact": "Kontakt"
+  },
+  "search": {
+    "placeholder": "Produkte, Artikel, News suchen..."
+  },
+  "products": {
+    "page_title": "Pharmazeutische Produkte",
+    "page_subtitle": "Fertige Darreichungsformen in wichtigen Therapiebereichen, mit regulatorischer Unterstützung und Qualitätsdokumentation.",
+    "count_label": "{{visible}} von {{total}} Produkten werden angezeigt"
+  }
+}

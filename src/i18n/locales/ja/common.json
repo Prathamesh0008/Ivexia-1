@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "api": "医薬品原薬（API）",
+    "products": "医薬品製品",
+    "about": "会社概要",
+    "mag": "Ivexia マガジン",
+    "mag_news": "ニュース",
+    "mag_health": "ヘルスマガジン",
+    "contact": "お問い合わせ"
+  },
+  "search": {
+    "placeholder": "製品・記事・ニュースを検索..."
+  },
+  "products": {
+    "page_title": "医薬品製品",
+    "page_subtitle": "主要な治療分野をカバーする製剤で、規制対応と品質文書を完備しています。",
+    "count_label": "{{total}} 件中 {{visible}} 件を表示"
+  }
+}

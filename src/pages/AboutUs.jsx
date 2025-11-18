@@ -1,6 +1,8 @@
+// src/pages/AboutUs.jsx
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import LazyImage from "../components/LazyImage";
+import factoryImg from "../assets/logo/ivexia-factory1.jpg"; // 🔹 NEW: Ivexia factory image
 
 // =========================
 // AUTO SCROLL COMPONENT
@@ -86,7 +88,6 @@ function AutoScrollLabs() {
 export default function AboutUs() {
   return (
     <div className="bg-white font-sans overflow-hidden">
-
       {/* =======================
           1. HERO SECTION
       ======================= */}
@@ -129,8 +130,9 @@ export default function AboutUs() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
+            {/* 🔹 Replaced with Ivexia factory image */}
             <LazyImage
-              src="https://images.unsplash.com/photo-1581091012184-7c54c3c50c82?auto=format&fit=crop&w=1000&q=80"
+              src={factoryImg}
               className="rounded-3xl shadow-2xl object-cover w-full h-[300px] md:h-[550px]"
             />
           </motion.div>
@@ -159,7 +161,6 @@ export default function AboutUs() {
           3. VISION + MISSION
       ======================= */}
       <section className="relative py-20 md:py-32 bg-[#0d2d47] text-white">
-
         <div className="absolute inset-x-0 -top-16 flex justify-center px-6">
           <div className="bg-white shadow-xl rounded-2xl px-6 md:px-12 py-6 md:py-8 text-center w-full md:w-auto">
             <h3 className="text-xl md:text-3xl font-bold text-[#0d2d47]">
@@ -170,14 +171,18 @@ export default function AboutUs() {
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 mt-20 md:mt-28">
           <motion.div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#FF7A00]">Our Vision</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#FF7A00]">
+              Our Vision
+            </h2>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               To become a trusted global pharmaceutical force.
             </p>
           </motion.div>
 
           <motion.div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#19a6b5]">Our Mission</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#19a6b5]">
+              Our Mission
+            </h2>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               To deliver products aligned with WHO-GMP, EU-GMP, ISO & PIC/S.
             </p>
@@ -213,7 +218,9 @@ export default function AboutUs() {
               <h3 className="text-xl md:text-2xl font-semibold text-[#E2004F]">
                 {loc.place}
               </h3>
-              <p className="mt-3 text-gray-600 text-base md:text-lg">{loc.detail}</p>
+              <p className="mt-3 text-gray-600 text-base md:text-lg">
+                {loc.detail}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -283,7 +290,9 @@ export default function AboutUs() {
                 src={`https://randomuser.me/api/portraits/men/${id}.jpg`}
                 className="w-24 h-24 mx-auto object-cover mb-4 border-4 border-[#19a6b5]"
               />
-              <h4 className="font-semibold text-[#0d2d47] text-lg">Leader {i + 1}</h4>
+              <h4 className="font-semibold text-[#0d2d47] text-lg">
+                Leader {i + 1}
+              </h4>
               <p className="text-xs text-gray-500">Department</p>
             </motion.div>
           ))}
@@ -306,16 +315,20 @@ export default function AboutUs() {
             { year: "2020", text: "First multi-facility manufacturing expansion in India." },
             { year: "2023", text: "Advanced Nutraceutical R&D labs commissioned." },
             { year: "2025", text: "EU-aligned operations begin in North Macedonia." },
-            { year: "2030", text: "Entry into global oncology & biotech production." }
+            { year: "2030", text: "Entry into global oncology & biotech production." },
           ].map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className={`relative mb-12 md:mb-20 p-6 md:w-1/2 ${i % 2 === 0 ? "md:ml-auto md:pr-10" : "md:mr-auto md:pl-10"}`}
+              className={`relative mb-12 md:mb-20 p-6 md:w-1/2 ${
+                i % 2 === 0 ? "md:ml-auto md:pr-10" : "md:mr-auto md:pl-10"
+              }`}
             >
               <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#E2004F]">
-                <h3 className="text-2xl font-bold text-[#0d2d47]">{item.year}</h3>
+                <h3 className="text-2xl font-bold text-[#0d2d47]">
+                  {item.year}
+                </h3>
                 <p className="text-gray-600 mt-2">{item.text}</p>
               </div>
             </motion.div>
@@ -332,14 +345,16 @@ export default function AboutUs() {
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
-          {["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"].map((text) => (
-            <div
-              key={text}
-              className="px-6 py-4 bg-white shadow-md border border-gray-200 text-center text-sm md:text-base font-medium text-[#0d2d47]"
-            >
-              {text}
-            </div>
-          ))}
+          {["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"].map(
+            (text) => (
+              <div
+                key={text}
+                className="px-6 py-4 bg-white shadow-md border border-gray-200 text-center text-sm md:text-base font-medium text-[#0d2d47]"
+              >
+                {text}
+              </div>
+            )
+          )}
         </div>
       </section>
 
@@ -361,7 +376,10 @@ export default function AboutUs() {
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581093502863-50b395c221e5?q=80&w=1500')" }}
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1581093502863-50b395c221e5?q=80&w=1500')",
+          }}
         />
         <div className="absolute inset-0 bg-black/60" />
 
@@ -396,10 +414,12 @@ export default function AboutUs() {
               Sustainability at Ivexia
             </h2>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4">
-              Our facilities operate with ZLD, controlled emissions & renewable energy.
+              Our facilities operate with ZLD, controlled emissions & renewable
+              energy.
             </p>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-              We reduce carbon footprint through green chemistry & energy efficiency.
+              We reduce carbon footprint through green chemistry & energy
+              efficiency.
             </p>
           </motion.div>
 
@@ -410,25 +430,30 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* =======================
+            {/* =======================
           13. GLOBAL MAP
       ======================= */}
-      <section className="py-20 md:py-32 px-6 bg-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-10">
+      <section className="py-16 md:py-24 px-6 bg-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-8">
           Global Presence
         </h2>
 
-        <div className="relative max-w-5xl mx-auto">
-          <LazyImage
-            src="https://i.pinimg.com/736x/ce/bf/12/cebf123f0fa46097918c4cf297e96a20.jpg"
-            className="w-full opacity-90"
-          />
+        <div className="relative max-w-xl mx-auto">
+          {/* 🔹 Smaller height, image contained */}
+          <div className="relative w-full max-w-[420px] mx-auto h-[180px] md:h-[230px]">
+            <LazyImage
+              src="https://i.pinimg.com/736x/ce/bf/12/cebf123f0fa46097918c4cf297e96a20.jpg"
+              className="w-full h-full object-contain opacity-90"
+            />
 
-          <div className="absolute top-[60%] left-[50%] w-4 h-4 bg-[#E2004F] rounded-full animate-pulse"></div>
-          <div className="absolute top-[42%] left-[47%] w-4 h-4 bg-[#19a6b5] rounded-full animate-pulse"></div>
-          <div className="absolute top-[55%] left-[52%] w-4 h-4 bg-[#FF7A00] rounded-full animate-pulse"></div>
+            {/* Pulsing markers – kept but inside same box */}
+            <div className="absolute top-[60%] left-[50%] w-3 h-3 bg-[#E2004F] rounded-full animate-pulse"></div>
+            <div className="absolute top-[42%] left-[47%] w-3 h-3 bg-[#19a6b5] rounded-full animate-pulse"></div>
+            <div className="absolute top-[55%] left-[52%] w-3 h-3 bg-[#FF7A00] rounded-full animate-pulse"></div>
+          </div>
         </div>
       </section>
+
 
       {/* =======================
           14. AWARDS
@@ -445,8 +470,12 @@ export default function AboutUs() {
                 src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
                 className="w-14 mx-auto mb-4"
               />
-              <h4 className="font-semibold text-[#0d2d47]">Excellence Award {i}</h4>
-              <p className="text-gray-500 text-sm mt-1">Recognized for innovation.</p>
+              <h4 className="font-semibold text-[#0d2d47]">
+                Excellence Award {i}
+              </h4>
+              <p className="text-gray-500 text-sm mt-1">
+                Recognized for innovation.
+              </p>
             </div>
           ))}
         </div>
@@ -456,7 +485,9 @@ export default function AboutUs() {
           15. CTA
       ======================= */}
       <section className="py-20 md:py-28 bg-[#0d2d47] text-center text-white px-6">
-        <h2 className="text-3xl md:text-5xl font-bold">Join Our Global Mission</h2>
+        <h2 className="text-3xl md:text-5xl font-bold">
+          Join Our Global Mission
+        </h2>
         <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
           Be part of a future where science, innovation & humanity come together.
         </p>
@@ -464,7 +495,6 @@ export default function AboutUs() {
           Contact Us
         </button>
       </section>
-
     </div>
   );
 }

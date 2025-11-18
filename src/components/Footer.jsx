@@ -1,7 +1,18 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
 import logo from "../assets/logo/ivexiaa-logoo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
+  const quickLinks = [
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/about" },
+    { label: "Pharmaceutical Products", path: "/products" },
+    { label: "Ivexia Magazine", path: "/ivexia-mag" },
+    { label: "Contact Us", path: "/contact" },
+  ];
+
   return (
     <footer className="relative bg-[#0d2d47] text-white overflow-hidden">
       {/* === Top Accent Line === */}
@@ -27,9 +38,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
-              <span className="font-semibold text-white">
-                Ivexia Pharmaceuticals Pvt. Ltd.
-              </span>
+              <span className="font-semibold text-white">Ivexia Pharmaceuticals Pvt. Ltd.</span>
               <br />
               Precision. Purity. Progress.
               <br />
@@ -59,16 +68,15 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              {["Home", "About Us", "Pharmaceutical Products", "Ivexia Magazine", "Contact Us"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="hover:text-white hover:translate-x-1 transform transition-all duration-300 cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                )
-              )}
+              {quickLinks.map((q) => (
+                <li
+                  key={q.label}
+                  onClick={() => navigate(q.path)}
+                  className="hover:text-white  transform transition-all duration-300 cursor-pointer"
+                >
+                  {q.label}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -88,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="font-semibold text-white">Phone:</span>{" "}
-                +91 87674 65480
+                +91 9998887770
               </li>
             </ul>
           </div>

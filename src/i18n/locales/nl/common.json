@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "api": "Actieve farmaceutische ingrediënten",
+    "products": "Farmaceutische producten",
+    "about": "Over ons",
+    "mag": "Ivexia Magazine",
+    "mag_news": "Nieuws",
+    "mag_health": "Gezondheidsmagazine",
+    "contact": "Contact"
+  },
+  "search": {
+    "placeholder": "Zoek naar producten, artikelen, nieuws..."
+  },
+  "products": {
+    "page_title": "Farmaceutische producten",
+    "page_subtitle": "Afgewerkte doseringsvormen in belangrijke therapiegebieden, met volledige regelgeving en kwaliteitsdocumentatie.",
+    "count_label": "{{visible}} van {{total}} producten worden weergegeven"
+  }
+}

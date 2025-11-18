@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "api": "Active Pharmaceutical Ingredients",
+    "products": "Pharmaceutical Products",
+    "about": "About Us",
+    "mag": "Ivexia Magazine",
+    "mag_news": "News",
+    "mag_health": "Health Magazine",
+    "contact": "Contact Us"
+  },
+  "search": {
+    "placeholder": "Search products, articles, news..."
+  },
+  "products": {
+    "page_title": "Pharmaceutical Products",
+    "page_subtitle": "Finished dosage formulations across key therapy areas, supplied with regulatory support and quality documentation.",
+    "count_label": "Showing {{visible}} of {{total}} products"
+  }
+}

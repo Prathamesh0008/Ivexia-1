@@ -1,0 +1,194 @@
+/* Detail article page – Ivexia style, de-cardified */
+
+/* PAGE WRAPPER */
+.mag-article-page {
+  background: #fff8f5; /* same as Contact page */
+  min-height: 100vh;
+  padding: 140px 24px 60px;
+}
+
+.mag-article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #0d2d47;
+}
+
+/* Breadcrumb */
+.mag-article-breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.mag-article-breadcrumb span {
+  color: #0d2d47;
+  font-weight: 500;
+}
+
+/* Header */
+.mag-article-header {
+  margin-bottom: 16px;
+}
+
+.mag-article-title {
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.mag-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.mag-article-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(13, 45, 71, 0.06);
+  color: #0d2d47;
+  font-weight: 600;
+}
+
+.mag-article-dot {
+  opacity: 0.6;
+}
+
+/* HERO STRIP – now flat, full-width band (no rounded card vibe) */
+.mag-article-hero {
+  margin: 18px 0 22px;
+  border-radius: 0;              /* 🔹 no rounded edges */
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: none;              /* 🔹 remove heavy shadow */
+  border-top: 1px solid #f3d3bf; /* subtle separation from header */
+  border-bottom: 1px solid #f3d3bf;
+}
+
+.mag-article-hero-img {
+  width: 100%;
+  display: block;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+.mag-article-hero-caption {
+  font-size: 12px;
+  color: #6b7280;
+  padding: 10px 14px 12px;
+  background: #f9fafb;
+}
+
+/* BODY – no more single rounded card; looks like flat content on peach with section dividers */
+.mag-article-body {
+  background: transparent;         /* 🔹 no white pill, use page bg */
+  border-radius: 0;                /* 🔹 remove rounding */
+  padding: 10px 0 26px;           /* top padding a bit lighter */
+  box-shadow: none;                /* 🔹 no card shadow */
+  border: none;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Text defaults */
+.mag-article-body p {
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+/* SECTION TITLES – each topic feels like its own block */
+.mag-article-body h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d2d47;
+  margin: 26px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid #f3d3bf;   /* 🔹 separator line = “new section” */
+}
+
+/* First h2 shouldn’t have double border feeling */
+.mag-article-body h2:first-of-type {
+  border-top: 2px solid #f3d3bf;
+  margin-top: 18px;
+}
+
+.mag-article-body h3 {
+  font-size: 16px;
+  margin: 14px 0 6px;
+  font-weight: 600;
+  color: #0d2d47;
+}
+
+.mag-article-body ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.mag-article-body li {
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+/* TABLE OF CONTENTS BOX – still a small peach block, no rounded corners */
+.mag-article-toc {
+  border-radius: 0;                 /* 🔹 no rounded edges */
+  background: #fef4ee;
+  border: 1px solid #f3d3bf;
+  padding: 12px 14px;
+  margin: 18px 0 10px;
+}
+
+.mag-article-toc-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d2d47;
+  margin-bottom: 6px;
+}
+
+.mag-article-toc ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.mag-article-toc li {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+/* Back link */
+.mag-article-back {
+  margin-top: 20px;
+}
+
+.mag-article-back-link {
+  font-size: 14px;
+  color: #0d2d47;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mag-article-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mag-article-page {
+    padding: 120px 16px 40px;
+  }
+
+  .mag-article-title {
+    font-size: 24px;
+  }
+
+  .mag-article-body {
+    padding: 8px 0 20px;
+  }
+}

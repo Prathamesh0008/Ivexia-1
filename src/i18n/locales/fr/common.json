@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "api": "Ingrédients pharmaceutiques actifs",
+    "products": "Produits pharmaceutiques",
+    "about": "À propos de nous",
+    "mag": "Magazine Ivexia",
+    "mag_news": "Actualités",
+    "mag_health": "Magazine santé",
+    "contact": "Contact"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits, articles, actualités..."
+  },
+  "products": {
+    "page_title": "Produits pharmaceutiques",
+    "page_subtitle": "Formulations de dose finie dans des domaines thérapeutiques clés, avec support réglementaire et documentation de qualité.",
+    "count_label": "Affichage de {{visible}} sur {{total}} produits"
+  }
+}

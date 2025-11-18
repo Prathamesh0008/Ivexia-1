@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Hero from "../components/Hero";
 import IvexiaNumbers from "../components/IvexiaNumbers";
 import AboutVideo from "../components/AboutVideo";
@@ -8,16 +10,18 @@ import ResearchManufacturingSection from "../components/ResearchManufacturingSec
 import LatestFromIvexia from "../components/LatestFromIvexia";
 
 export default function Home() {
+  const { t } = useTranslation("common");
+
   return (
-    <div >
+    <div>
       <Hero />
       <IvexiaNumbers />
       <AboutVideo />
       <TherapyGroups />
-      <AccordSection/>
-      <LeadershipSection/>
-      <ResearchManufacturingSection/>
-      <LatestFromIvexia/>
+      <AccordSection />
+      <LeadershipSection />
+      <ResearchManufacturingSection />
+      <LatestFromIvexia />
     </div>
   );
 }
