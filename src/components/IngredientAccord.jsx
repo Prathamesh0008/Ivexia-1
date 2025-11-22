@@ -1,36 +1,25 @@
 // src/components/IngredientAccord.jsx
 import { useState } from "react";
-
-const FAQS = [
-  {
-    q: "Do you supply full documentation (CoA / MSDS)?",
-    a: "Yes, each API ships with CoA and MSDS on request, along with specifications and stability data where applicable.",
-  },
-  {
-    q: "Are your sites WHO-GMP / cGMP compliant?",
-    a: "Yes, manufacturing sites follow WHO-GMP / cGMP guidelines with regular audits, validated processes, and full traceability.",
-  },
-  {
-    q: "Do you support custom specs or contract manufacturing?",
-    a: "We offer CDMO support including tech transfer, scale-up, validation, customized specifications, and packaging solutions.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function IngredientAccord() {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle = (idx) => {
+  // Load from translations
+  const faqList = t("ingredientAccord.faqs", { returnObjects: true });
+
+  const toggle = (idx) =>
     setOpenIndex((current) => (current === idx ? null : idx));
-  };
 
   return (
     <section className="bg-white py-16 md:py-20 px-6 md:px-16">
       <h2 className="text-3xl md:text-4xl font-bold text-[#222] mb-8 text-center">
-        FAQs
+        {t("ingredientAccord.title")}
       </h2>
 
       <div className="max-w-3xl mx-auto space-y-4">
-        {FAQS.map((item, idx) => {
+        {faqList.map((item, idx) => {
           const isOpen = openIndex === idx;
 
           return (
@@ -38,7 +27,6 @@ export default function IngredientAccord() {
               key={idx}
               className="rounded-xl border border-gray-200 overflow-hidden bg-[#FFF8F5]"
             >
-              {/* HEADER */}
               <button
                 type="button"
                 onClick={() => toggle(idx)}
@@ -52,17 +40,12 @@ export default function IngredientAccord() {
                 </span>
               </button>
 
-              {/* BODY – SLOW, SMOOTH DROPDOWN */}
               <div
-                className={`
-                  px-5 text-gray-700 overflow-hidden
-                  transition-[max-height,opacity,padding] duration-500 ease-in-out
-                  ${isOpen ? "max-h-48 py-4 opacity-100" : "max-h-0 py-0 opacity-0"}
-                `}
+                className={`px-5 text-gray-700 overflow-hidden transition-[max-height,opacity,padding] duration-500 ease-in-out ${
+                  isOpen ? "max-h-48 py-4 opacity-100" : "max-h-0 py-0 opacity-0"
+                }`}
               >
-                <p className="text-sm md:text-base">
-                  {item.a}
-                </p>
+                <p className="text-sm md:text-base">{item.a}</p>
               </div>
             </div>
           );

@@ -1,33 +1,40 @@
 // src/pages/Products/ProductDetail.jsx
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import INGREDIENTS from "../../data/ingredients";
 import capsuleImg from "../../assets/logo/capsuleimage.jpg";
 
 export default function ProductDetail() {
+  const { t } = useTranslation();
   const { slug } = useParams();
+
   const product = INGREDIENTS.find((p) => p.slug === slug);
 
-  // For quote popup
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
-  // Always scroll to top when product changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
+  // If product not found
   if (!product) {
     return (
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-2xl font-bold text-[#0d2d47]">Product not found</h1>
+        <h1 className="text-2xl font-bold text-[#0d2d47]">
+          {t("productDetail.notFoundTitle")}
+        </h1>
+
         <p className="mt-2 text-gray-600">
-          We couldn&apos;t find this API in our portfolio.
+          {t("productDetail.notFoundText")}
         </p>
+
         <Link
           to="/products/ingredient"
           className="mt-6 inline-block px-4 py-2 rounded-lg border border-[#0d2d47] text-[#0d2d47] hover:bg-[#0d2d47] hover:text-white transition"
         >
-          ← Back to Active Pharmaceutical Ingredients
+          {t("productDetail.backToApis")}
         </Link>
       </section>
     );
@@ -35,9 +42,10 @@ export default function ProductDetail() {
 
   const imgSrc = product.image || capsuleImg;
 
-  // Suggested products (3–4 items, excluding current)
+  // Suggested products
   const others = INGREDIENTS.filter((p) => p.slug !== product.slug);
-  const diffCategory = others.filter((p) => p.category !== product.category);
+  const diffCategory = others.filter((p) => p.categoryKey !== product.categoryKey);
+
   let suggested = diffCategory.slice(0, 4);
 
   if (suggested.length < 4) {
@@ -60,49 +68,38 @@ export default function ProductDetail() {
   return (
     <>
       {/* MAIN PRODUCT SECTION */}
-      <section className="bg-white pt-24 md:pt-28">
+      <section className="bg-white pt-12 md:pt-10">
         <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
-          {/* Breadcrumbs */}
-          <nav className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6">
-            <Link to="/" className="text-[#0d2d47] hover:underline">
-              Home
-            </Link>{" "}
-            /{" "}
-            <Link
-              to="/products/ingredient"
-              className="text-[#0d2d47] hover:underline"
-            >
-              Active Pharmaceutical Ingredients
-            </Link>{" "}
-            / <span className="text-gray-500">{product.name}</span>
-          </nav>
-
-          <div className=" bg-[#FFF8F5] shadow-sm border border-gray-100 px-5 md:px-8 py-8 md:py-10">
+          <div className="bg-[#FFF8F5] shadow-sm border border-gray-100 px-5 md:px-8 py-8 md:py-10">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_1.4fr] items-start">
-              {/* CLEAN IMAGE — NO BG, NO BORDER, NO SHADOW */}
+              
+              {/* PRODUCT IMAGE */}
               <div className="flex items-center justify-center">
                 <img
                   src={imgSrc}
-                  alt={product.name}
+                  alt={t(product.nameKey)}
                   className="w-full max-h-[260px] object-contain"
                 />
               </div>
 
               {/* PRODUCT INFO */}
               <div>
+                {/* PRODUCT NAME (translated) */}
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0d2d47]">
-                  {product.name}
+                  {t(product.nameKey)}
                 </h1>
 
+                {/* CAS */}
                 {product.cas && (
                   <p className="mt-2 text-xs md:text-sm text-gray-500">
-                    CAS: {product.cas}
+                    {t("productDetail.cas")}: {product.cas}
                   </p>
                 )}
 
+                {/* CATEGORY (translated) & badges */}
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium bg-[#0d2d47] text-white">
-                    {product.category}
+                    {t(product.categoryKey)}
                   </span>
 
                   {product.badges?.length
@@ -119,24 +116,25 @@ export default function ProductDetail() {
 
                 {/* DESCRIPTION */}
                 <div className="mt-5 space-y-3 text-sm md:text-[15px] text-gray-700">
-                  {product.description && <p>{product.description}</p>}
+
+                  {product.descKey && (
+                    <p>{t(product.descKey)}</p>
+                  )}
+
+                  <p>{t("productDetail.descriptionLine1")}</p>
+
                   <p>
-                    This Active Pharmaceutical Ingredient is manufactured under
-                    controlled GMP conditions with full batch traceability.
-                  </p>
-                  <p>
-                    It is suitable for formulation development and commercial
-                    supply in{" "}
-                    {product.category?.toLowerCase() || "relevant"} therapy
-                    areas.
+                    {t("productDetail.descriptionLine2", {
+                      category: t(product.categoryKey),
+                    })}
                   </p>
                 </div>
 
-                {/* Synonyms */}
+                {/* SYNONYMS */}
                 {product.synonyms?.length > 0 && (
                   <>
                     <h3 className="mt-4 text-sm font-semibold text-[#0d2d47]">
-                      Synonyms
+                      {t("productDetail.synonyms")}
                     </h3>
                     <p className="text-sm text-gray-700">
                       {product.synonyms.join(", ")}
@@ -144,22 +142,23 @@ export default function ProductDetail() {
                   </>
                 )}
 
+                {/* DOSAGE FORMS */}
                 <h3 className="mt-4 text-sm font-semibold text-[#0d2d47]">
-                  Dosage Forms
+                  {t("productDetail.dosageForms")}
                 </h3>
 
                 <div className="mt-1 flex flex-wrap gap-2">
-                  {product.dosageForms.map((d) => (
+                  {product.dosageKeys?.map((key) => (
                     <span
-                      key={d}
+                      key={key}
                       className="text-xs px-2 py-1 rounded-full border border-gray-200 bg-white"
                     >
-                      {d}
+                      {t(key)}
                     </span>
                   ))}
                 </div>
 
-                {/* REQUEST QUOTE BUTTON → POPUP */}
+                {/* REQUEST QUOTE BUTTON */}
                 <div className="mt-6">
                   <button
                     type="button"
@@ -167,13 +166,12 @@ export default function ProductDetail() {
                     className="
                       inline-flex items-center justify-center 
                       px-5 py-2.5 
-                      rounded-lg 
-                      text-white text-sm 
+                      rounded-lg text-white text-sm 
                       bg-gradient-to-r from-[#FF7A00] to-[#E2004F]
                       shadow-md hover:opacity-90 transition
                     "
                   >
-                    Request quote
+                    {t("productDetail.requestQuote")}
                   </button>
                 </div>
               </div>
@@ -188,13 +186,15 @@ export default function ProductDetail() {
           <div className="max-w-7xl mx-auto px-6 py-14">
             <div className="text-center mb-8">
               <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#0d2d47]/70">
-                Explore More
+                {t("productDetail.suggestedExplore")}
               </p>
+
               <h2 className="text-xl md:text-2xl font-bold text-[#0d2d47] mt-1">
-                Suggested Products
+                {t("productDetail.suggestedTitle")}
               </h2>
+
               <p className="text-xs md:text-sm text-gray-700 mt-2">
-                Other APIs related to your current selection.
+                {t("productDetail.suggestedSubtitle")}
               </p>
             </div>
 
@@ -212,28 +212,27 @@ export default function ProductDetail() {
                     transition
                   "
                 >
-                  {/* CLEAN IMAGE BLOCK — NO BG WRAPPER */}
                   <div className="w-full px-5 pt-5 pb-4 flex justify-center">
                     <img
                       src={p.image || capsuleImg}
-                      alt={p.name}
+                      alt={t(p.nameKey)}
                       className="w-24 h-24 md:w-28 md:h-28 object-contain"
                     />
                   </div>
 
                   <div className="flex flex-col items-center text-center flex-1 px-4 pb-4">
                     <h3 className="text-sm font-semibold text-[#0d2d47] leading-snug">
-                      {p.name}
+                      {t(p.nameKey)}
                     </h3>
 
                     {p.cas && (
                       <p className="text-[11px] text-gray-500 mt-1">
-                        CAS: {p.cas}
+                        {t("productDetail.cas")}: {p.cas}
                       </p>
                     )}
 
                     <span className="inline-flex mt-2 items-center rounded-full px-3 py-0.5 text-[11px] font-medium bg-[#0d2d47]/6 text-[#0d2d47]">
-                      {p.category}
+                      {t(p.categoryKey)}
                     </span>
                   </div>
                 </Link>
@@ -243,20 +242,22 @@ export default function ProductDetail() {
         </section>
       )}
 
-      {/* REQUEST QUOTE POPUP MODAL */}
+      {/* QUOTE REQUEST MODAL */}
       {showQuoteModal && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 px-4">
           <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
-            {/* Modal Header */}
+
+            {/* MODAL HEADER */}
             <div className="bg-gradient-to-r from-[#0d2d47] to-[#19a6b5] px-6 py-4 flex items-center justify-between">
               <div>
                 <h3 className="text-white font-semibold text-base md:text-lg">
-                  Request Quote
+                  {t("productDetail.modalTitle")}
                 </h3>
                 <p className="text-xs text-white/80 mt-0.5">
-                  {product.name}
+                  {t(product.nameKey)}
                 </p>
               </div>
+
               <button
                 type="button"
                 onClick={() => setShowQuoteModal(false)}
@@ -266,10 +267,10 @@ export default function ProductDetail() {
               </button>
             </div>
 
-            {/* Modal Body */}
+            {/* MODAL BODY */}
             <div className="px-6 py-5 space-y-4 bg-[#FFF8F5]">
               <p className="text-xs md:text-sm text-gray-700">
-                Share a few details and our team will reach out to you.
+                {t("productDetail.modalInfo")}
               </p>
 
               <form
@@ -280,83 +281,87 @@ export default function ProductDetail() {
                   setShowQuoteModal(false);
                 }}
               >
-                {/* Product Name */}
+                {/* PRODUCT NAME */}
                 <div>
                   <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                    Product
+                    {t("productDetail.modalSubtitle")}
                   </label>
                   <input
                     type="text"
-                    value={product.name}
+                    value={t(product.nameKey)}
                     readOnly
                     className="w-full rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700"
                   />
                 </div>
 
+                {/* Name + Company */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                      Full Name
+                      {t("productDetail.fullName")}
                     </label>
                     <input
                       type="text"
                       required
-                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#19a6b5]"
+                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                      Company
+                      {t("productDetail.company")}
                     </label>
                     <input
                       type="text"
-                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#19a6b5]"
+                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
                     />
                   </div>
                 </div>
 
+                {/* Email + Country */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                      Email
+                      {t("productDetail.email")}
                     </label>
                     <input
                       type="email"
                       required
-                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#19a6b5]"
+                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                      Country
+                      {t("productDetail.country")}
                     </label>
                     <input
                       type="text"
-                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#19a6b5]"
+                      className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
                     />
                   </div>
                 </div>
 
+                {/* MESSAGE */}
                 <div>
                   <label className="block text-xs font-semibold text-[#0d2d47] mb-1">
-                    Message / Requirement
+                    {t("productDetail.message")}
                   </label>
                   <textarea
                     rows={3}
-                    className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#19a6b5] resize-none"
-                    placeholder="Briefly describe your requirement..."
+                    className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm resize-none"
+                    placeholder={t("productDetail.messagePlaceholder")}
                   />
                 </div>
 
+                {/* BUTTONS */}
                 <div className="flex justify-end gap-3 pt-2">
                   <button
                     type="button"
                     onClick={() => setShowQuoteModal(false)}
                     className="px-4 py-2 rounded-full text-xs md:text-sm border border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
-                    Cancel
+                    {t("productDetail.cancel")}
                   </button>
 
                   <button
@@ -367,9 +372,10 @@ export default function ProductDetail() {
                       text-white shadow-md hover:opacity-90
                     "
                   >
-                    Submit request
+                    {t("productDetail.submit")}
                   </button>
                 </div>
+
               </form>
             </div>
           </div>

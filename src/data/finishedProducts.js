@@ -1,7 +1,7 @@
 // src/data/finishedProducts.js
 import commonImage from "../assets/logo/capsuleimage.jpg"; // your single product image
 
-const FINISHED_PRODUCTS = [
+export const FINISHED_PRODUCTS = [
   {
     category: "ANTICANCER",
     name: "Carboplatin Injection",
@@ -5544,4 +5544,6 @@ const FINISHED_PRODUCTS = [
     id: 502,
     slug: "sulphamethoxazole-pyrimethamine-502"
   }
-]
+];
+
+export default FINISHED_PRODUCTS;

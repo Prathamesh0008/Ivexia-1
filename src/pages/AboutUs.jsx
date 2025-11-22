@@ -2,12 +2,15 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import LazyImage from "../components/LazyImage";
-import factoryImg from "../assets/logo/ivexia-factory1.jpg"; // 🔹 NEW: Ivexia factory image
+import factoryImg from "../assets/logo/ivexia-factory1.jpg";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // =========================
 // AUTO SCROLL COMPONENT
 // =========================
 function AutoScrollLabs() {
+  const { t } = useTranslation();
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -71,9 +74,11 @@ function AutoScrollLabs() {
           />
 
           <div className="p-4 bg-white">
-            <h3 className="font-semibold text-[#0d2d47]">Advanced Lab {i}</h3>
+            <h3 className="font-semibold text-[#0d2d47]">
+              {t("aboutPage.labs.cardTitle", { index: i })}
+            </h3>
             <p className="text-gray-600 text-sm mt-1">
-              Equipped with next-gen analytical instruments.
+              {t("aboutPage.labs.cardText")}
             </p>
           </div>
         </div>
@@ -86,6 +91,8 @@ function AutoScrollLabs() {
 // MAIN ABOUT US PAGE
 // =========================
 export default function AboutUs() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white font-sans overflow-hidden">
       {/* =======================
@@ -113,10 +120,10 @@ export default function AboutUs() {
             w-[90%] md:w-auto text-center shadow-2xl"
         >
           <h1 className="text-2xl md:text-5xl font-bold text-white drop-shadow-xl leading-tight">
-            Advancing Global Care With Purpose
+            {t("aboutPage.hero.title")}
           </h1>
           <p className="mt-2 md:mt-4 text-gray-100 text-sm md:text-xl">
-            Where scientific innovation meets uncompromised quality.
+            {t("aboutPage.hero.subtitle")}
           </p>
         </motion.div>
       </section>
@@ -130,7 +137,6 @@ export default function AboutUs() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            {/* 🔹 Replaced with Ivexia factory image */}
             <LazyImage
               src={factoryImg}
               className="rounded-3xl shadow-2xl object-cover w-full h-[300px] md:h-[550px]"
@@ -139,19 +145,19 @@ export default function AboutUs() {
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-6">
-              A Legacy Built on Precision & Purpose
+              {t("aboutPage.brand.heading")}
             </h2>
 
             <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-6">
-              Ivexia Pharmaceuticals is a globally aligned healthcare company.
+              {t("aboutPage.brand.p1")}
             </p>
 
             <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-6">
-              We transform scientific innovation into world-class therapeutic solutions.
+              {t("aboutPage.brand.p2")}
             </p>
 
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-              Our footprint spans India, Europe, and the MENA region.
+              {t("aboutPage.brand.p3")}
             </p>
           </div>
         </div>
@@ -164,7 +170,7 @@ export default function AboutUs() {
         <div className="absolute inset-x-0 -top-16 flex justify-center px-6">
           <div className="bg-white shadow-xl rounded-2xl px-6 md:px-12 py-6 md:py-8 text-center w-full md:w-auto">
             <h3 className="text-xl md:text-3xl font-bold text-[#0d2d47]">
-              Driven by Science. Strengthened by Purpose.
+              {t("aboutPage.vision.banner")}
             </h3>
           </div>
         </div>
@@ -172,19 +178,19 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 mt-20 md:mt-28">
           <motion.div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#FF7A00]">
-              Our Vision
+              {t("aboutPage.vision.visionTitle")}
             </h2>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              To become a trusted global pharmaceutical force.
+              {t("aboutPage.vision.visionText")}
             </p>
           </motion.div>
 
           <motion.div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#19a6b5]">
-              Our Mission
+              {t("aboutPage.vision.missionTitle")}
             </h2>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              To deliver products aligned with WHO-GMP, EU-GMP, ISO & PIC/S.
+              {t("aboutPage.vision.missionText")}
             </p>
           </motion.div>
         </div>
@@ -196,19 +202,24 @@ export default function AboutUs() {
       <section className="py-20 md:py-32 px-6 md:px-16 bg-gray-50">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47]">
-            Global Operations
+            {t("aboutPage.global.title")}
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-base md:text-lg mt-3">
-            Integrated manufacturing, research & distribution.
+            {t("aboutPage.global.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {[
-            { place: "India", detail: "HQ & Manufacturing Hub" },
-            { place: "North Macedonia", detail: "EU-Aligned Regulatory Operations" },
-            { place: "Doha", detail: "MENA Distribution Center" },
-          ].map((loc, i) => (
+          {[{
+            place: t("aboutPage.global.indiaTitle"),
+            detail: t("aboutPage.global.indiaText"),
+          },{
+            place: t("aboutPage.global.macedoniaTitle"),
+            detail: t("aboutPage.global.macedoniaText"),
+          },{
+            place: t("aboutPage.global.dohaTitle"),
+            detail: t("aboutPage.global.dohaText"),
+          }].map((loc, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -231,24 +242,13 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 md:py-32 bg-white px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-16">
-          Our Expertise
+          {t("aboutPage.expertise.title")}
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {[
-            {
-              img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=900",
-              title: "High-Precision Manufacturing",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1581091012184-7c54c3c50c82?q=80&w=900",
-              title: "Research & Molecule Development",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1576765607935-3a83dfb1f3a2?q=80&w=900",
-              title: "Global Quality Compliance",
-            },
-          ].map((card, i) => (
+          {[{ key: "card1Title", img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=900" },
+            { key: "card2Title", img: "https://images.unsplash.com/photo-1581091012184-7c54c3c50c82?q=80&w=900" },
+            { key: "card3Title", img: "https://images.unsplash.com/photo-1576765607935-3a83dfb1f3a2?q=80&w=900" }].map((card, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -261,7 +261,7 @@ export default function AboutUs() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <h3 className="text-lg md:text-xl text-white font-semibold">
-                  {card.title}
+                  {t(`aboutPage.expertise.${card.key}`)}
                 </h3>
               </div>
             </motion.div>
@@ -274,7 +274,7 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-32 bg-gray-50 px-6 md:px-16">
         <h2 className="text-4xl font-bold text-center text-[#0d2d47] mb-12">
-          Leadership at Ivexia
+          {t("aboutPage.leadership.title")}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
@@ -291,9 +291,11 @@ export default function AboutUs() {
                 className="w-24 h-24 mx-auto object-cover mb-4 border-4 border-[#19a6b5]"
               />
               <h4 className="font-semibold text-[#0d2d47] text-lg">
-                Leader {i + 1}
+                {t("aboutPage.leadership.cardName", { index: i + 1 })}
               </h4>
-              <p className="text-xs text-gray-500">Department</p>
+              <p className="text-xs text-gray-500">
+                {t("aboutPage.leadership.cardDept")}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -304,21 +306,15 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 md:py-32 bg-white px-6 md:px-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-16">
-          Our Journey Forward
+          {t("aboutPage.timeline.title")}
         </h2>
 
         <div className="relative max-w-4xl mx-auto">
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-[#FF7A00] via-[#E2004F] to-[#19a6b5] h-full"></div>
 
-          {[
-            { year: "2018", text: "Ivexia founded with a mission to elevate healthcare." },
-            { year: "2020", text: "First multi-facility manufacturing expansion in India." },
-            { year: "2023", text: "Advanced Nutraceutical R&D labs commissioned." },
-            { year: "2025", text: "EU-aligned operations begin in North Macedonia." },
-            { year: "2030", text: "Entry into global oncology & biotech production." },
-          ].map((item, i) => (
+          {["2018", "2020", "2023", "2025", "2030"].map((year, i) => (
             <motion.div
-              key={i}
+              key={year}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               className={`relative mb-12 md:mb-20 p-6 md:w-1/2 ${
@@ -327,9 +323,11 @@ export default function AboutUs() {
             >
               <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#E2004F]">
                 <h3 className="text-2xl font-bold text-[#0d2d47]">
-                  {item.year}
+                  {year}
                 </h3>
-                <p className="text-gray-600 mt-2">{item.text}</p>
+                <p className="text-gray-600 mt-2">
+                  {t(`aboutPage.timeline.items.${year}`)}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -341,14 +339,14 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 bg-[#f8fafc] px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-12">
-          Certifications & Global Standards
+          {t("aboutPage.certifications.title")}
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
-          {["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"].map(
-            (text) => (
+          {t("aboutPage.certifications.items", { returnObjects: true }).map(
+            (text, idx) => (
               <div
-                key={text}
+                key={idx}
                 className="px-6 py-4 bg-white shadow-md border border-gray-200 text-center text-sm md:text-base font-medium text-[#0d2d47]"
               >
                 {text}
@@ -363,10 +361,10 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 md:py-32 bg-[#0d2d47] text-white text-center px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          “Innovation. Quality. Integrity.”
+          {t("aboutPage.statement.quote")}
         </h2>
         <p className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
-          Our promise reflects our commitment to ethical and world-class healthcare.
+          {t("aboutPage.statement.text")}
         </p>
       </section>
 
@@ -385,10 +383,10 @@ export default function AboutUs() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white">
-            State-of-the-Art Facilities
+            {t("aboutPage.facilities.title")}
           </h2>
           <p className="text-gray-300 text-base md:text-lg mt-4 max-w-3xl mx-auto">
-            Designed to meet global standards of precision & compliance.
+            {t("aboutPage.facilities.text")}
           </p>
         </div>
       </section>
@@ -398,7 +396,7 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 px-6 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-10">
-          Research & Development Labs
+          {t("aboutPage.labs.title")}
         </h2>
 
         <AutoScrollLabs />
@@ -411,15 +409,13 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           <motion.div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-4">
-              Sustainability at Ivexia
+              {t("aboutPage.sustainability.title")}
             </h2>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4">
-              Our facilities operate with ZLD, controlled emissions & renewable
-              energy.
+              {t("aboutPage.sustainability.p1")}
             </p>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-              We reduce carbon footprint through green chemistry & energy
-              efficiency.
+              {t("aboutPage.sustainability.p2")}
             </p>
           </motion.div>
 
@@ -430,37 +426,41 @@ export default function AboutUs() {
         </div>
       </section>
 
-            {/* =======================
-          13. GLOBAL MAP
+      {/* =======================
+          13. GLOBAL PRESENCE
       ======================= */}
-      <section className="py-16 md:py-24 px-6 bg-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-8">
-          Global Presence
+      <section className="py-32 md:py-44 px-6 bg-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-12">
+          {t("aboutPage.globalPresence.title")}
         </h2>
 
-        <div className="relative max-w-xl mx-auto">
-          {/* 🔹 Smaller height, image contained */}
-          <div className="relative w-full max-w-[420px] mx-auto h-[180px] md:h-[230px]">
-            <LazyImage
-              src="https://i.pinimg.com/736x/ce/bf/12/cebf123f0fa46097918c4cf297e96a20.jpg"
-              className="w-full h-full object-contain opacity-90"
-            />
+        <div className="relative max-w-4xl mx-auto">
+          <div className="relative w-full h-[420px] md:h-[520px] flex items-center justify-center">
+            <div className="relative w-[60%] md:w-[50%] flex justify-center items-center">
+              <LazyImage
+                src="https://i.pinimg.com/736x/ce/bf/12/cebf123f0fa46097918c4cf297e96a20.jpg"
+                className="w-full h-auto object-contain opacity-90 mx-auto"
+              />
 
-            {/* Pulsing markers – kept but inside same box */}
-            <div className="absolute top-[60%] left-[50%] w-3 h-3 bg-[#E2004F] rounded-full animate-pulse"></div>
-            <div className="absolute top-[42%] left-[47%] w-3 h-3 bg-[#19a6b5] rounded-full animate-pulse"></div>
-            <div className="absolute top-[55%] left-[52%] w-3 h-3 bg-[#FF7A00] rounded-full animate-pulse"></div>
+              <div className="absolute top-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 
+                w-3 h-3 bg-[#E2004F] rounded-full animate-pulse"></div>
+
+              <div className="absolute top-[42%] left-[47%] transform -translate-x-1/2 -translate-y-1/2
+                w-3 h-3 bg-[#19a6b5] rounded-full animate-pulse"></div>
+
+              <div className="absolute top-[55%] left-[52%] transform -translate-x-1/2 -translate-y-1/2
+                w-3 h-3 bg-[#FF7A00] rounded-full animate-pulse"></div>
+            </div>
           </div>
         </div>
       </section>
-
 
       {/* =======================
           14. AWARDS
       ======================= */}
       <section className="py-20 bg-gray-50 px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-12">
-          Awards & Recognition
+          {t("aboutPage.awards.title")}
         </h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -471,10 +471,10 @@ export default function AboutUs() {
                 className="w-14 mx-auto mb-4"
               />
               <h4 className="font-semibold text-[#0d2d47]">
-                Excellence Award {i}
+                {t("aboutPage.awards.cardTitle", { index: i })}
               </h4>
               <p className="text-gray-500 text-sm mt-1">
-                Recognized for innovation.
+                {t("aboutPage.awards.cardText")}
               </p>
             </div>
           ))}
@@ -486,14 +486,25 @@ export default function AboutUs() {
       ======================= */}
       <section className="py-20 md:py-28 bg-[#0d2d47] text-center text-white px-6">
         <h2 className="text-3xl md:text-5xl font-bold">
-          Join Our Global Mission
+          {t("aboutPage.cta.title")}
         </h2>
         <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-          Be part of a future where science, innovation & humanity come together.
+          {t("aboutPage.cta.text")}
         </p>
-        <button className="mt-8 bg-white text-[#0d2d47] px-8 py-3 font-semibold hover:bg-gray-200 transition">
-          Contact Us
-        </button>
+
+        <Link
+          to="/contact"
+          onClick={(e) => {
+            if (e.ctrlKey || e.metaKey) {
+              e.preventDefault();
+              window.open("/contact", "_blank", "noopener,noreferrer");
+              return;
+            }
+          }}
+          className="inline-block mt-8 bg-white text-[#0d2d47] px-8 py-3 font-semibold hover:bg-gray-200 transition"
+        >
+          {t("aboutPage.cta.button")}
+        </Link>
       </section>
     </div>
   );

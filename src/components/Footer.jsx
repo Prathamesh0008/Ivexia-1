@@ -1,17 +1,14 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
 import logo from "../assets/logo/ivexiaa-logoo.png";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
-  const quickLinks = [
-    { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    { label: "Pharmaceutical Products", path: "/products" },
-    { label: "Ivexia Magazine", path: "/ivexia-mag" },
-    { label: "Contact Us", path: "/contact" },
-  ];
+  const quickLinks = t("footer.quickLinks", { returnObjects: true });
+  const contact = t("footer.contact", { returnObjects: true });
 
   return (
     <footer className="relative bg-[#0d2d47] text-white overflow-hidden">
@@ -27,22 +24,21 @@ export default function Footer() {
           
           {/* === Column 1: Logo + Brand === */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            {/* Logo with subtle glow */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#19a6b5]/40 to-[#FF7A00]/30 blur-lg rounded-full" />
               <img
                 src={logo}
-                alt="Ivexia Logo"
+                alt={t("footer.logoAlt")}
                 className="relative w-[12vh] md:w-[22vh] h-auto object-contain mx-auto md:mx-0 drop-shadow-lg"
               />
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
-              <span className="font-semibold text-white">Ivexia Pharmaceuticals Pvt. Ltd.</span>
+              <span className="font-semibold text-white">{t("footer.companyName")}</span>
               <br />
-              Precision. Purity. Progress.
+              {t("footer.tagline")}
               <br />
-              Advancing global healthcare through innovation, quality, and integrity.
+              {t("footer.description")}
             </p>
 
             {/* Social Icons */}
@@ -50,7 +46,7 @@ export default function Footer() {
               {[FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={contact.social[i] || "#"}
                   className="bg-white/10 p-2.5 rounded-full hover:bg-gradient-to-r hover:from-[#19a6b5] hover:to-[#E2004F] transition-all duration-300"
                 >
                   <Icon size={15} />
@@ -58,21 +54,20 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Decorative mini line */}
             <div className="w-20 h-[2px] bg-gradient-to-r from-[#19a6b5] via-[#E2004F] to-[#FF7A00] rounded-full mt-3" />
           </div>
 
           {/* === Column 2: Quick Links === */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4 text-[#FF7A00] uppercase tracking-wide">
-              Quick Links
+              {t("footer.quickLinksTitle")}
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
               {quickLinks.map((q) => (
                 <li
                   key={q.label}
                   onClick={() => navigate(q.path)}
-                  className="hover:text-white  transform transition-all duration-300 cursor-pointer"
+                  className="hover:text-white transform transition-all duration-300 cursor-pointer"
                 >
                   {q.label}
                 </li>
@@ -83,20 +78,17 @@ export default function Footer() {
           {/* === Column 3: Contact === */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4 text-[#19a6b5] uppercase tracking-wide">
-              Contact Us
+              {t("footer.contactTitle")}
             </h3>
             <ul className="text-gray-300 text-sm leading-relaxed space-y-2">
+              <li>{contact.address}</li>
               <li>
-                Office No. 2, 1st Floor, Palm Beach Arcade,<br />
-                Sector 4, Nerul West, Navi Mumbai – 400706
+                <span className="font-semibold text-white">{t("footer.emailLabel")}:</span>{" "}
+                {contact.email}
               </li>
               <li>
-                <span className="font-semibold text-white">Email:</span>{" "}
-                info@ivexiapharma.com
-              </li>
-              <li>
-                <span className="font-semibold text-white">Phone:</span>{" "}
-                +91 9998887770
+                <span className="font-semibold text-white">{t("footer.phoneLabel")}:</span>{" "}
+                {contact.phone}
               </li>
             </ul>
           </div>
@@ -106,7 +98,7 @@ export default function Footer() {
       {/* === Bottom Bar === */}
       <div className="border-t border-white/10 bg-[#0b2338] py-4 text-center text-gray-400 text-sm">
         © {new Date().getFullYear()}{" "}
-        <span className="text-white font-medium">Ivexia Pharmaceuticals Pvt. Ltd.</span> | All Rights Reserved
+        <span className="text-white font-medium">{t("footer.companyName")}</span> | {t("footer.rights")}
       </div>
     </footer>
   );

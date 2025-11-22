@@ -1,35 +1,33 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaMicroscope, FaIndustry } from "react-icons/fa6"; // 🔬 microscope + industry
+import { FaMicroscope, FaIndustry } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export default function ResearchManufacturingSection() {
+  const { t } = useTranslation("common"); // Using common namespace
+
   const [activeTab, setActiveTab] = useState("research");
 
   const tabs = [
-    { key: "research", label: "Research & Innovation", icon: <FaMicroscope size={18} /> },
-    { key: "manufacturing", label: "Manufacturing Excellence", icon: <FaIndustry size={18} /> },
-  ];
+  { key: "research", label: t("researchManufacturing.tabs.research") },
+  { key: "manufacturing", label: t("researchManufacturing.tabs.manufacturing") }
+];
 
-  const content = {
-    research: {
-      title: "Pioneering Research & Innovation",
-      desc: `At Ivexia, innovation is the heartbeat of progress. Our R&D centers
-      focus on developing breakthrough molecules, advanced formulations,
-      and next-generation therapies. We collaborate globally to turn ideas
-      into tangible healthcare solutions that improve millions of lives.`,
-      icon: <FaMicroscope size={60} className="text-[#19a6b5]" />,
-      img: "https://i.pinimg.com/1200x/e1/a3/ee/e1a3eefa00b4ff2f95c00165d9e6e644.jpg",
-    },
-    manufacturing: {
-      title: "Manufacturing with Precision & Quality",
-      desc: `Ivexia’s manufacturing facilities operate under WHO-GMP and EU-GMP
-      standards, blending technology with precision engineering. From sterile
-      injectables to complex oral solids, every product is crafted under
-      stringent quality assurance and sustainability frameworks.`,
-      icon: <FaIndustry size={60} className="text-[#19a6b5]" />,
-      img: "https://i.pinimg.com/1200x/c0/c3/02/c0c30253274fe9fd73b9c633d2a56902.jpg",
-    },
-  };
+const content = {
+  research: {
+    title: t("researchManufacturing.research.title"),
+    desc: t("researchManufacturing.research.desc"),
+    icon: <FaMicroscope size={60} className="text-[#19a6b5]" />,
+    img: "https://i.pinimg.com/1200x/e1/a3/ee/e1a3eefa00b4ff2f95c00165d9e6e644.jpg"
+  },
+  manufacturing: {
+    title: t("researchManufacturing.manufacturing.title"),
+    desc: t("researchManufacturing.manufacturing.desc"),
+    icon: <FaIndustry size={60} className="text-[#19a6b5]" />,
+    img: "https://i.pinimg.com/1200x/c0/c3/02/c0c30253274fe9fd73b9c633d2a56902.jpg"
+  }
+};
+
 
   const active = content[activeTab];
 
@@ -43,10 +41,9 @@ export default function ResearchManufacturingSection() {
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               className={`flex items-center gap-2 px-5 md:px-8 py-3 text-sm md:text-base font-medium transition-all duration-300
-                ${
-                  activeTab === tab.key
-                    ? "bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white"
-                    : "text-gray-600 hover:text-[#0d2d47]"
+                ${activeTab === tab.key
+                  ? "bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white"
+                  : "text-gray-600 hover:text-[#0d2d47]"
                 }`}
             >
               {tab.icon}
@@ -66,7 +63,7 @@ export default function ResearchManufacturingSection() {
           transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         >
-          {/* === Left Info === */}
+          {/* Left Info */}
           <div>
             <div className="mb-6">{active.icon}</div>
             <h3 className="text-3xl md:text-4xl font-bold text-[#0d2d47] mb-4">
@@ -75,12 +72,21 @@ export default function ResearchManufacturingSection() {
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
               {active.desc}
             </p>
-            <button className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
-              Explore
-            </button>
+            <a
+              href="/about"
+              onClick={(e) => {
+                if (e.ctrlKey || e.metaKey) {
+                  e.preventDefault();
+                  window.open("/about", "_blank", "noopener,noreferrer");
+                }
+              }}
+              className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition inline-block"
+            >
+              {t("exploreBtn")}
+            </a>
           </div>
 
-          {/* === Right Image === */}
+          {/* Right Image */}
           <div className="relative overflow-hidden rounded-2xl shadow-lg">
             <img
               src={active.img}

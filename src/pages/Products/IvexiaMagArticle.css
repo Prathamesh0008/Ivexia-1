@@ -1,25 +1,34 @@
-/* Detail article page – Ivexia style, de-cardified */
-
-/* PAGE WRAPPER */
+/* === PAGE WRAPPER === */
 .mag-article-page {
-  background: #fff8f5; /* same as Contact page */
+  background: #fff8f5; /* Ivexia peach */
   min-height: 100vh;
-  padding: 140px 24px 60px;
+ padding: 90px 24px 50px;
 }
 
 .mag-article-container {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   color: #0d2d47;
 }
 
-/* Breadcrumb */
+/* === BREADCRUMB === */
 .mag-article-breadcrumb {
   font-size: 13px;
   color: #6b7280;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mag-article-breadcrumb::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b8bacf, #999ac6);
 }
 
 .mag-article-breadcrumb span {
@@ -27,29 +36,32 @@
   font-weight: 500;
 }
 
-/* Header */
+/* === HEADER === */
 .mag-article-header {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3d3bf;
 }
 
 .mag-article-title {
-  font-size: 30px;
-  line-height: 1.3;
+  font-size: 32px;
+  line-height: 1.25;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
 
 .mag-article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
   font-size: 13px;
   color: #4b5563;
 }
 
 .mag-article-chip {
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
   background: rgba(13, 45, 71, 0.06);
   color: #0d2d47;
@@ -60,71 +72,93 @@
   opacity: 0.6;
 }
 
-/* HERO STRIP – now flat, full-width band (no rounded card vibe) */
+/* === HERO STRIP === */
 .mag-article-hero {
-  margin: 18px 0 22px;
-  border-radius: 0;              /* 🔹 no rounded edges */
+  margin: 20px 0 26px;
+  border-radius: 18px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: none;              /* 🔹 remove heavy shadow */
-  border-top: 1px solid #f3d3bf; /* subtle separation from header */
-  border-bottom: 1px solid #f3d3bf;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+  position: relative;
+}
+
+/* top Ivexia gradient band */
+.mag-article-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, #b8bacf, #999ac6);
+  opacity: 1;
+  pointer-events: none;
 }
 
 .mag-article-hero-img {
   width: 100%;
   display: block;
-  max-height: 360px;
+  max-height: 380px;
   object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.mag-article-hero:hover .mag-article-hero-img {
+  transform: scale(1.03);
 }
 
 .mag-article-hero-caption {
   font-size: 12px;
   color: #6b7280;
-  padding: 10px 14px 12px;
+  padding: 10px 16px 12px;
   background: #f9fafb;
 }
 
-/* BODY – no more single rounded card; looks like flat content on peach with section dividers */
+/* === MAIN LAYOUT: ARTICLE + SIDEBAR === */
+.mag-article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 20px; /* ✅ optional, just a bit of spacing */
+}
+
+
 .mag-article-body {
-  background: transparent;         /* 🔹 no white pill, use page bg */
-  border-radius: 0;                /* 🔹 remove rounding */
-  padding: 10px 0 26px;           /* top padding a bit lighter */
-  box-shadow: none;                /* 🔹 no card shadow */
+  background: transparent;
+  border-radius: 0;
+  padding: 12px 0 30px;
+  box-shadow: none;
   border: none;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
+
+  /* ✅ NEW: make article area scrollable */
+  max-height: calc(100vh - 260px); /* adjust if too tall/short */
+  overflow-y: auto;
+  padding-right: 10px; /* space for scrollbar */
 }
 
-/* Text defaults */
-.mag-article-body p {
-  margin-bottom: 14px;
-  color: #111827;
+/* ✅ Scrollbar styling only for article area */
+.mag-article-body::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* SECTION TITLES – each topic feels like its own block */
-.mag-article-body h2 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #0d2d47;
-  margin: 26px 0 8px;
-  padding-top: 16px;
-  border-top: 1px solid #f3d3bf;   /* 🔹 separator line = “new section” */
+.mag-article-body::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* First h2 shouldn’t have double border feeling */
-.mag-article-body h2:first-of-type {
-  border-top: 2px solid #f3d3bf;
-  margin-top: 18px;
+.mag-article-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
 }
 
-.mag-article-body h3 {
-  font-size: 16px;
-  margin: 14px 0 6px;
-  font-weight: 600;
-  color: #0d2d47;
+/* Firefox thin scrollbar */
+.mag-article-body {
+  scrollbar-width: thin;
 }
 
+
+/* LISTS */
 .mag-article-body ul {
   padding-left: 20px;
   margin-bottom: 14px;
@@ -135,13 +169,23 @@
   color: #111827;
 }
 
-/* TABLE OF CONTENTS BOX – still a small peach block, no rounded corners */
+/* === TABLE OF CONTENTS BOX === */
 .mag-article-toc {
-  border-radius: 0;                 /* 🔹 no rounded edges */
+  border-radius: 10px;
   background: #fef4ee;
   border: 1px solid #f3d3bf;
   padding: 12px 14px;
-  margin: 18px 0 10px;
+  margin: 20px 0 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mag-article-toc::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 4px;
+  background: linear-gradient(180deg, #ffb347, #f97316);
 }
 
 .mag-article-toc-label {
@@ -162,9 +206,98 @@
   color: #374151;
 }
 
-/* Back link */
+/* === SIDEBAR === */
+.mag-article-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* ✅ make it fixed relative to viewport while scrolling */
+  position: sticky;
+  top: 120px;      /* adjust if overlapping navbar */
+  align-self: flex-start;
+}
+
+.mag-sidebar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 18px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.mag-sidebar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d2d47;
+  margin-bottom: 10px;
+}
+
+.mag-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mag-sidebar-item + .mag-sidebar-item {
+  border-top: 1px dashed #e5e7eb;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.mag-sidebar-link {
+  text-decoration: none;
+  display: block;
+}
+
+.mag-sidebar-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0d2d47;
+  display: block;
+}
+
+.mag-sidebar-meta {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* newsletter-style card */
+.mag-sidebar-newsletter {
+  background: linear-gradient(135deg, #ffffff, #fff1e6);
+  border: 1px solid #f3d3bf;
+}
+
+.mag-sidebar-news-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d2d47;
+  margin-bottom: 6px;
+}
+
+.mag-sidebar-news-text {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.mag-sidebar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ff7a00, #e2004f);
+}
+
+/* === BACK LINK === */
 .mag-article-back {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .mag-article-back-link {
@@ -172,13 +305,51 @@
   color: #0d2d47;
   font-weight: 500;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mag-article-back-link::before {
+  content: "←";
+  font-size: 14px;
 }
 
 .mag-article-back-link:hover {
   text-decoration: underline;
 }
+.mag-card-button {
+  border-radius: 999px;
+  padding: 6px 16px;        /* smaller padding */
+  font-size: 14px;          /* smaller text */
+  border: 1px solid #0d2d47;
+  color: #0d2d47;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  transition: 0.18s ease;
+  align-self: flex-start;
+  line-height: 1;           /* compact height */
+}
 
-/* Responsive */
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .mag-article-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mag-article-sidebar {
+    margin-top: 8px;
+    position: static;      /* ✅ no sticky on mobile */
+  }
+
+  .mag-article-body {
+    max-height: none;      /* ✅ normal page scroll */
+    overflow-y: visible;
+    padding-right: 0;
+  }
+}
+
+
 @media (max-width: 768px) {
   .mag-article-page {
     padding: 120px 16px 40px;
@@ -188,7 +359,12 @@
     font-size: 24px;
   }
 
+  .mag-article-hero {
+    margin: 16px 0 20px;
+    border-radius: 14px;
+  }
+
   .mag-article-body {
-    padding: 8px 0 20px;
+    padding: 8px 0 22px;
   }
 }

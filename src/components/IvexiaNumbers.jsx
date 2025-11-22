@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Counter({ target, label, suffix = "" }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let start = 0;
-    const duration = 2000; // 2 seconds
+    const duration = 2000;
     const increment = target / (duration / 16);
 
     const timer = setInterval(() => {
@@ -32,22 +33,29 @@ function Counter({ target, label, suffix = "" }) {
 }
 
 export default function IvexiaNumbers() {
+  const { t } = useTranslation("common");
+
   const stats = [
-    { target: 500, label: "Employees", suffix: "+" },
-    { target: 120, label: "Products", suffix: "+" },
-    { target: 15, label: "Countries", suffix: "+" },
-    { target: 8, label: "Global Facilities" },
-    { target: 4, label: "R&D Centers" },
+    { target: 500, label: t("ivexia_numbers.employees"), suffix: "+" },
+    { target: 120, label: t("ivexia_numbers.products"), suffix: "+" },
+    { target: 15, label: t("ivexia_numbers.countries"), suffix: "+" },
+    { target: 8, label: t("ivexia_numbers.facilities") },
+    { target: 4, label: t("ivexia_numbers.rnd") }
   ];
 
   return (
     <section className="bg-[#FFF8F5] py-16 md:py-20">
       <h1 className="text-center text-3xl md:text-4xl font-bold text-[#333] mb-10">
-        Ivexia in Numbers
+        {t("ivexia_numbers.title")}
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 px-8 md:px-20">
         {stats.map((item, i) => (
-          <Counter key={i} target={item.target} label={item.label} suffix={item.suffix} />
+          <Counter
+            key={i}
+            target={item.target}
+            label={item.label}
+            suffix={item.suffix}
+          />
         ))}
       </div>
     </section>
