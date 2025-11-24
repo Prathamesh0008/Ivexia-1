@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function useOnScreen(ref) {
   const [v, setV] = useState(false);
@@ -33,10 +34,7 @@ function Counter({ target, label, suffix = "" }) {
   return (
     <div
       ref={ref}
-      className="
-        flex flex-col items-center justify-center text-center
-        min-h-[90px]
-      "
+      className="flex flex-col items-center justify-center text-center min-h-[90px]"
     >
       <h3 className="min-w-[5ch] text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF7A00] to-[#E2004F]">
         {val}
@@ -50,30 +48,24 @@ function Counter({ target, label, suffix = "" }) {
 }
 
 export default function IngredientStats() {
+  const { t } = useTranslation();
+
+  // Pull labels from i18n JSON
   const stats = [
-    { target: 120, label: "APIs", suffix: "+" },
-    { target: 15, label: "Therapy Areas", suffix: "+" },
-    { target: 30, label: "Countries", suffix: "+" },
-    { target: 100, label: "Docs Available (CoA/MSDS)", suffix: "+" },
-    { target: 8, label: "Manufacturing Sites" },
+    { target: 120, label: t("ivexia_numbers.products"), suffix: "+" },
+    { target: 15, label: t("ivexia_numbers.therapyAreas"), suffix: "+" },
+    { target: 30, label: t("ivexia_numbers.countries"), suffix: "+" },
+    { target: 100, label: t("ivexia_numbers.docsAvailable"), suffix: "+" },
+    { target: 8, label: t("ivexia_numbers.facilities") },
   ];
 
   return (
     <section className="bg-[#FFF8F5] py-12">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-center text-2xl md:text-3xl font-bold text-[#333] mb-8">
-          Our API Footprint
+          {t("ivexia_numbers.title")}
         </h2>
-        <div
-          className="
-            grid 
-            grid-cols-2 
-            sm:grid-cols-3 
-            md:grid-cols-5 
-            gap-6 md:gap-8 
-            place-items-center
-          "
-        >
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8 place-items-center">
           {stats.map((s, i) => (
             <Counter key={i} {...s} />
           ))}

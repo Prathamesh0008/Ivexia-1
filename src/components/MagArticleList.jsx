@@ -1,97 +1,91 @@
 // src/components/MagArticleList.jsx
-import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../pages/Products/IvexiaMag.css";
 
 export default function MagArticleList({
-  articles = [],
+  articles,
   currentPage,
   totalPages,
   onPageChange,
 }) {
-  const scrollRef = useRef(null);
-  const navigate = useNavigate();
+  const wrapperRef = useRef(null);
 
-  // Keep your smooth scroll-to-top for the list
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [currentPage]);
 
-  const openArticle = (slug) => {
-    navigate(`/ivexia-mag/${slug}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <section className="mag-articles-wrapper" ref={scrollRef}>
+    <div className="mag-articles-wrapper" ref={wrapperRef}>
       <div className="mag-content-inner">
         {articles.map((article) => (
-          <article key={article.id} className="mag-card">
+          <article key={article.slug} className="mag-card">
             <div
               className="mag-card-bg"
               style={{ backgroundImage: `url(${article.image})` }}
             >
               <div className="mag-card-overlay">
                 <div className="mag-card-meta">
-                  {article.category && (
-                    <span className="mag-card-category">
-                      {article.category}
-                    </span>
-                  )}
+                  <span className="mag-card-category">{article.category}</span>
                   <span className="mag-card-date">{article.date}</span>
                 </div>
 
                 <h2 className="mag-card-title">{article.title}</h2>
+
                 <p className="mag-card-excerpt">{article.excerpt}</p>
 
-                <button
+                <Link
+                  to={`/ivexia-mag/${article.slug}`}
                   className="mag-card-button"
-                  onClick={() => openArticle(article.slug)}
                 >
-                  Read more
-                </button>
+                  Read article
+                </Link>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      {/* Pagination */}
-      <div className="mag-pagination">
-        {currentPage > 1 && (
+      {totalPages > 1 && (
+        <div className="mag-pagination">
           <button
+            type="button"
             className="mag-page-btn"
             onClick={() => onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
           >
-            ‹ Previous
+            Previous
           </button>
-        )}
 
-        {Array.from({ length: totalPages }).map((_, index) => {
-          const page = index + 1;
-          return (
-            <button
-              key={page}
-              className={`mag-page-btn ${
-                page === currentPage ? "mag-page-btn--active" : ""
-              }`}
-              onClick={() => onPageChange(page)}
-            >
-              {page}
-            </button>
-          );
-        })}
+          {Array.from({ length: totalPages }).map((_, index) => {
+            const page = index + 1;
+            return (
+              <button
+                key={page}
+                type="button"
+                onClick={() => onPageChange(page)}
+                className={
+                  "mag-page-btn" +
+                  (page === currentPage ? " mag-page-btn--active" : "")
+                }
+              >
+                {page}
+              </button>
+            );
+          })}
 
-        {currentPage < totalPages && (
           <button
+            type="button"
             className="mag-page-btn"
             onClick={() => onPageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
           >
-            Next ›
+            Next
           </button>
-        )}
-      </div>
-    </section>
+        </div>
+      )}
+    </div>
   );
 }

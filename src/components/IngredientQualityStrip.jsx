@@ -1,25 +1,27 @@
+import { useTranslation } from "react-i18next";
+
 export default function IngredientQualityStrip() {
+  const { t } = useTranslation();
+
   const items = [
     {
-      title: "High Performance Quality",
-      desc: "Premium-grade APIs manufactured under strict GMP compliance.",
+      title: t("ingredientQualityStrip.items.0.title"),
+      desc: t("ingredientQualityStrip.items.0.desc"),
     },
     {
-      title: "Trusted Global Network",
-      desc: "Building long-term partnerships with formulators worldwide.",
+      title: t("ingredientQualityStrip.items.1.title"),
+      desc: t("ingredientQualityStrip.items.1.desc"),
     },
     {
-      title: "Regulatory Excellence",
-      desc: "Full regulatory documentation with transparent traceability.",
+      title: t("ingredientQualityStrip.items.2.title"),
+      desc: t("ingredientQualityStrip.items.2.desc"),
     },
   ];
 
   return (
     <section className="bg-[#FFF8F5] py-14">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
-
         <div className="grid gap-6 md:grid-cols-3">
-
           {items.map((item, idx) => (
             <div
               key={item.title}
@@ -34,7 +36,6 @@ export default function IngredientQualityStrip() {
                 px-8 py-10 text-center
               "
             >
-              {/* top accent line — little left */}
               <div className="h-[2px] w-20 bg-[#FF7A00] mb-6 self-start ml-2" />
 
               <h3 className="text-[#0d2d47] font-bold text-lg md:text-xl leading-tight">
@@ -45,10 +46,8 @@ export default function IngredientQualityStrip() {
                 {item.desc}
               </p>
 
-              {/* bottom accent line — little right */}
               <div className="h-[2px] w-20 bg-[#FF7A00] mt-6 self-end mr-2" />
 
-              {/* connector line — fixed */}
               {idx < items.length - 1 && (
                 <div
                   className="
@@ -61,9 +60,7 @@ export default function IngredientQualityStrip() {
               )}
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

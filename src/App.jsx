@@ -1,6 +1,11 @@
 // src/App.jsx
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import "./index.css";
 
@@ -18,31 +23,33 @@ import FinishedProductDetail from "./pages/Products/FinishedProductDetail";
 import IvexiaMag from "./pages/Products/IvexiaMag.jsx";
 import IvexiaMagArticle from "./pages/Products/IvexiaMagArticle.jsx";
 import SearchResults from "./pages/SearchResults.jsx";
+import Breadcrumbs from "./components/Breadcrumbs";
+import NotFound from "./pages/NotFound";
 
-// ✅ Layout Wrapper handles DOM manipulation and page-based logic
-function LayoutWrapper() {
-  const location = useLocation();
 
-  // Scroll to top when route changes
+// scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+  }, [pathname]);
 
-  // which pages need full-screen layout (no nav/footer)
+  return null;
+}
+
+function Layout() {
+  const location = useLocation();
+
   const fullScreenRoutes = ["/login", "/register"];
   const hideLayout = fullScreenRoutes.includes(location.pathname);
 
   return (
-    <div
-      id="ivexia-app"
-      className="min-h-screen flex flex-col bg-white text-[#0d2d47]"
-    >
-      {/* === Shared Header Elements === */}
+    <>
       {!hideLayout && <TopBar />}
       {!hideLayout && <Navbar />}
+      {!hideLayout && <Breadcrumbs />}
 
-      {/* === Main Route Outlet === */}
-      <main className="flex-grow">
+      <main className="flex-grow min-h-screen bg-white text-[#0d2d47]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/ingredient" element={<Ingredient />} />
@@ -51,12 +58,15 @@ function LayoutWrapper() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<FinishedProductDetail />} />
+          <Route path="/products/category/:categorySlug" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ivexia-mag" element={<IvexiaMag />} />
           <Route path="/ivexia-mag/:slug" element={<IvexiaMagArticle />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="*" element={<NotFound />} />
 
-          {/* full-page standalone routes */}
+
+          {/* Standalone full-page routes */}
           <Route
             path="/login"
             element={<div className="p-20 text-center">Login Page</div>}
@@ -65,19 +75,25 @@ function LayoutWrapper() {
             path="/register"
             element={<div className="p-20 text-center">Register Page</div>}
           />
+
+          {/* 404 */}
+          <Route
+            path="*"
+            element={<div className="p-20 text-center">404 - Page Not Found</div>}
+          />
         </Routes>
       </main>
 
-      {/* === Shared Footer === */}
       {!hideLayout && <Footer />}
-    </div>
+    </>
   );
 }
 
 export default function App() {
   return (
     <BrowserRouter>
-      <LayoutWrapper />
+      <ScrollToTop />
+      <Layout />
     </BrowserRouter>
   );
 }

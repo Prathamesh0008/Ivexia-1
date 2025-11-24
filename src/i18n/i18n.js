@@ -26,7 +26,7 @@ i18n
       ja: { common: ja },
       ar: { common: ar },
     },
-    lng: "en",
+    lng: localStorage.getItem("lang") || "en",
     fallbackLng: "en",
     ns: ["common"],
     defaultNS: "common",

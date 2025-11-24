@@ -1,20 +1,1086 @@
 {
   "nav": {
-    "home": "Home",
-    "api": "Active Pharmaceutical Ingredients",
-    "products": "Pharmaceutical Products",
-    "about": "About Us",
-    "mag": "Ivexia Magazine",
-    "mag_news": "News",
-    "mag_health": "Health Magazine",
-    "contact": "Contact Us"
-  },
+  "home": "Home",
+  "api": "Active Pharmaceutical Ingredients",
+  "products": "Pharmaceutical Products",
+  "about": "About Us",
+  "mag": "Ivexia Magazine",
+  "mag_news": "News",
+  "mag_health": "Health Magazine",
+  "contact": "Contact"
+}
+,
+
   "search": {
     "placeholder": "Search products, articles, news..."
   },
+
   "products": {
     "page_title": "Pharmaceutical Products",
     "page_subtitle": "Finished dosage formulations across key therapy areas, supplied with regulatory support and quality documentation.",
     "count_label": "Showing {{visible}} of {{total}} products"
+  },
+
+  "ivexia_numbers": {
+  "title": "Ivexia in Numbers",
+  "employees": "Employees",
+  "products": "Products",
+  "countries": "Countries",
+  "facilities": "Global Facilities",
+  "rnd": "R&D Centers"
+},
+
+  "about": {
+    "video": {
+      "title": "Your Health is Our Future",
+      "subtitle": "Ivexia Pharmaceuticals Pvt. Ltd.",
+      "paragraph": "At Ivexia, we are driven by a singular mission — to deliver precision, purity, and progress in every product. Our commitment to healthcare innovation ensures a brighter, healthier tomorrow for communities worldwide.",
+      "cta": "Read More",
+      "fallback": "Your browser does not support the video tag."
+    }
+  },
+
+  "therapy": {
+    "title": "Therapy Groups",
+    "highlight": "Quality, Innovation & Health —",
+    "subtitle": "At Ivexia, we advance precision-based therapies across multiple domains to redefine global healthcare.",
+
+    "cardiology": {
+      "title": "Cardiology",
+      "desc": "Advanced cardiovascular therapies that protect and enhance heart health."
+    },
+    "oncology": {
+      "title": "Oncology",
+      "desc": "Innovative cancer treatments focusing on targeted therapies and care."
+    },
+    "neurology": {
+      "title": "Neurology",
+      "desc": "Breakthrough neurological solutions for cognitive and nervous system care."
+    },
+    "endocrinology": {
+      "title": "Endocrinology",
+      "desc": "Hormonal balance and metabolic wellness through specialized formulations."
+    },
+    "dermatology": {
+      "title": "Dermatology",
+      "desc": "Skin care excellence with dermatological innovation and safety."
+    }
+  },
+
+  "home": {
+    "hero_1_title": "Precision. Purity. Progress.",
+    "hero_1_text": "Delivering world-class pharmaceutical solutions.",
+    "hero_2_title": "Innovation in Every Dose",
+    "hero_2_text": "Committed to healthcare excellence and innovation.",
+    "hero_3_title": "Global Standards, Local Trust",
+    "hero_3_text": "Ensuring quality, compliance, and care worldwide.",
+    "cta_explore": "Explore"
+  },
+
+  "accord": {
+    "title_line1": "An Accord for a",
+    "title_highlight": "Healthier World",
+    "paragraph": "Ivexia’s Accord for a Healthier World connects continents through science, innovation, and compassion — with an expanding footprint across Europe and Asia.",
+    "cta": "Learn More About Our Accord"
+  },
+
+  
+  "leadership": {
+    "heading": "Leadership & Vision",          
+    "subheading": "At Ivexia, we don’t just make pharmaceuticals — we create trust. Our people are our foundation, our science is our strength, and our vision is our promise.",  
+    "ceo": {
+      "name": "Dr. Avinaash Badal",
+      "title": "Chief Executive Officer"
+    },
+    "team_heading": "Our Leadership Team",   
+    "team_sub": "The driving force behind Ivexia’s innovation, integrity, and impact.", 
+    "team": [
+      { "name": "Prathamesh Shinde", "role": "Director – Strategy", "quote": "We lead with innovation and integrity." },
+      { "name": "Adarsh Singh", "role": "Director – Operations", "quote": "Our vision is to shape global healthcare." },
+      { "name": "Priya Sharma", "role": "Head – Quality Assurance", "quote": "Quality defines trust at Ivexia." },
+      { "name": "Rahul Desai", "role": "Head – Manufacturing", "quote": "Efficiency meets precision every day." },
+      { "name": "Sonal Mehta", "role": "HR & People Development", "quote": "We grow together with purpose." },
+      { "name": "Karan Patel", "role": "R&D Scientist", "quote": "Innovation is in our DNA." },
+      { "name": "Fatima Khan", "role": "Regulatory Affairs", "quote": "Compliance drives confidence." },
+      { "name": "Rohit Nair", "role": "Finance & Strategy", "quote": "Sustainable growth through smart finance." },
+      { "name": "Neha Gupta", "role": "Marketing Head", "quote": "Every product tells a story." },
+      { "name": "Arjun Verma", "role": "Digital Systems Lead", "quote": "Technology powers transparency." }
+    ]
+  },
+
+
+
+  "researchManufacturing": {
+    "tabs": {
+      "research": "Research & Innovation",
+      "manufacturing": "Manufacturing Excellence"
+    },
+
+    "research": {
+      "title": "Pioneering Research & Innovation",
+      "desc": "At Ivexia, innovation is the heartbeat of progress. Our R&D centers focus on developing breakthrough molecules, advanced formulations, and next-generation therapies. We collaborate globally to turn ideas into tangible healthcare solutions that improve millions of lives.",
+      "exploreBtn": "Explore"
+    },
+
+    "manufacturing": {
+      "title": "Manufacturing with Precision & Quality",
+      "desc": "Ivexia’s manufacturing facilities operate under WHO-GMP and EU-GMP standards, blending technology with precision engineering. From sterile injectables to complex oral solids, every product is crafted under stringent quality assurance and sustainability frameworks.",
+      "exploreBtn": "Explore"
+    }
+  },
+
+  "latestNews": {
+    "sectionTitle": "Latest from Ivexia",
+    "sectionDesc": "Discover the latest updates, innovations, and milestones driving Ivexia’s mission toward precision, purity, and progress.",
+    "readMore": "Read More",
+    "posts": [
+      {
+        "id": 1,
+        "title": "Ivexia Expands R&D in Biotech",
+        "date": "November 10, 2025",
+        "category": "Research & Development",
+        "image": "https://images.unsplash.com/photo-1581090467727-9737c1b1a83b?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "Ivexia strengthens its innovation footprint by expanding R&D capabilities in advanced biologics and biosimilar research."
+      },
+      {
+        "id": 2,
+        "title": "Sustainability in Pharma Manufacturing",
+        "date": "October 28, 2025",
+        "category": "Corporate Responsibility",
+        "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "Our facilities are moving toward full Zero Liquid Discharge (ZLD) compliance, ensuring a greener tomorrow for healthcare manufacturing."
+      },
+      {
+        "id": 3,
+        "title": "New Oncology Line Launch 2026",
+        "date": "October 15, 2025",
+        "category": "Product Innovation",
+        "image": "https://images.unsplash.com/photo-1579154204601-01588f351e56?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "Ivexia announces the upcoming launch of its oncology formulations line, focusing on affordable and high-efficacy cancer care."
+      }
+    ]
+  },
+
+  "footer": {
+    "logoAlt": "Ivexia Logo",
+    "companyName": "Ivexia Pharmaceuticals Pvt. Ltd.",
+    "tagline": "Precision. Purity. Progress.",
+    "description": "Advancing global healthcare through innovation, quality, and integrity.",
+
+    "quickLinksTitle": "Quick Links",
+    "quickLinks": [
+      { "label": "Home", "path": "/" },
+      { "label": "About Us", "path": "/about" },
+      { "label": "Pharmaceutical Products", "path": "/products" },
+      { "label": "Ivexia Magazine", "path": "/ivexia-mag" },
+      { "label": "Contact Us", "path": "/contact" }
+    ],
+
+    "contactTitle": "Contact Us",
+    "contact": {
+      "address": "14, P Box 3351 Chand Manzi, 14 Old Bandil Poora, Mandvi, Mumbai –400003",
+      "email": "info@ivexiapharma.com",
+      "phone": "+91 9998887770",
+      "social": ["#", "#", "#", "#"]
+    },
+
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "rights": "All Rights Reserved"
+  },
+
+  "ingredient": {
+    "heading": "List of API's Products",
+    "filters": {
+      "searchPlaceholder": "Search by name, CAS, or synonym...",
+      "category": "Category",
+      "dosage": "Dosage Form",
+      "sort": "Sort By",
+      "sortOptions": {
+        "nameAsc": "Name (A-Z)",
+        "nameDesc": "Name (Z-A)",
+        "category": "Category"
+      },
+      "reset": "Reset Filters"
+    }
+  },
+
+  "ingredientHero": {
+    "subtitle": "Active Pharmaceutical Ingredients",
+    "title": {
+      "part1": "High-purity APIs,",
+      "part2": "built for global formulations."
+    },
+    "description": "Ivexia supplies controlled, traceable Active Pharmaceutical Ingredients for regulated markets. WHO-GMP aligned, documentation ready, and backed by a team that actually answers your emails.",
+    "badges": {
+      "gmp": "WHO-GMP & cGMP aligned",
+      "coa": "CoA, MSDS & full CTD support",
+      "flexible": "Flexible batch sizes"
+    },
+    "cta": "Discuss a specific API →",
+    "imageAlt": "Ivexia API portfolio",
+    "partnerText": "Controlled, validated manufacturing partners.",
+    "qualityText": "GMP • Stability • Traceability"
+  },
+
+  "ingredientQualityStrip": {
+    "items": [
+      {
+        "title": "High Performance Quality",
+        "desc": "Premium-grade APIs manufactured under strict GMP compliance."
+      },
+      {
+        "title": "Trusted Global Network",
+        "desc": "Building long-term partnerships with formulators worldwide."
+      },
+      {
+        "title": "Regulatory Excellence",
+        "desc": "Full regulatory documentation with transparent traceability."
+      }
+    ]
+  },
+
+  "ingredientFilters": {
+    "searchPlaceholder": "Search by name / CAS / synonym...",
+    "category": "Category",
+    "dosage": "Dosage form",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "nameAsc": "Name (A → Z)",
+      "nameDesc": "Name (Z → A)",
+      "category": "Category"
+    },
+    "resetFilters": "Reset filters",
+    "results": "{{total}} result",
+    "results_plural": "{{total}} results"
+  },
+
+  "ingredientGrid": {
+    "noResults": "No results. Try different filters.",
+    "prev": "‹ Prev",
+    "next": "Next ›"
+  },
+
+  "ingredientCard": {
+    "cas": "CAS",
+    "synonyms": "Synonyms",
+    "viewDetails": "View Details →"
+  },
+
+  "ingredientAccord": {
+    "title": "FAQs",
+    "faqs": [
+      {
+        "q": "Do you supply full documentation (CoA / MSDS)?",
+        "a": "Yes, each API ships with CoA and MSDS on request, along with specifications and stability data where applicable."
+      },
+      {
+        "q": "Are your sites WHO-GMP / cGMP compliant?",
+        "a": "Yes, manufacturing sites follow WHO-GMP / cGMP guidelines with regular audits, validated processes, and full traceability."
+      },
+      {
+        "q": "Do you support custom specs or contract manufacturing?",
+        "a": "We offer CDMO support including tech transfer, scale-up, validation, customized specifications, and packaging solutions."
+      }
+    ]
+  },
+
+  "customerStrip": {
+    "title": "Our Customers"
+  },
+
+  
+  "productDetail": {
+  "notFoundTitle": "Product not found",
+  "notFoundText": "We couldn't find this API in our portfolio.",
+  "backToApis": "← Back to Active Pharmaceutical Ingredients",
+
+  "cas": "CAS",
+  "synonyms": "Synonyms",
+  "dosageForms": "Dosage Forms",
+
+  "descriptionLine1": "This Active Pharmaceutical Ingredient is manufactured under controlled GMP conditions with full batch traceability.",
+  "descriptionLine2": "It is suitable for formulation development and commercial supply in {{category}} therapy areas.",
+
+  "requestQuote": "Request Quote",
+  "modalTitle": "Request Quote",
+  "modalSubtitle": "Product",
+  "modalInfo": "Share a few details and our team will reach out to you.",
+  "fullName": "Full Name",
+  "company": "Company",
+  "email": "Email",
+  "country": "Country",
+  "message": "Message / Requirement",
+  "messagePlaceholder": "Briefly describe your requirement...",
+  "cancel": "Cancel",
+  "submit": "Submit Request",
+
+  "suggestedExplore": "Explore More",
+  "suggestedTitle": "Suggested Products",
+  "suggestedSubtitle": "Other APIs related to your current selection.",
+
+  "dosageForm": "Dosage Form",
+  "importantInformation": "Important Information",
+  "precautionsHeading": "Precautions and Side Effects",
+  "pharmaciesTitle": "List of Pharmacies",
+  "onlineShopping": "Online Shopping"
+},
+
+
+  "ingredients": {
+    "categories": {
+      "cardiology": "Cardiology",
+      "anti_infective": "Anti-infective",
+      "pain": "Pain Management",
+      "endocrinology": "Endocrinology",
+      "respiratory": "Respiratory",
+      "gastro": "Gastroenterology",
+      "nutraceutical": "Nutraceutical"
+    },
+
+    "forms": {
+      "tablet": "Tablet",
+      "capsule": "Capsule",
+      "injection": "Injection"
+    },
+
+    "amiodarone": {
+      "name": "Amiodarone Hydrochloride",
+      "desc": "Antiarrhythmic agent used for heart rhythm disorders."
+    },
+    "atorvastatin": {
+      "name": "Atorvastatin Calcium",
+      "desc": "Used to lower LDL cholesterol levels."
+    },
+    "amlodipine": {
+      "name": "Amlodipine Besylate",
+      "desc": "Calcium channel blocker for hypertension."
+    },
+    "azithromycin": {
+      "name": "Azithromycin",
+      "desc": "Macrolide antibiotic for various infections."
+    },
+    "amoxicillin": {
+      "name": "Amoxicillin Trihydrate",
+      "desc": "Broad-spectrum penicillin antibiotic."
+    },
+    "clarithromycin": {
+      "name": "Clarithromycin",
+      "desc": "Macrolide antibiotic."
+    },
+    "codeine": {
+      "name": "Codeine Sulfate",
+      "desc": "Opioid used for pain relief."
+    },
+    "tramadol": {
+      "name": "Tramadol Hydrochloride",
+      "desc": "Opioid analgesic."
+    },
+    "diclofenac": {
+      "name": "Diclofenac Sodium",
+      "desc": "Anti-inflammatory pain reliever."
+    },
+    "metformin": {
+      "name": "Metformin HCl",
+      "desc": "Biguanide used for type 2 diabetes."
+    },
+    "sitagliptin": {
+      "name": "Sitagliptin Phosphate",
+      "desc": "DPP-4 inhibitor for diabetes."
+    },
+    "salbutamol": {
+      "name": "Salbutamol Sulphate",
+      "desc": "Bronchodilator used for asthma."
+    },
+    "montelukast": {
+      "name": "Montelukast Sodium",
+      "desc": "Leukotriene receptor blocker for asthma."
+    },
+    "omeprazole": {
+      "name": "Omeprazole",
+      "desc": "Proton pump inhibitor for acid reflux."
+    },
+    "pantoprazole": {
+      "name": "Pantoprazole Sodium",
+      "desc": "PPI for GERD treatment."
+    },
+    "vitamin_c": {
+      "name": "Vitamin C (Ascorbic Acid)",
+      "desc": "Essential vitamin and antioxidant."
+    },
+    "vitamin_b12": {
+      "name": "Vitamin B12 (Cyanocobalamin)",
+      "desc": "Vitamin important for metabolism."
+    }
+  },
+  "aboutPage": {
+  "hero": {
+    "title": "Global Care with Purpose",
+    "subtitle": "Where scientific innovation meets uncompromising quality."
+  },
+  "brand": {
+    "heading": "A Legacy Built on Precision & Purpose",
+    "p1": "Ivexia Pharmaceuticals is a globally compliant healthcare company.",
+    "p2": "We turn scientific innovation into world-class therapeutic solutions.",
+    "p3": "Our presence spans India, Europe, and the MENA region."
+  },
+  "vision": {
+    "banner": "Driven by Science. Powered by Purpose.",
+    "visionTitle": "Our Vision",
+    "visionText": "To become a trusted global pharmaceutical force.",
+    "missionTitle": "Our Mission",
+    "missionText": "Delivering products compliant with WHO-GMP, EU-GMP, ISO & PIC/S."
+  },
+  "global": {
+    "title": "Global Operations",
+    "subtitle": "Integrated manufacturing, research, and distribution.",
+    "indiaTitle": "India",
+    "indiaText": "Headquarters and manufacturing hub",
+    "macedoniaTitle": "North Macedonia",
+    "macedoniaText": "EU-compliant operations",
+    "dohaTitle": "Doha",
+    "dohaText": "Distribution center for MENA region"
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "card1Title": "High-Precision Manufacturing",
+    "card2Title": "Molecular R&D Innovation",
+    "card3Title": "Global Quality Compliance"
+  },
+  "leadership": {
+    "title": "Leadership at Ivexia",
+    "cardName": "Leader {{index}}",
+    "cardDept": "Department"
+  },
+  "timeline": {
+    "title": "Our Journey Forward",
+    "items": {
+      "2018": "Ivexia founded to elevate healthcare standards.",
+      "2020": "First multi-facility manufacturing expansion in India.",
+      "2023": "R&D labs for advanced nutraceutical products launched.",
+      "2025": "EU-compliant operations start in North Macedonia.",
+      "2030": "Global production for oncology and biotech begins."
+    }
+  },
+  "certifications": {
+    "title": "Global Certifications & Standards",
+    "items": ["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"]
+  },
+  "statement": {
+    "quote": "“Innovation. Quality. Integrity.”",
+    "text": "Our promise reflects commitment to ethical and world-class healthcare."
+  },
+  "facilities": {
+    "title": "Advanced Facilities",
+    "text": "Designed to meet global standards of precision and compliance."
+  },
+  "labs": {
+    "title": "Research & Development Labs",
+    "cardTitle": "Advanced Lab {{index}}",
+    "cardText": "Equipped with next-generation analytical instruments."
+  },
+  "sustainability": {
+    "title": "Sustainability at Ivexia",
+    "p1": "Our plants operate ZLD, controlled emissions, and renewable energy.",
+    "p2": "We reduce carbon footprint through green chemistry and energy efficiency."
+  },
+  "globalPresence": {
+    "title": "Global Presence"
+  },
+  "awards": {
+    "title": "Awards & Recognition",
+    "cardTitle": "Excellence Award {{index}}",
+    "cardText": "Recognized for innovation."
+  },
+  "cta": {
+    "title": "Join Our Global Mission",
+    "text": "Be part of a future where science, innovation, and humanity meet.",
+    "button": "Contact Us"
   }
+},
+"contactPage": {
+  "title": "Contact Us",
+  "subtitle": "Share your questions, partnership ideas or product enquiries. Our Ivexia team will get back to you as soon as possible.",
+  "formTitle": "Send us a message",
+  "formSubtitle": "Fill in the form and our team will respond within 1–2 business days.",
+  "fullName": "First Name and Last Name",
+  "fullNamePlaceholder": "Your full name",
+  "email": "Email",
+  "emailPlaceholder": "you@example.com",
+  "phone": "Phone Number",
+  "phonePlaceholder": "+91 98765 43210",
+  "subject": "Subject",
+  "subjectPlaceholder": "Brief about your enquiry",
+  "message": "Message",
+  "messagePlaceholder": "Write your message here...",
+  "submit": "Send message",
+  "heroAlt": "Ivexia pharmaceutical factory",
+  "heroTitle": "Global quality from a trusted manufacturing partner",
+  "heroSubtitle": "Modern facilities, strict GMP standards and a commitment to patient safety — powering Ivexia's formulations worldwide.",
+  "contactTitle": "Get in touch with us",
+  "contactDesc": "Reach out by phone, email or through our social channels.",
+  "followUs": "Social Networks",
+  "addressTitle": "Address",
+  "addressDesc": "Our corporate office coordinates operations and global partnerships.",
+  "officeLabel": "Corporate Office"
+},
+"articles": {
+  "breadcrumb": { "home": "Home" },
+  "backToMag": "← Back to Ivexia Mag",
+  "recentlyViewed": "Recently viewed",
+  "stayInKnow": "Stay in the know",
+  "newsDescription": "Updates on science, healthcare and Ivexia initiatives — no spam, just insights.",
+  "getInsights": "Get insights",
+  "notFound": "Article not found"
+},
+
+  
+  "ivexiaMag": {
+    "title": "Ivexia Mag",
+    "subtitle": "Insights, stories and perspectives from the world of pharmaceuticals, innovation and healthcare.",
+    "articles": [
+      {
+        "slug": "gene-therapy-emerging-science",
+        "date": "May 13, 2024",
+        "category": "Emerging Science",
+        "title": "How Gene Therapy Is Transforming Modern Treatment",
+        "excerpt": "Gene therapy is moving from concept to clinic, offering targeted ways to correct genetic issues instead of only managing symptoms.",
+        "tag": "health"
+      },
+      {
+        "slug": "power-of-ai-medical-industry",
+        "date": "May 11, 2024",
+        "category": "Digital Health & AI",
+        "title": "The Power of AI in the Medical Industry: 4 Things to Know",
+        "excerpt": "Artificial intelligence is reshaping diagnostics, workflows and decision-making across hospitals and pharma companies.",
+        "tag": "health"
+      },
+      {
+        "slug": "what-is-obesity-how-to-overcome-it",
+        "date": "March 9, 2024",
+        "category": "Metabolic Health",
+        "title": "What Is Obesity—and How Do You Really Overcome It?",
+        "excerpt": "Obesity is influenced by biology, environment and lifestyle. Long-term management needs structure, not just short diets.",
+        "tag": "health"
+      },
+      {
+        "slug": "personalized-medicine-basics",
+        "date": "March 3, 2024",
+        "category": "Personalized Medicine",
+        "title": "Personalized Medicine: Treatments Tailored to Each Patient",
+        "excerpt": "By using genetics, biomarkers and clinical data, personalized medicine aims to choose the right treatment for the right person at the right time.",
+        "tag": "health"
+      },
+      {
+        "slug": "international-womens-day-healthcare",
+        "date": "February 21, 2024",
+        "category": "People & Culture",
+        "title": "In Honor of International Women’s Day",
+        "excerpt": "Women scientists, clinicians and leaders drive critical advances in healthcare. Recognizing their work is part of building a better system.",
+        "tag": "news"
+      },
+      {
+        "slug": "diabetes-kidney-disease-6",
+        "date": "December 4, 2023",
+        "category": "Diabetes & Kidneys",
+        "title": "Does Diabetes Increase the Risk of Kidney Disease?",
+        "excerpt": "Chronically high blood sugar can damage the tiny blood vessels in the kidneys. Understanding this link early matters.",
+        "tag": "health"
+      }
+    ],
+    
+    "gene-therapy-emerging-science": {
+      "title": "How Gene Therapy Is Transforming Modern Treatment",
+      "date": "May 13, 2024",
+      "category": "Emerging Science",
+      "readTime": "7–9 min read",
+      "heroCaption": "Gene therapy looks at disease from the level of DNA, aiming to correct or adjust the instructions that cells follow.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "Gene therapy is an approach where treatment begins at the level of our genes. Instead of only managing symptoms with tablets or injections, scientists work directly with the DNA instructions inside cells.",
+            "This becomes especially important in conditions strongly linked to genetics — rare inherited disorders, certain blood diseases and some cancers."
+          ]
+        },
+        {
+          "id": "toc",
+          "title": "In this article:",
+          "items": [
+            "What gene therapy actually is",
+            "Different approaches to gene therapy",
+            "How modern tools and AI support this field",
+            "Where gene therapy is being used today",
+            "Key benefits and challenges",
+            "Where the science is heading next"
+          ]
+        },
+        {
+          "id": "what",
+          "heading": "What is gene therapy?",
+          "paragraphs": [
+            "Inside almost every cell of the body, DNA carries the instructions for how that cell should function. When part of this instruction manual is damaged, missing or altered, disease can appear.",
+            "Gene therapy focuses on these faulty sections and aims to repair, replace or adjust the genetic material."
+          ]
+        },
+        {
+          "id": "methods",
+          "paragraphs": [
+            "In simple terms, gene therapy can:",
+            "• Add a working copy of a missing or broken gene",
+            "• Reduce or silence a harmful gene",
+            "• Edit the DNA sequence using modern gene-editing tools"
+          ]
+        },
+        {
+          "id": "approaches",
+          "heading": "Main approaches"
+        },
+        {
+          "id": "augmentation",
+          "subheading": "1. Gene augmentation",
+          "paragraphs": [
+            "Some diseases occur because a key gene is missing or not working properly. Adding a healthy copy can help restore cell function."
+          ]
+        },
+        {
+          "id": "inhibition",
+          "subheading": "2. Gene inhibition",
+          "paragraphs": [
+            "In other diseases, the issue is a gene that is too active or producing something harmful. Gene inhibition strategies aim to reduce or block this activity."
+          ]
+        },
+        {
+          "id": "editing",
+          "subheading": "3. Gene editing",
+          "paragraphs": [
+            "Tools like CRISPR act like molecular scissors, allowing scientists to cut DNA at precise locations and correct mutations or insert new material."
+          ]
+        },
+        {
+          "id": "digital",
+          "heading": "How digital tools support gene therapy",
+          "paragraphs": [
+            "Gene therapy research generates huge amounts of data. AI helps analyse this information and support decisions about which patients may benefit most."
+          ]
+        },
+        {
+          "id": "today",
+          "heading": "Where gene therapy is used today",
+          "paragraphs": [
+            "Approved gene therapies currently focus on rare inherited diseases. Research is expanding into oncology, cardiovascular medicine and neurology."
+          ]
+        },
+        {
+          "id": "benefits",
+          "heading": "Benefits and challenges"
+        },
+        {
+          "id": "benefit-list",
+          "subheading": "Potential benefits",
+          "items": [
+            "Addresses the root cause of disease",
+            "Can offer long-lasting or one-time treatments",
+            "Provides precise targeting of cells or tissues",
+            "Creates new options where standard therapies are limited"
+          ]
+        },
+        {
+          "id": "risks",
+          "subheading": "Points to watch",
+          "items": [
+            "Unintended changes elsewhere in the genome",
+            "Possible immune reactions",
+            "Complex, high-cost manufacturing",
+            "Need for long-term safety monitoring"
+          ]
+        },
+        {
+          "id": "ethics",
+          "heading": "Ethics and the future",
+          "paragraphs": [
+            "Because gene therapy modifies core biological instructions, it raises important questions about access, fairness and long-term safety.",
+            "As delivery methods improve, gene therapy is expected to become part of mainstream medical care."
+          ]
+        }
+      ]
+    },
+
+    "power-of-ai-medical-industry": {
+      "title": "The Power of AI in the Medical Industry: 4 Things to Know",
+      "date": "May 11, 2024",
+      "category": "Digital Health & AI",
+      "readTime": "6–8 min read",
+      "heroCaption": "Artificial intelligence helps turn complex medical and pharmaceutical data into faster, more informed decisions.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "Artificial intelligence is becoming one of the most important tools in modern healthcare. It can analyse thousands of data points at once and highlight patterns that humans may miss.",
+            "In hospitals and the pharmaceutical industry, AI supports decision-making, improves diagnostics and streamlines workflows."
+          ]
+        },
+        {
+          "id": "toc",
+          "title": "In this article:",
+          "items": [
+            "The impact of AI in medicine",
+            "AI in the pharmaceutical industry",
+            "AI in pharma marketing",
+            "AI in healthcare systems and hospitals",
+            "The future of AI in medicine",
+            "Why this matters for patients and pharma"
+          ]
+        },
+        {
+          "id": "impact",
+          "heading": "The impact of AI in medicine",
+          "paragraphs": [
+            "AI includes machine learning, deep learning and natural language processing. In healthcare, these tools support diagnostics, risk prediction and clinical decision-making."
+          ]
+        },
+        {
+          "id": "pharma",
+          "heading": "AI in the pharmaceutical industry",
+          "paragraphs": [
+            "Pharma relies heavily on data — chemical libraries, biological experiments, clinical trials and safety signals. AI connects these information streams and accelerates research."
+          ],
+          "items": [
+            "Virtual screening for drug discovery",
+            "Simulation of formulations and processes",
+            "Predictive modelling for safety assessment"
+          ]
+        },
+        {
+          "id": "marketing",
+          "heading": "AI in pharma marketing",
+          "paragraphs": [
+            "AI makes marketing more data-driven by tailoring communication to real information needs."
+          ],
+          "items": [
+            "More precise audience segmentation",
+            "Personalised content",
+            "Better understanding of what drives behaviour"
+          ]
+        },
+        {
+          "id": "hospital",
+          "heading": "AI in healthcare systems and hospitals",
+          "paragraphs": [
+            "AI analyses lab results, imaging, vital signs and history to identify urgent risks or guide treatment adjustments."
+          ],
+          "items": [
+            "Imaging support for radiologists",
+            "Risk prediction tools",
+            "Virtual assistants for patient support"
+          ]
+        },
+        {
+          "id": "future",
+          "heading": "The future of AI in medicine",
+          "paragraphs": [
+            "AI will play a major role in precision medicine by helping tailor treatments to each individual’s genetics and risk profile."
+          ]
+        },
+        {
+          "id": "why",
+          "heading": "Why AI matters",
+          "paragraphs": [
+            "For patients: earlier detection, personalised treatment and better outcomes.",
+            "For pharma and providers: smarter use of existing data and better efficiency."
+          ]
+        }
+      ]
+    },
+
+    "personalized-medicine-basics": {
+      "title": "Personalized Medicine: Treatments Tailored to Each Patient",
+      "date": "March 3, 2024",
+      "category": "Personalized Medicine",
+      "readTime": "6–8 min read",
+      "heroCaption": "Personalized medicine combines genetics, clinical data and lifestyle information to tailor treatment to each patient.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "Personalized medicine moves healthcare away from a one-size-fits-all model and tailors treatments to each individual.",
+            "Advances in genomic sequencing show why two patients with the same condition may respond differently to the same therapy."
+          ]
+        },
+        {
+          "id": "toc",
+          "title": "In this article:",
+          "items": [
+            "What personalized medicine actually means",
+            "How genetic engineering and precision medicine work together",
+            "Key benefits for patients and health systems",
+            "Challenges and responsibilities",
+            "Why this matters for the future of care"
+          ]
+        },
+        {
+          "id": "what",
+          "heading": "What is personalized medicine?",
+          "paragraphs": [
+            "Personalized medicine uses detailed patient information — genetics, biomarkers, coexisting conditions, environment and lifestyle — to guide prevention, diagnosis and treatment."
+          ]
+        },
+        {
+          "id": "genetic",
+          "heading": "Genetic engineering and precision medicine",
+          "paragraphs": [
+            "Modern DNA sequencing helps identify genetic variations linked to disease, response to drugs or risk of side effects."
+          ]
+        },
+        {
+          "id": "benefits",
+          "heading": "Benefits of personalized medicine",
+          "items": [
+            "More precise treatments with higher chances of response",
+            "Proactive, preventive healthcare",
+            "Better allocation of medical resources",
+            "Innovation in diagnostics and targeted therapies"
+          ]
+        },
+        {
+          "id": "challenges",
+          "heading": "Challenges and responsibilities",
+          "items": [
+            "Data privacy and protection of genetic information",
+            "Ensuring equitable access",
+            "Clear regulatory frameworks",
+            "Interoperability between healthcare systems"
+          ]
+        },
+        {
+          "id": "future",
+          "heading": "Looking ahead",
+          "paragraphs": [
+            "As sequencing becomes more accessible, personalized medicine will become a central part of modern healthcare."
+          ]
+        }
+      ]
+    },
+
+    "international-womens-day-healthcare": {
+      "title": "In Honor of International Women’s Day",
+      "date": "February 21, 2024",
+      "category": "People & Culture",
+      "readTime": "5–7 min read",
+      "heroCaption": "International Women’s Day is a moment to celebrate women’s achievements and to focus on closing gaps in women’s health.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "International Women’s Day, celebrated on March 8, recognizes women’s achievements and highlights the challenges that many still face in healthcare.",
+            "Putting women’s health at the center requires understanding both medical and social realities that shape their wellbeing."
+          ]
+        },
+        {
+          "id": "challenges",
+          "heading": "Women’s health challenges",
+          "paragraphs": [
+            "Across many countries, women face a combination of obstacles:"
+          ],
+          "items": [
+            "Limited access to reproductive and maternal healthcare",
+            "Under-diagnosis or delayed diagnosis of chronic diseases such as heart disease",
+            "Cultural pressures and discrimination that make accessing care more difficult"
+          ]
+        },
+        {
+          "id": "diseases",
+          "heading": "Diseases that disproportionately affect women",
+          "paragraphs": [
+            "Certain conditions strongly influence women’s health outcomes."
+          ],
+          "items": [
+            "Breast cancer and cervical cancer, where screening can significantly improve survival",
+            "Maternal complications during pregnancy and childbirth",
+            "Chronic conditions that may present differently in women, leading to misdiagnosis"
+          ]
+        },
+        {
+          "id": "solutions",
+          "heading": "Promoting women’s health: key levers",
+          "items": [
+            "Improving access to essential services: maternity care, contraception, screening",
+            "Investing in education, economic empowerment and access to reliable information",
+            "Encouraging research that includes women in sufficient numbers",
+            "Strengthening public health policies that protect reproductive rights and ensure access to care"
+          ]
+        },
+        {
+          "id": "future",
+          "heading": "A commitment beyond one day",
+          "paragraphs": [
+            "International Women’s Day is a reminder, not a single event. Reducing gaps in women’s health requires consistent and long-term commitment.",
+            "For Ivexia, prioritizing women’s health means designing medicines, communication and programs with women’s unique needs in mind."
+          ]
+        }
+      ]
+    },
+
+    "what-is-obesity-how-to-overcome-it": {
+      "title": "What Is Obesity — and How Do You Really Overcome It?",
+      "date": "March 9, 2024",
+      "category": "Metabolic Health",
+      "readTime": "6–8 min read",
+      "heroCaption": "Obesity is influenced by biology, environment and lifestyle. Long-term management requires structure, not just short diets.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "Obesity is not just about weight or appearance. It is a complex, chronic condition influenced by genetics, hormones, mental health, environment and daily habits.",
+            "Because obesity is linked to serious conditions like type 2 diabetes and heart disease, early understanding and management are crucial for long-term health."
+          ]
+        },
+        {
+          "id": "why",
+          "heading": "Why obesity happens",
+          "paragraphs": [
+            "Diet and exercise matter, but they are only part of the story. Biological factors, sleep, stress, medications and social environment all contribute significantly."
+          ]
+        },
+        {
+          "id": "risks",
+          "heading": "Health risks associated with obesity",
+          "items": [
+            "Higher risk of type 2 diabetes and insulin resistance",
+            "Increased likelihood of high blood pressure and heart disease",
+            "Sleep apnea, joint pain and certain cancers",
+            "Impact on mental health, including self-esteem and depression"
+          ]
+        },
+        {
+          "id": "management",
+          "heading": "Approaching weight management realistically",
+          "paragraphs": [
+            "Sustainable weight management is not about extreme diets or quick fixes. It requires a balanced, long-term plan."
+          ],
+          "items": [
+            "Enjoyable, balanced nutrition rather than strict rules",
+            "Regular physical activity that is manageable and sustainable",
+            "Managing sleep, stress and emotional eating triggers",
+            "Medication or surgery where appropriate, under clinical guidance"
+          ]
+        },
+        {
+          "id": "support",
+          "heading": "Long-term support matters",
+          "paragraphs": [
+            "Because obesity is a chronic condition, long-term support helps maintain progress.",
+            "The goal is not perfection — but steady, consistent improvements over time."
+          ]
+        }
+      ]
+    },
+
+    "diabetes-kidney-disease-6": {
+      "title": "Does Diabetes Increase the Risk of Kidney Disease?",
+      "date": "December 4, 2023",
+      "category": "Diabetes & Kidneys",
+      "readTime": "5–7 min read",
+      "heroCaption": "Diabetes is one of the most important risk factors for chronic kidney disease, especially when blood sugar and blood pressure remain high over time.",
+      "sections": [
+        {
+          "id": "intro",
+          "paragraphs": [
+            "Diabetes is one of the leading causes of chronic kidney disease (CKD). When blood sugar and blood pressure remain high over many years, the tiny blood vessels in the kidneys become damaged.",
+            "Kidney damage often develops slowly and may not cause noticeable symptoms early on, which is why screening is essential."
+          ]
+        },
+        {
+          "id": "how",
+          "heading": "How diabetes affects the kidneys",
+          "paragraphs": [
+            "High blood sugar damages the kidney’s filtering units, called glomeruli. Over time, they become leaky and allow proteins like albumin to pass into the urine.",
+            "High blood pressure and inflammation add additional strain and worsen the damage."
+          ]
+        },
+        {
+          "id": "warning",
+          "heading": "Warning signs",
+          "items": [
+            "Swelling in the legs, ankles or around the eyes",
+            "Foamy or bubbly urine (a sign of protein loss)",
+            "Increasing difficulty controlling blood pressure",
+            "Fatigue, poor appetite or difficulty focusing"
+          ]
+        },
+        {
+          "id": "screening",
+          "heading": "The role of screening",
+          "paragraphs": [
+            "Urine tests for albumin and blood tests for creatinine and eGFR can detect kidney damage long before severe symptoms appear."
+          ]
+        },
+        {
+          "id": "protection",
+          "heading": "Protecting the kidneys",
+          "items": [
+            "Keeping blood sugar within target range",
+            "Strict blood pressure control, often with ACE inhibitors or ARBs",
+            "Healthy lifestyle habits: nutrition, exercise, good sleep and not smoking"
+          ]
+        },
+        {
+          "id": "message",
+          "heading": "A message of prevention and partnership",
+          "paragraphs": [
+            "Diabetes does increase the risk of kidney disease — but the risk is not fixed.",
+            "With early detection, proper management and strong collaboration with healthcare teams, kidney function can be protected for much longer."
+          ]
+        }
+      ]
+    }
+  },
+  
+  "productsCommon": {
+    "introduction": "This finished dosage product is manufactured under strict GMP conditions. For partners we provide regulatory and quality support.",
+    "indications": "Indications will be aligned with the approved label and target markets.",
+    "maintenance": "Storage and maintenance instructions will follow the official pack insert and stability data.",
+    "importantInfo": [
+      { "q": "How should I use this product?", "a": "Use the recommended dose with water, preferably at the same time each day, or as directed by your physician." },
+      { "q": "Can I use it during pregnancy or breastfeeding?", "a": "Only under medical supervision if the benefits clearly outweigh the risks." },
+      { "q": "What if I miss a dose?", "a": "Take it as soon as you remember unless it is almost time for the next dose. Do not double the dose." },
+      { "q": "What if I accidentally take too much?", "a": "Seek immediate medical advice or contact your local poison centre." }
+    ],
+    "precautions": [
+      { "q": "Who should not use this product?", "a": "Patients with known hypersensitivity to any component should not use this product." },
+      { "q": "Who should use with caution?", "a": "Patients with chronic diseases or multiple medications should consult their doctor before use." },
+      { "q": "Possible side effects", "a": "Mild gastrointestinal discomfort, headache or dizziness may occur. Stop treatment and consult a doctor if symptoms persist." }
+    ],
+    "pharmacies": [
+    "Ivexia Health Store – Delhi",
+    "Ivexia Pharma Point – Mumbai",
+    "Ivexia Global Pharmacy – London",
+    "Ivexia Medicines Hub – Spain",
+    "Ivexia Wellness Shop – France",
+    "Ivexia Care Pharmacy – North Macedonia"
+  ]
+  },
+  "productTabs": {
+    "introduction": "Introduction",
+    "indications": "Indications",
+    "maintenance": "Maintenance"
+  },
+  "finalProductDetail": {
+    "dosageForm": "Dosage Form",
+    "requestQuote": "Request quote",
+    "importantInformation": "Important Information",
+    "precautionsHeading": "Precautions and Side Effects",
+    "pharmaciesTitle": "List of Pharmacies",
+    "onlineShopping": "Online Shopping"
+  }
+
 }
+
+
+
+
+
+
+
+
+

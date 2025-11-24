@@ -1,4 +1,4 @@
-// src/components/IngredientGrid.jsx
+import { useTranslation } from "react-i18next";
 import IngredientCard from "./IngredientCard";
 
 export default function IngredientGrid({
@@ -8,10 +8,12 @@ export default function IngredientGrid({
   onPageChange,
   onOpen,
 }) {
+  const { t } = useTranslation();
+
   if (!items.length) {
     return (
       <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center">
-        <p className="text-gray-700">No results. Try different filters.</p>
+        <p className="text-gray-700">{t("ingredientGrid.noResults")}</p>
       </div>
     );
   }
@@ -33,7 +35,7 @@ export default function IngredientGrid({
             disabled={page === 1}
             className="px-3 py-2 rounded-lg border border-gray-200 bg-white text-sm disabled:opacity-50"
           >
-            ‹ Prev
+            {t("ingredientGrid.prev")}
           </button>
           {Array.from({ length: totalPages }).map((_, i) => {
             const n = i + 1;
@@ -57,7 +59,7 @@ export default function IngredientGrid({
             disabled={page === totalPages}
             className="px-3 py-2 rounded-lg border border-gray-200 bg-white text-sm disabled:opacity-50"
           >
-            Next ›
+            {t("ingredientGrid.next")}
           </button>
         </nav>
       )}

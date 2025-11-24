@@ -1,36 +1,59 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
-  const banners = [
+  const { t } = useTranslation("common");
+
+  // Refs to measure navbar height dynamically
+  const heroRef = useRef(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  useEffect(() => {
+    const nav = document.querySelector("nav");
+    if (nav) setNavbarHeight(nav.offsetHeight);
+
+    const resizeHandler = () => {
+      if (nav) setNavbarHeight(nav.offsetHeight);
+    };
+    window.addEventListener("resize", resizeHandler);
+
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
+
+  // Banner metadata
+  const bannersMeta = [
     {
       id: 1,
       image: "https://i.pinimg.com/1200x/38/d4/10/38d4101d5771836ae8624e463696b4c9.jpg",
       color: "from-[#FF7A00]/70 to-[#E2004F]/70",
-      title: "Precision. Purity. Progress.",
-      text: "Delivering world-class pharmaceutical solutions."
+      keyPrefix: "home.hero_1",
     },
     {
       id: 2,
       image: "https://i.pinimg.com/1200x/9e/30/12/9e30127d086fd974c7e1b06832d4bb90.jpg",
       color: "from-[#0d2d47]/70 to-[#19a6b5]/70",
-      title: "Innovation in Every Dose",
-      text: "Committed to healthcare excellence and innovation."
+      keyPrefix: "home.hero_2",
     },
     {
       id: 3,
       image: "https://i.pinimg.com/1200x/2d/2d/85/2d2d85fb196588c54f7a60285511dec6.jpg",
       color: "from-[#E2004F]/70 to-[#FF7A00]/70",
-      title: "Global Standards, Local Trust",
-      text: "Ensuring quality, compliance, and care worldwide."
+      keyPrefix: "home.hero_3",
     },
   ];
+
+  const banners = bannersMeta.map((b) => ({
+    ...b,
+    title: t(`${b.keyPrefix}_title`),
+    text: t(`${b.keyPrefix}_text`),
+  }));
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Auto slide every 4s
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {
@@ -39,7 +62,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [isHovered, banners.length]);
 
-  // Swipe gestures (mobile)
   const handleTouchStart = (e) => (touchStartX.current = e.touches[0].clientX);
   const handleTouchMove = (e) => (touchEndX.current = e.touches[0].clientX);
   const handleTouchEnd = () => {
@@ -51,7 +73,9 @@ export default function Hero() {
 
   return (
     <section
-      className="relative  w-full h-[70vh] md:h-[55vh] overflow-hidden"
+      ref={heroRef}
+      className="relative w-full h-[90vh] md:h-[75vh] overflow-hidden"
+      style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -66,14 +90,11 @@ export default function Hero() {
             index === currentIndex ? "opacity-100 z-20" : "opacity-0 z-10"
           }`}
         >
-          {/* Background Image + Overlay */}
           <div
             className="w-full h-full bg-cover bg-center relative"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div
-              className={`absolute inset-0 bg-gradient-to-r ${slide.color}`}
-            ></div>
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.color}`} />
             <div className="relative z-10 flex flex-col justify-center items-start h-full px-6 sm:px-10 md:px-20">
               <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
                 {slide.title}
@@ -81,9 +102,12 @@ export default function Hero() {
               <p className="text-gray-100 max-w-xl text-sm sm:text-base md:text-lg mb-6">
                 {slide.text}
               </p>
-              <button className="bg-white text-[#E2004F] px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
-                Explore Ivexia
-              </button>
+              <Link
+                to="/contact"
+                className="bg-white text-[#E2004F] px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
+              >
+                {t("home.cta_explore")}
+              </Link>
             </div>
           </div>
         </div>
@@ -96,9 +120,7 @@ export default function Hero() {
             key={i}
             onClick={() => setCurrentIndex(i)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              currentIndex === i
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/80"
+              currentIndex === i ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}

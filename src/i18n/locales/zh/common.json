@@ -1,20 +1,1082 @@
 {
   "nav": {
-    "home": "首页",
-    "api": "原料药 (API)",
-    "products": "制剂产品",
-    "about": "关于我们",
-    "mag": "Ivexia 杂志",
-    "mag_news": "新闻",
-    "mag_health": "健康杂志",
-    "contact": "联系我们"
-  },
+  "home": "首页",
+  "api": "活性药物成分",
+  "products": "药品",
+  "about": "关于我们",
+  "mag": "Ivexia 杂志",
+  "mag_news": "新闻",
+  "mag_health": "健康杂志",
+  "contact": "联系我们"
+}
+,
+
   "search": {
     "placeholder": "搜索产品、文章、新闻..."
   },
+
   "products": {
     "page_title": "制剂产品",
     "page_subtitle": "覆盖主要治疗领域的制剂产品，并提供法规与质量文件支持。",
     "count_label": "显示 {{visible}} / {{total}} 个产品"
+  },
+
+  "ivexia_numbers": {
+  "title": "Ivexia 数据概览",
+  "employees": "员工数",
+  "products": "产品数",
+  "countries": "国家",
+  "facilities": "全球设施",
+  "rnd": "研发中心"
+},
+  "about": {
+    "video": {
+      "title": "您的健康就是我们的未来",
+      "subtitle": "Ivexia 制药私人有限公司",
+      "paragraph": "在 Ivexia，我们以一个使命为驱动——在每一款产品中提供精准、纯净与进步。我们对医疗创新的承诺，确保为全球社区带来更加光明、更健康的明天。",
+      "cta": "阅读更多",
+      "fallback": "您的浏览器不支持 video 标签。"
+    }
+  },
+
+  "therapy": {
+    "title": "治疗领域",
+    "highlight": "质量、创新与健康 —",
+    "subtitle": "在 Ivexia，我们在多个领域推进精准治疗，以重新定义全球医疗保健。",
+    "cardiology": {
+      "title": "心脏病学",
+      "desc": "先进的心血管治疗，保护并提升心脏健康。"
+    },
+    "oncology": {
+      "title": "肿瘤学",
+      "desc": "关注靶向疗法与护理的创新癌症治疗。"
+    },
+    "neurology": {
+      "title": "神经学",
+      "desc": "面向认知与神经系统护理的突破性神经学解决方案。"
+    },
+    "endocrinology": {
+      "title": "内分泌学",
+      "desc": "通过专业配方实现激素平衡与代谢健康。"
+    },
+    "dermatology": {
+      "title": "皮肤科",
+      "desc": "结合皮肤科学创新与安全性的卓越护肤方案。"
+    }
+  },
+
+  "home": {
+    "hero_1_title": "精确。纯净。进步。",
+    "hero_1_text": "提供世界级的制药解决方案。",
+    "hero_2_title": "每一剂的创新",
+    "hero_2_text": "致力于医疗卓越与创新。",
+    "hero_3_title": "全球标准，本地信赖",
+    "hero_3_text": "确保全球范围内的质量、合规与护理。",
+    "cta_explore": "探索"
+  },
+
+  "accord": {
+    "title_line1": "为了一个更",
+    "title_highlight": "健康的世界",
+    "paragraph": "Ivexia 的“为了一个更健康的世界”倡议通过科学、创新和同情心连接各大洲——并在欧洲和亚洲不断扩展影响力。",
+    "cta": "了解我们的协议"
+  },
+
+  "leadership": {
+    "heading": "领导力与愿景",
+    "subheading": "“在 Ivexia，我们不仅制造药品——我们建立信任。我们的员工是基础，科学是我们的力量，愿景是我们的承诺。”",
+    "ceo": {
+      "name": "Dr. Avinaash Badal",
+      "title": "首席执行官"
+    },
+    "team_heading": "我们的领导团队",
+    "team_sub": "驱动 Ivexia 创新、诚信与影响力的核心力量。",
+    "team": {
+      "0": { "role": "董事 – 战略", "quote": "我们以创新和诚信引领。" },
+      "1": { "role": "董事 – 运营", "quote": "我们的愿景是塑造全球医疗。" },
+      "2": { "role": "质量保证主管", "quote": "质量定义了 Ivexia 的信任。" },
+      "3": { "role": "制造主管", "quote": "效率每天与精确相遇。" },
+      "4": { "role": "人力资源与人才发展", "quote": "我们有目的地共同成长。" },
+      "5": { "role": "研发科学家", "quote": "创新在我们的基因中。" },
+      "6": { "role": "法规事务", "quote": "合规推动信心。" },
+      "7": { "role": "财务与战略", "quote": "通过明智的财务实现可持续增长。" },
+      "8": { "role": "市场负责人", "quote": "每个产品都有一个故事。" },
+      "9": { "role": "数字系统负责人", "quote": "技术推动透明度。" }
+    }
+  },
+
+  "researchManufacturing": {
+    "tabs": {
+      "research": "研究与创新",
+      "manufacturing": "制造卓越"
+    },
+    "research": {
+      "title": "开创性研究与创新",
+      "desc": "在 Ivexia，创新是进步的核心。我们的研发中心专注于开发突破性分子、先进配方和下一代疗法。我们在全球范围内合作，将创意转化为改善数百万生命的医疗解决方案。",
+      "exploreBtn": "探索"
+    },
+    "manufacturing": {
+      "title": "精密与高质量制造",
+      "desc": "Ivexia 的制造设施遵循 WHO-GMP 和 EU-GMP 标准。从无菌注射剂到复杂口服固体，每款产品都在严格监管与可持续性框架下生产。",
+      "exploreBtn": "探索"
+    }
+  },
+
+  "latestNews": {
+    "sectionTitle": "Ivexia 最新动态",
+    "sectionDesc": "探索推动 Ivexia 实现精准、纯净和进步使命的最新更新、创新和里程碑。",
+    "readMore": "阅读更多",
+    "posts": [
+      {
+        "id": 1,
+        "title": "Ivexia 扩展生物技术研发",
+        "date": "2025年11月10日",
+        "category": "研发",
+        "image": "https://images.unsplash.com/photo-1581090467727-9737c1b1a83b?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "Ivexia 通过提升生物制剂和生物类似药研发能力，强化其创新实力。"
+      },
+      {
+        "id": 2,
+        "title": "制药生产中的可持续性",
+        "date": "2025年10月28日",
+        "category": "企业责任",
+        "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "我们的工厂正迈向零液体排放 (ZLD) 完全合规，打造绿色可持续制药生产。"
+      },
+      {
+        "id": 3,
+        "title": "2026 年新肿瘤系列发布",
+        "date": "2025年10月15日",
+        "category": "产品创新",
+        "image": "https://images.unsplash.com/photo-1579154204601-01588f351e56?auto=format&fit=crop&w=800&q=80",
+        "excerpt": "Ivexia 将在 2026 年发布新肿瘤药物系列，提供可负担、先进的癌症治疗方案。"
+      }
+    ]
+  },
+
+  "footer": {
+    "logoAlt": "Ivexia 标志",
+    "companyName": "Ivexia Pharmaceuticals Pvt. Ltd.",
+    "tagline": "精确。纯净。进步。",
+    "description": "通过创新、质量和诚信推动全球医疗健康发展。",
+    "quickLinksTitle": "快速链接",
+    "quickLinks": [
+      { "label": "首页", "path": "/" },
+      { "label": "关于我们", "path": "/about" },
+      { "label": "药品产品", "path": "/products" },
+      { "label": "Ivexia 杂志", "path": "/ivexia-mag" },
+      { "label": "联系我们", "path": "/contact" }
+    ],
+    "contactTitle": "联系我们",
+    "contact": {
+      "address": "14, P Box 3351 Chand Manzi, 14 Old Bandil Poora, Mandvi, Mumbai –400003",
+      "email": "info@ivexiapharma.com",
+      "phone": "+91 9998887770",
+      "social": ["#", "#", "#", "#"]
+    },
+    "emailLabel": "邮箱",
+    "phoneLabel": "电话",
+    "rights": "版权所有"
+  },
+
+  "ingredient": {
+    "heading": "API 产品列表",
+    "filters": {
+      "searchPlaceholder": "按名称、CAS 或同义词搜索...",
+      "category": "类别",
+      "dosage": "剂型",
+      "sort": "排序方式",
+      "sortOptions": {
+        "nameAsc": "名称 (A-Z)",
+        "nameDesc": "名称 (Z-A)",
+        "category": "类别"
+      },
+      "reset": "重置筛选"
+    }
+  },
+
+  "ingredientHero": {
+    "subtitle": "活性药物成分",
+    "title": {
+      "part1": "高纯度 API，",
+      "part2": "面向全球制剂。"
+    },
+    "description": "Ivexia 为受监管市场提供可控、可追溯的 API。符合 WHO-GMP，文件齐全，由专业团队支持。",
+    "badges": {
+      "gmp": "符合 WHO-GMP 和 cGMP",
+      "coa": "CoA、MSDS 及完整 CTD 支持",
+      "flexible": "灵活的批量规模"
+    },
+    "cta": "讨论特定 API →",
+    "imageAlt": "Ivexia API 产品组合",
+    "partnerText": "受控验证的生产合作伙伴。",
+    "qualityText": "GMP • 稳定性 • 可追溯性"
+  },
+
+  "ingredientQualityStrip": {
+    "items": [
+      {
+        "title": "高性能质量",
+        "desc": "在严格 GMP 合规下生产的优质 API。"
+      },
+      {
+        "title": "可信的全球网络",
+        "desc": "与全球制剂企业建立长期合作关系。"
+      },
+      {
+        "title": "监管卓越",
+        "desc": "提供完整的监管文件并具有透明的可追溯性。"
+      }
+    ]
+  },
+
+  "ingredientFilters": {
+    "searchPlaceholder": "按名称 / CAS / 同义词搜索...",
+    "category": "类别",
+    "dosage": "剂型",
+    "sortBy": "排序方式",
+    "sortOptions": {
+      "nameAsc": "名称 (A → Z)",
+      "nameDesc": "名称 (Z → A)",
+      "category": "类别"
+    },
+    "resetFilters": "重置筛选",
+    "results": "{{total}} 结果",
+    "results_plural": "{{total}} 结果"
+  },
+
+  "ingredientGrid": {
+    "noResults": "没有结果。请尝试其他筛选条件。",
+    "prev": "‹ 上一页",
+    "next": "下一页 ›"
+  },
+
+  "ingredientCard": {
+    "cas": "CAS",
+    "synonyms": "同义词",
+    "viewDetails": "查看详情 →"
+  },
+
+  "ingredientAccord": {
+    "title": "常见问题",
+    "faqs": [
+      {
+        "q": "是否提供完整文件（CoA / MSDS）？",
+        "a": "是的，每种 API 可根据要求提供 CoA 和 MSDS，并附有规格书和稳定性数据（如适用）。"
+      },
+      {
+        "q": "你们的工厂是否符合 WHO-GMP / cGMP 标准？",
+        "a": "是的，我们的生产设施遵循 WHO-GMP / cGMP 标准，拥有定期审核、验证流程以及完整可追溯性。"
+      },
+      {
+        "q": "是否支持定制规格或合同生产？",
+        "a": "是的，我们提供 CDMO 服务，包括技术转移、放大生产、验证、定制规格与包装解决方案。"
+      }
+    ]
+  },
+
+  "customerStrip": {
+    "title": "我们的客户"
+  },
+
+  
+  "productDetail": {
+    "notFoundTitle": "未找到产品",
+    "notFoundText": "我们在产品目录中找不到此 API。",
+    "backToApis": "← 返回活性药物成分（API）",
+
+    "cas": "CAS",
+    "synonyms": "别名",
+    "dosageForms": "剂型",
+
+    "descriptionLine1": "该 API 在受控的 GMP 条件下生产，并具有完整的批次追溯能力。",
+    "descriptionLine2": "适用于 {{category}} 相关治疗领域的制剂开发与商业供应。",
+
+    "requestQuote": "请求报价",
+    "modalTitle": "请求报价",
+    "modalSubtitle": "产品",
+
+    "modalInfo": "请填写信息，我们的团队会与您联系。",
+    "fullName": "姓名",
+    "company": "公司",
+    "email": "邮箱",
+    "country": "国家",
+    "message": "留言 / 需求",
+    "messagePlaceholder": "请简要描述您的需求...",
+    "cancel": "取消",
+    "submit": "提交请求",
+
+    "suggestedExplore": "查看更多",
+    "suggestedTitle": "推荐产品",
+    "suggestedSubtitle": "其他与当前选择相关的 API。"
+  },
+
+
+
+  "ingredients": {
+    "categories": {
+      "cardiology": "心脏病学",
+      "anti_infective": "抗感染",
+      "pain": "疼痛管理",
+      "endocrinology": "内分泌学",
+      "respiratory": "呼吸系统",
+      "gastro": "胃肠病学",
+      "nutraceutical": "营养保健品"
+    },
+    "forms": {
+      "tablet": "片剂",
+      "capsule": "胶囊",
+      "injection": "注射剂"
+    },
+    "amiodarone": {
+      "name": "胺碘酮盐酸盐",
+      "desc": "用于心律失常的抗心律失常药物。"
+    },
+    "atorvastatin": {
+      "name": "阿托伐他汀钙",
+      "desc": "用于降低低密度脂蛋白胆固醇。"
+    },
+    "amlodipine": {
+      "name": "氨氯地平苯磺酸盐",
+      "desc": "用于治疗高血压的钙通道阻滞剂。"
+    },
+    "azithromycin": {
+      "name": "阿奇霉素",
+      "desc": "用于多种感染的宏环内酯类抗生素。"
+    },
+    "amoxicillin": {
+      "name": "阿莫西林三水合物",
+      "desc": "广谱青霉素类抗生素。"
+    },
+    "clarithromycin": {
+      "name": "克拉霉素",
+      "desc": "宏环内酯类抗生素。"
+    },
+    "codeine": {
+      "name": "可待因硫酸盐",
+      "desc": "用于止痛的阿片类药物。"
+    },
+    "tramadol": {
+      "name": "曲马多盐酸盐",
+      "desc": "阿片样镇痛药。"
+    },
+    "diclofenac": {
+      "name": "双氯芬酸钠",
+      "desc": "抗炎镇痛药。"
+    },
+    "metformin": {
+      "name": "二甲双胍盐酸盐",
+      "desc": "用于治疗 2 型糖尿病。"
+    },
+    "sitagliptin": {
+      "name": "西格列汀磷酸盐",
+      "desc": "DPP-4 抑制剂，用于治疗糖尿病。"
+    },
+    "salbutamol": {
+      "name": "沙丁胺醇硫酸盐",
+      "desc": "用于哮喘的支气管扩张剂。"
+    },
+    "montelukast": {
+      "name": "孟鲁司特钠",
+      "desc": "白三烯受体阻断剂，用于哮喘。"
+    },
+    "omeprazole": {
+      "name": "奥美拉唑",
+      "desc": "抑制胃酸分泌的质子泵抑制剂。"
+    },
+    "pantoprazole": {
+      "name": "泮托拉唑钠",
+      "desc": "用于治疗胃酸倒流（GERD）的 PPI 药物。"
+    },
+    "vitamin_c": {
+      "name": "维生素 C（抗坏血酸）",
+      "desc": "必需维生素和抗氧化剂。"
+    },
+    "vitamin_b12": {
+      "name": "维生素 B12（氰钴胺）",
+      "desc": "对代谢非常重要的维生素。"
+    }
+  },
+  "aboutPage": {
+  "hero": {
+    "title": "有目标的全球关怀",
+    "subtitle": "科学创新与高标准质量的结合。"
+  },
+  "brand": {
+    "heading": "建立在精准与目标之上的传承",
+    "p1": "Ivexia Pharmaceuticals是一家全球合规的医疗健康公司。",
+    "p2": "我们将科学创新转化为世界级治疗解决方案。",
+    "p3": "我们的业务覆盖印度、欧洲及MENA地区。"
+  },
+  "vision": {
+    "banner": "科学驱动，目标引领。",
+    "visionTitle": "我们的愿景",
+    "visionText": "成为全球值得信赖的制药力量。",
+    "missionTitle": "我们的使命",
+    "missionText": "提供符合WHO-GMP、EU-GMP、ISO及PIC/S的产品。"
+  },
+  "global": {
+    "title": "全球业务",
+    "subtitle": "整合的生产、研发与分销。",
+    "indiaTitle": "印度",
+    "indiaText": "总部及制造中心",
+    "macedoniaTitle": "北马其顿",
+    "macedoniaText": "符合欧盟标准的运营",
+    "dohaTitle": "多哈",
+    "dohaText": "MENA地区分销中心"
+  },
+  "expertise": {
+    "title": "我们的专长",
+    "card1Title": "精密制造",
+    "card2Title": "分子研发创新",
+    "card3Title": "全球质量合规"
+  },
+  "leadership": {
+    "title": "Ivexia的领导力",
+    "cardName": "领导者 {{index}}",
+    "cardDept": "部门"
+  },
+  "timeline": {
+    "title": "我们的前进之路",
+    "items": {
+      "2018": "Ivexia成立，提升医疗标准。",
+      "2020": "印度多工厂扩张启动。",
+      "2023": "先进营养产品研发实验室启动。",
+      "2025": "北马其顿启动欧盟合规运营。",
+      "2030": "全球肿瘤及生物技术生产开始。"
+    }
+  },
+  "certifications": {
+    "title": "全球认证与标准",
+    "items": ["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"]
+  },
+  "statement": {
+    "quote": "“创新。质量。诚信。”",
+    "text": "我们的承诺体现了对全球一流医疗的道德承诺。"
+  },
+  "facilities": {
+    "title": "先进设施",
+    "text": "设计以满足全球精准与合规标准。"
+  },
+  "labs": {
+    "title": "研发实验室",
+    "cardTitle": "先进实验室 {{index}}",
+    "cardText": "配备下一代分析仪器。"
+  },
+  "sustainability": {
+    "title": "Ivexia的可持续发展",
+    "p1": "我们的工厂采用ZLD、受控排放及可再生能源。",
+    "p2": "通过绿色化学与能源效率降低碳足迹。"
+  },
+  "globalPresence": {
+    "title": "全球布局"
+  },
+  "awards": {
+    "title": "奖项与荣誉",
+    "cardTitle": "卓越奖 {{index}}",
+    "cardText": "因创新而获认可。"
+  },
+  "cta": {
+    "title": "加入我们的全球使命",
+    "text": "成为科学、创新与人道交汇的未来的一部分。",
+    "button": "联系我们"
+  }
+},
+"contactPage": {
+  "title": "联系我们",
+  "subtitle": "分享您的问题、合作想法或产品咨询。Ivexia团队将尽快与您联系。",
+  "formTitle": "发送消息给我们",
+  "formSubtitle": "填写表单，我们的团队将在1-2个工作日内回复。",
+  "fullName": "姓名",
+  "fullNamePlaceholder": "您的全名",
+  "email": "电子邮箱",
+  "emailPlaceholder": "you@example.com",
+  "phone": "电话号码",
+  "phonePlaceholder": "+91 98765 43210",
+  "subject": "主题",
+  "subjectPlaceholder": "简要描述您的咨询",
+  "message": "留言",
+  "messagePlaceholder": "在此输入您的留言...",
+  "submit": "发送消息",
+  "heroAlt": "Ivexia制药工厂",
+  "heroTitle": "来自可信赖制造合作伙伴的全球质量",
+  "heroSubtitle": "现代化设施、严格GMP标准和对患者安全的承诺 — 推动Ivexia全球配方。",
+  "contactTitle": "联系我们",
+  "contactDesc": "通过电话、邮件或社交渠道与我们联系。",
+  "followUs": "社交网络",
+  "addressTitle": "地址",
+  "addressDesc": "我们的总部协调全球业务和合作伙伴关系。",
+  "officeLabel": "总部"
+},
+"articles": {
+  "breadcrumb": { "home": "首页" },
+  "backToMag": "← 返回 Ivexia 杂志",
+  "recentlyViewed": "最近查看",
+  "stayInKnow": "保持关注",
+  "newsDescription": "关于科学、医疗保健和 Ivexia 项目的最新消息 — 无垃圾信息，只有有价值的内容。",
+  "getInsights": "获取资讯",
+  "notFound": "未找到文章"
+},
+
+  "ivexiaMag": {
+    "title": "Ivexia 杂志",
+    "subtitle": "来自制药、创新和医疗健康领域的洞察、故事与视角。",
+    "articles": [
+      {
+        "slug": "gene-therapy-emerging-science",
+        "date": "2024年5月13日",
+        "category": "新兴科学",
+        "title": "基因疗法如何改变现代治疗",
+        "excerpt": "基因疗法从概念走向临床，提供针对性的方式来纠正遗传问题，而不仅仅是管理症状。",
+        "tag": "health"
+      },
+      {
+        "slug": "power-of-ai-medical-industry",
+        "date": "2024年5月11日",
+        "category": "数字健康与人工智能",
+        "title": "人工智能在医疗行业的力量：您需要知道的4件事",
+        "excerpt": "人工智能正在重塑医院和制药公司的诊断、工作流程和决策过程。",
+        "tag": "health"
+      },
+      {
+        "slug": "what-is-obesity-how-to-overcome-it",
+        "date": "2024年3月9日",
+        "category": "代谢健康",
+        "title": "什么是肥胖，以及如何真正克服？",
+        "excerpt": "肥胖受到生物、环境和生活方式的影响。长期管理需要结构，而不仅仅是短期饮食。",
+        "tag": "health"
+      },
+      {
+        "slug": "personalized-medicine-basics",
+        "date": "2024年3月3日",
+        "category": "个性化医疗",
+        "title": "个性化医疗：针对每位患者的治疗方案",
+        "excerpt": "通过使用基因学、生物标志物和临床数据，个性化医疗旨在在正确的时间为正确的人提供正确的治疗。",
+        "tag": "health"
+      },
+      {
+        "slug": "international-womens-day-healthcare",
+        "date": "2024年2月21日",
+        "category": "人类与文化",
+        "title": "纪念国际妇女节",
+        "excerpt": "女性科学家、临床医生和领导者推动了医疗健康领域的重要进展。认可她们的工作是构建更好系统的一部分。",
+        "tag": "news"
+      },
+      {
+        "slug": "diabetes-kidney-disease-6",
+        "date": "2023年12月4日",
+        "category": "糖尿病与肾脏",
+        "title": "糖尿病会增加肾脏疾病风险吗？",
+        "excerpt": "长期高血糖可能损害肾脏微血管。及早了解这种关联至关重要。",
+        "tag": "health"
+      }
+    ],
+  
+  
+  "gene-therapy-emerging-science": {
+    "slug": "gene-therapy-emerging-science",
+    "title": "基因治疗如何改变现代医疗",
+    "date": "2024年5月13日",
+    "category": "新兴科学",
+    "readTime": "7–9分钟阅读",
+    "heroCaption": "基因治疗从DNA层面处理疾病，旨在纠正或调整细胞所遵循的指令。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "基因治疗是一种直接作用于基因层面的治疗方式。它不是仅仅控制症状，而是通过修复细胞内部的遗传指令来解决根本问题。",
+          "这种技术在遗传因素占主导的疾病中尤为关键，例如罕见遗传病、部分血液疾病和某些癌症。"
+        ]
+      },
+      {
+        "id": "toc",
+        "title": "本篇内容包括：",
+        "items": [
+          "什么是基因治疗",
+          "基因治疗的不同方式",
+          "现代工具与人工智能如何推动发展",
+          "基因治疗目前的临床应用",
+          "优势与挑战",
+          "未来发展方向"
+        ]
+      },
+      {
+        "id": "what",
+        "heading": "什么是基因治疗？",
+        "paragraphs": [
+          "DNA包含细胞运作的所有指令。当这些指令受损、缺失或出现错误时，就可能导致疾病。",
+          "基因治疗的目标是修复、替代或调整这些异常的遗传物质，使细胞恢复正常功能。"
+        ]
+      },
+      {
+        "id": "methods",
+        "paragraphs": [
+          "基因治疗可以：",
+          "• 添加一份健康的基因拷贝替代缺失或损坏的基因",
+          "• 减少或沉默有害基因的表达",
+          "• 使用基因编辑技术直接修改DNA序列"
+        ]
+      },
+      {
+        "id": "approaches",
+        "heading": "主要治疗方式"
+      },
+      {
+        "id": "augmentation",
+        "subheading": "1. 基因增强",
+        "paragraphs": [
+          "某些疾病由于重要基因缺失或功能不足而产生。通过引入健康基因，可以恢复细胞功能。"
+        ]
+      },
+      {
+        "id": "inhibition",
+        "subheading": "2. 基因抑制",
+        "paragraphs": [
+          "在某些情况下，有害基因过度活跃。基因抑制旨在减少其表达，从而降低负面影响。"
+        ]
+      },
+      {
+        "id": "editing",
+        "subheading": "3. 基因编辑",
+        "paragraphs": [
+          "例如CRISPR等工具可以精确切割和修改DNA，使科学家能够纠正突变或插入新的遗传物质。"
+        ]
+      },
+      {
+        "id": "digital",
+        "heading": "数字工具的作用",
+        "paragraphs": [
+          "基因治疗会产生大量数据，包括基因序列、实验结果和临床信息。人工智能帮助分析这些数据并支持临床决策。"
+        ]
+      },
+      {
+        "id": "today",
+        "heading": "当前应用",
+        "paragraphs": [
+          "目前获批的基因治疗主要针对罕见遗传病，但研究已扩展至肿瘤、心血管疾病、神经疾病等更多领域。"
+        ]
+      },
+      {
+        "id": "benefits",
+        "heading": "优势与挑战"
+      },
+      {
+        "id": "benefit-list",
+        "subheading": "潜在优势",
+        "items": [
+          "从根本上作用于病因",
+          "具有长期疗效甚至一次性治疗潜力",
+          "精准作用于目标组织",
+          "为传统方案有限的疾病提供新选择"
+        ]
+      },
+      {
+        "id": "risks",
+        "subheading": "可能风险",
+        "items": [
+          "可能影响基因组其他部分",
+          "免疫反应风险",
+          "生产难度高、成本高",
+          "需长期随访评估风险与收益"
+        ]
+      },
+      {
+        "id": "ethics",
+        "heading": "伦理与未来",
+        "paragraphs": [
+          "基因治疗涉及改变细胞的基本指令，因此产生关于公平性、安全性和可及性的伦理讨论。",
+          "随着技术更安全、更精准，基因治疗将逐步成为现代医学的重要组成部分。"
+        ]
+      }
+    ]
+  },
+
+  "power-of-ai-medical-industry": {
+    "slug": "power-of-ai-medical-industry",
+    "title": "人工智能在医疗行业的力量：4个关键认识",
+    "date": "2024年5月11日",
+    "category": "数字健康与人工智能",
+    "readTime": "6–8分钟阅读",
+    "heroCaption": "人工智能将复杂的医学数据转化为更快速、更可靠的决策。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "人工智能正成为现代医疗中最重要的工具之一。它能够同时分析成千上万条数据，发现人类难以立即察觉的模式。",
+          "在医院和制药行业中，AI主要用于辅助决策、提升诊断效率和优化流程。"
+        ]
+      },
+      {
+        "id": "toc",
+        "title": "本篇内容包括：",
+        "items": [
+          "AI在医学中的影响",
+          "AI在制药行业中的应用",
+          "AI在医药营销中的作用",
+          "AI在医院及医疗系统中的应用",
+          "AI的未来发展",
+          "AI为何对患者和行业重要"
+        ]
+      },
+      {
+        "id": "impact",
+        "heading": "AI在医学中的影响",
+        "paragraphs": [
+          "AI包括机器学习、深度学习和自然语言处理等技术。它们用于影像分析、风险预测和资源分配等领域。"
+        ]
+      },
+      {
+        "id": "pharma",
+        "heading": "AI在制药行业中的应用",
+        "paragraphs": [
+          "制药行业依赖大量化学、生物和临床数据。AI帮助科学家加速分析与研发。"
+        ],
+        "items": [
+          "虚拟筛选潜在药物分子",
+          "模拟配方与生产过程",
+          "预测药物安全性与效果"
+        ]
+      },
+      {
+        "id": "marketing",
+        "heading": "AI在医药营销中的应用",
+        "paragraphs": [
+          "AI让营销更精准，能够根据医生和患者的真实需求优化内容与策略。"
+        ],
+        "items": [
+          "更细分的目标群体分析",
+          "个性化内容推荐",
+          "更准确的效果衡量"
+        ]
+      },
+      {
+        "id": "hospital",
+        "heading": "AI在医疗系统与医院中的应用",
+        "paragraphs": [
+          "AI分析实验室数据、影像、生命体征和用药记录，帮助识别高风险患者。"
+        ],
+        "items": [
+          "辅助影像诊断",
+          "预测并发症风险",
+          "为患者提供虚拟助手"
+        ]
+      },
+      {
+        "id": "future",
+        "heading": "AI的未来",
+        "paragraphs": [
+          "AI将在个体化医疗中发挥关键作用，基于基因、生活方式和风险因素定制治疗方案。"
+        ]
+      },
+      {
+        "id": "why",
+        "heading": "AI为何重要",
+        "paragraphs": [
+          "对患者来说，AI意味着更早的疾病发现与更个性化的治疗。",
+          "对医疗机构与制药企业而言，AI帮助更高效地利用已有数据。"
+        ]
+      }
+    ]
+  },
+
+  "personalized-medicine-basics": {
+    "slug": "personalized-medicine-basics",
+    "title": "个体化医疗：为每位患者量身定制的治疗方案",
+    "date": "2024年3月3日",
+    "category": "个体化医疗",
+    "readTime": "6–8分钟阅读",
+    "heroCaption": "个体化医疗结合基因、临床数据和生活方式，为每位患者选择最合适的治疗。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "个体化医疗突破传统的“一刀切”模式，根据患者的独特特征制定治疗方案。",
+          "基因测序的发展显示，不同患者对同种疾病的同一种药物反应可能完全不同。"
+        ]
+      },
+      {
+        "id": "toc",
+        "title": "本篇内容包括：",
+        "items": [
+          "什么是个体化医疗",
+          "基因工程与精准医疗如何协同",
+          "对患者和医疗系统的主要优势",
+          "挑战与责任",
+          "未来展望"
+        ]
+      },
+      {
+        "id": "what",
+        "heading": "什么是个体化医疗？",
+        "paragraphs": [
+          "个体化医疗通过分析基因、标志物、并存疾病、环境与生活方式等信息来指导预防、诊断和治疗。"
+        ]
+      },
+      {
+        "id": "genetic",
+        "heading": "基因工程与精准医疗",
+        "paragraphs": [
+          "基因测序技术帮助识别与疾病、药物反应或副作用相关的基因变异。",
+          "精准医疗结合基因信息与临床数据，为患者选择最合适的干预措施。"
+        ]
+      },
+      {
+        "id": "benefits",
+        "heading": "个体化医疗的优势",
+        "items": [
+          "更精准的治疗方案",
+          "更主动的疾病预防策略",
+          "更有效的资源利用",
+          "推动新型诊断和靶向治疗的发展"
+        ]
+      },
+      {
+        "id": "challenges",
+        "heading": "挑战与责任",
+        "items": [
+          "基因信息的数据隐私保护",
+          "公平获取相关医疗技术",
+          "监管框架的建立",
+          "医疗系统数据互通性不足"
+        ]
+      },
+      {
+        "id": "future",
+        "heading": "未来展望",
+        "paragraphs": [
+          "随着基因检测成本降低，个体化医疗将逐渐成为主流医疗模式。"
+        ]
+      }
+    ]
+  },
+  
+  "international-womens-day-healthcare": {
+    "slug": "international-womens-day-healthcare",
+    "title": "致敬国际妇女节",
+    "date": "2024年2月21日",
+    "category": "人物与文化",
+    "readTime": "5–7分钟阅读",
+    "heroCaption": "国际妇女节庆祝女性成就，同时强调她们在医疗保健中仍面临的不平等。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "国际妇女节（3月8日）旨在庆祝女性在社会中的贡献，同时关注她们仍然面临的挑战，尤其是医疗方面的不平等。",
+          "关注女性健康意味着理解影响其健康的医学与社会因素。"
+        ]
+      },
+      {
+        "id": "challenges",
+        "heading": "女性健康面临的挑战",
+        "paragraphs": [
+          "在许多国家，女性在医疗体系中仍然面临着多种障碍："
+        ],
+        "items": [
+          "生殖健康与孕产护理的获取不足",
+          "心血管疾病等慢性病被漏诊或诊断过晚",
+          "社会压力与性别歧视影响医疗质量和机会"
+        ]
+      },
+      {
+        "id": "diseases",
+        "heading": "对女性影响更大的疾病",
+        "paragraphs": [
+          "某些疾病对女性的影响尤为显著。"
+        ],
+        "items": [
+          "乳腺癌与宫颈癌（早筛尤为关键）",
+          "妊娠和分娩过程中的并发症",
+          "某些慢性病在女性中的症状表现不同"
+        ]
+      },
+      {
+        "id": "solutions",
+        "heading": "改善女性健康的重要举措",
+        "items": [
+          "提升对基本医疗服务的获取：孕产、避孕、筛查",
+          "提高教育与经济自主权",
+          "开展包含更多女性参与的医学研究",
+          "加强保护女性权益的公共政策"
+        ]
+      },
+      {
+        "id": "future",
+        "heading": "不仅仅是一天的关注",
+        "paragraphs": [
+          "国际妇女节是一种提醒，而不是一次性的活动。减少健康不平等需要长期投入。",
+          "对Ivexia而言，这意味着打造真正理解并满足女性需求的医疗方案、药品和健康计划。"
+        ]
+      }
+    ]
+  },
+
+  "what-is-obesity-how-to-overcome-it": {
+    "slug": "what-is-obesity-how-to-overcome-it",
+    "title": "什么是肥胖——以及如何真正克服它？",
+    "date": "2024年3月9日",
+    "category": "代谢健康",
+    "readTime": "6–8分钟阅读",
+    "heroCaption": "肥胖受生物学、环境和生活方式影响。长期管理需要结构化、现实的方式。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "肥胖并不仅仅是体重问题，而是一种受到基因、荷尔蒙、心理健康、生活习惯和环境影响的复杂慢性疾病。",
+          "由于肥胖与2型糖尿病、心脏病等多种严重疾病相关，提前干预有助于改善长期健康。"
+        ]
+      },
+      {
+        "id": "why",
+        "heading": "肥胖为何发生？",
+        "paragraphs": [
+          "饮食和运动只是部分因素。生物因素、睡眠、压力、药物及社会环境都会影响体重调节。"
+        ]
+      },
+      {
+        "id": "risks",
+        "heading": "肥胖带来的健康风险",
+        "items": [
+          "更高风险的2型糖尿病",
+          "高血压与心脏疾病",
+          "睡眠呼吸暂停、关节疼痛、某些癌症",
+          "对心理健康和自尊的影响"
+        ]
+      },
+      {
+        "id": "management",
+        "heading": "现实可行的体重管理方式",
+        "paragraphs": [
+          "可持续的体重管理并不依赖极端节食，而是建立长期可坚持的生活方式。"
+        ],
+        "items": [
+          "健康、均衡、可长期坚持的饮食计划",
+          "适量且规律的身体活动",
+          "改善睡眠质量与压力管理",
+          "在必要时选择药物治疗或手术"
+        ]
+      },
+      {
+        "id": "support",
+        "heading": "长期支持的重要性",
+        "paragraphs": [
+          "肥胖是一种慢性疾病，因此长期支持可以帮助维持进展。",
+          "目标不是完美，而是持续的小幅度改善。"
+        ]
+      }
+    ]
+  },
+
+  "diabetes-kidney-disease-6": {
+    "slug": "diabetes-kidney-disease-6",
+    "title": "糖尿病会增加肾脏疾病风险吗？",
+    "date": "2023年12月4日",
+    "category": "糖尿病与肾脏",
+    "readTime": "5–7分钟阅读",
+    "heroCaption": "糖尿病是导致慢性肾脏病的主要风险因素之一。及早了解这种联系至关重要。",
+
+    "sections": [
+      {
+        "id": "intro",
+        "paragraphs": [
+          "糖尿病是导致慢性肾脏病（CKD）的最主要原因之一。长期高血糖与高血压会损害肾脏微血管，使其逐渐失去过滤功能。",
+          "肾脏损伤通常在早期没有明显症状，因此早期筛查至关重要。"
+        ]
+      },
+      {
+        "id": "how",
+        "heading": "糖尿病如何影响肾脏？",
+        "paragraphs": [
+          "高血糖会损害肾小球（肾脏的过滤单位），导致蛋白质（如白蛋白）漏入尿液。",
+          "高血压与炎症会进一步加重肾脏损伤。"
+        ]
+      },
+      {
+        "id": "warning",
+        "heading": "警示信号",
+        "items": [
+          "腿部或眼周浮肿",
+          "泡沫尿",
+          "难以控制的高血压",
+          "疲劳、食欲下降、注意力不集中"
+        ]
+      },
+      {
+        "id": "screening",
+        "heading": "筛查为何重要？",
+        "paragraphs": [
+          "尿液（白蛋白）与血液（肌酐、eGFR）检测可以在症状出现前识别早期肾脏损伤。"
+        ]
+      },
+      {
+        "id": "protection",
+        "heading": "如何保护肾脏？",
+        "items": [
+          "严格控制血糖",
+          "保持血压稳定（使用ACEI或ARB类药物）",
+          "健康生活方式：饮食、运动、戒烟、规律作息"
+        ]
+      },
+      {
+        "id": "message",
+        "heading": "希望的信息",
+        "paragraphs": [
+          "糖尿病确实会提高肾脏疾病风险——但风险并非不可避免。",
+          "通过定期筛查、管理风险因素并与医疗团队合作，可以显著延缓肾功能下降。"
+        ]
+      }
+    ]
+  }
+},
+
+  "productsCommon": {
+    "introduction": "该成品按严格的GMP条件生产。我们为合作伙伴提供监管与质量支持。",
+    "indications": "适应症将根据已批准的标签和目标市场进行对齐。",
+    "maintenance": "储存与维护说明将遵循官方说明书和稳定性数据。",
+    "importantInfo": [
+      { "q": "我应该如何使用本产品？", "a": "按推荐剂量与水服用，最好每天同一时间服用，或遵医嘱。" },
+      { "q": "可在怀孕或哺乳期使用吗？", "a": "仅在医疗监督下使用，且当益处明显大于风险时。" },
+      { "q": "如果忘记服药怎么办？", "a": "尽快补服，除非接近下次用药时间。不要双倍服用。" },
+      { "q": "如果误服过量怎么办？", "a": "立即寻求医疗建议或联系当地毒物中心。" }
+    ],
+    "precautions": [
+      { "q": "谁不应使用本产品？", "a": "对任何成分有已知过敏史的患者不应使用本产品。" },
+      { "q": "谁应谨慎使用？", "a": "慢性病患者或服用多种药物的患者应在使用前咨询医生。" },
+      { "q": "可能的不良反应", "a": "可能出现轻度胃肠不适、头痛或头晕。如症状持续，请停用并就医。" }
+    ],
+    "pharmacies": [
+  "Ivexia 健康商店 – 德里",
+  "Ivexia 药品中心 – 孟买",
+  "Ivexia 全球药房 – 伦敦",
+  "Ivexia 药品中心 – 西班牙",
+  "Ivexia 健康店 – 法国",
+  "Ivexia 护理药房 – 北马其顿"
+]
+
+  },
+  "productTabs": {
+    "introduction": "简介",
+    "indications": "适应症",
+    "maintenance": "储存与维护"
+  },
+  "finalProductDetail": {
+    "dosageForm": "剂型",
+    "requestQuote": "索取报价",
+    "importantInformation": "重要信息",
+    "precautionsHeading": "注意事项与不良反应",
+    "pharmaciesTitle": "药房列表",
+    "onlineShopping": "在线购物"
   }
 }
+
+
+
+
+
+
+
+

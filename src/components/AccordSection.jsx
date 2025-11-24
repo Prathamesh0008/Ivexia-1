@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Globe from "react-globe.gl";
+import { useTranslation } from "react-i18next";
 
 export default function AccordSection() {
+  const { t } = useTranslation("common");
   const globeRef = useRef();
   const [countries, setCountries] = useState([]);
 
@@ -28,13 +30,18 @@ export default function AccordSection() {
   useEffect(() => {
     fetch(GEOJSON_URL)
       .then(res => res.json())
-      .then(setCountries);
+      .then(setCountries)
+      .catch((err) => {
+        console.warn("Failed to load GEOJSON:", err);
+      });
 
     if (!globeRef.current) return;
     const controls = globeRef.current.controls();
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.4;
-    controls.enableZoom = false;
+    if (controls) {
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.4;
+      controls.enableZoom = false;
+    }
   }, []);
 
   // 3D pin
@@ -53,26 +60,35 @@ export default function AccordSection() {
         {/* === Left Text === */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-[#222] leading-snug mb-5">
-            An Accord for a <br />
+            {t("accord.title_line1")}
+            <br />
             <span className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] bg-clip-text text-transparent">
-              Healthier World
+              {t("accord.title_highlight")}
             </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-lg mx-auto md:mx-0">
-            Ivexia’s Accord for a Healthier World connects continents through
-            science, innovation, and compassion — with an expanding footprint
-            across Europe and Asia.
+            {t("accord.paragraph")}
           </p>
-          <button className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
-            Learn More About Our Accord
-          </button>
+          <a
+            href="/about"
+            onClick={(e) => {
+              if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                window.open("/about", "_blank", "noopener,noreferrer");
+                return;
+              }
+            }}
+            className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
+          >
+            {t("accord.cta")}
+          </a>
         </div>
 
         {/* === Right Globe === */}
         <div className="w-full md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
           <div className="relative w-full flex justify-center">
-            {/* Responsive globe wrapper */}
             <div className="aspect-square mx-auto w-[95vw] sm:w-[80vw] md:w-[600px] lg:w-[750px] xl:w-[900px] flex justify-center">
+              {/* Enable the Globe by uncommenting below if react-globe.gl & three are installed */}
               {/* <Globe
                 ref={globeRef}
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
@@ -81,7 +97,7 @@ export default function AccordSection() {
                 polygonsData={countries.features}
                 polygonCapColor={(d) =>
                   highlightList.includes(d.properties.name)
-                    ? "rgba(226,0,79,0.5)" // filled color
+                    ? "rgba(226,0,79,0.5)"
                     : "rgba(255,255,255,0.05)"
                 }
                 polygonSideColor={() => "rgba(255,255,255,0.1)"}
