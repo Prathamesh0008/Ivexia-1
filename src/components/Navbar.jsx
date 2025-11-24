@@ -325,6 +325,7 @@ export default function Navbar() {
           <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.contact")}
           </li>
+          
         </ul>
       )}
     </nav>
