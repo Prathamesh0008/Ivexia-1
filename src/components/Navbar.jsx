@@ -107,7 +107,7 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP MENU */}
-        <ul className="italic hidden lg:flex gap-8 font-bold text-gray-800 items-center">
+        <ul className=" hidden lg:flex gap-8 font-bold text-gray-800 items-center">
 
           <li
             onClick={() => goTo("/")}

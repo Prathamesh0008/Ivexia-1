@@ -9,6 +9,7 @@ import LeadershipSection from "../components/LeadershipSection";
 import ResearchManufacturingSection from "../components/ResearchManufacturingSection";
 import LatestFromIvexia from "../components/LatestFromIvexia";
 
+
 export default function Home() {
   const { t } = useTranslation("common");
 
@@ -18,7 +19,7 @@ export default function Home() {
       <Hero />
       <IvexiaNumbers />
       <AboutVideo />
-      <TherapyGroups />
+       <TherapyGroups />
       <AccordSection />
       <LeadershipSection />
       <ResearchManufacturingSection />
