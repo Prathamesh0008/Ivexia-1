@@ -1,3 +1,4 @@
+//src\components\IngredientFilters.jsx
 import { useTranslation } from "react-i18next";
 
 export default function IngredientFilters({
@@ -22,12 +23,30 @@ export default function IngredientFilters({
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full md:w-1/2">
-          <select value={category} onChange={(e)=>setCategory(e.target.value)} className="rounded-lg border border-gray-200 px-3 py-2 focus:ring-2 focus:ring-[#19a6b5]">
-            {categories.map(c=><option key={c}>{c}</option>)}
+                    <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="rounded-lg border border-gray-200 px-3 py-2 focus:ring-2 focus:ring-[#19a6b5]"
+          >
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c === "All" ? "All" : t(c)}
+              </option>
+            ))}
           </select>
-          <select value={dosage} onChange={(e)=>setDosage(e.target.value)} className="rounded-lg border border-gray-200 px-3 py-2 focus:ring-2 focus:ring-[#19a6b5]">
-            {dosages.map(d=><option key={d}>{d}</option>)}
+
+                    <select
+            value={dosage}
+            onChange={(e) => setDosage(e.target.value)}
+            className="rounded-lg border border-gray-200 px-3 py-2 focus:ring-2 focus:ring-[#19a6b5]"
+          >
+            {dosages.map((d) => (
+              <option key={d} value={d}>
+                {d === "All" ? "All" : t(d)}
+              </option>
+            ))}
           </select>
+
           <select value={sortBy} onChange={(e)=>setSortBy(e.target.value)} className="rounded-lg border border-gray-200 px-3 py-2 focus:ring-2 focus:ring-[#19a6b5]">
             <option value="name-asc">{t("ingredientFilters.sortOptions.nameAsc")}</option>
             <option value="name-desc">{t("ingredientFilters.sortOptions.nameDesc")}</option>

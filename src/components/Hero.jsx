@@ -4,18 +4,24 @@ import { useTranslation } from "react-i18next";
 
 export default function Hero() {
   const { t } = useTranslation("common");
+
+  // Refs to measure navbar height dynamically
+  const heroRef = useRef(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
   useEffect(() => {
-  console.log(
-    "hero keys:",
-    t("home.hero_1_title"),
-    t("home.hero_2_title"),
-    t("home.hero_3_title"),
-    t("home.cta_explore")
-  );
-}, [t]);
+    const nav = document.querySelector("nav");
+    if (nav) setNavbarHeight(nav.offsetHeight);
 
+    const resizeHandler = () => {
+      if (nav) setNavbarHeight(nav.offsetHeight);
+    };
+    window.addEventListener("resize", resizeHandler);
 
-  // static banner metadata (no hard-coded text)
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
+
+  // Banner metadata
   const bannersMeta = [
     {
       id: 1,
@@ -37,7 +43,6 @@ export default function Hero() {
     },
   ];
 
-  // build localized banners — uses t() so it updates on language change
   const banners = bannersMeta.map((b) => ({
     ...b,
     title: t(`${b.keyPrefix}_title`),
@@ -49,7 +54,6 @@ export default function Hero() {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Auto slide every 4s
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {
@@ -58,7 +62,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [isHovered, banners.length]);
 
-  // Swipe gestures (mobile)
   const handleTouchStart = (e) => (touchStartX.current = e.touches[0].clientX);
   const handleTouchMove = (e) => (touchEndX.current = e.touches[0].clientX);
   const handleTouchEnd = () => {
@@ -70,7 +73,9 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-[70vh] md:h-[55vh] overflow-hidden  "
+      ref={heroRef}
+      className="relative w-full h-[90vh] md:h-[75vh] overflow-hidden"
+      style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -85,7 +90,6 @@ export default function Hero() {
             index === currentIndex ? "opacity-100 z-20" : "opacity-0 z-10"
           }`}
         >
-          {/* Background Image + Overlay */}
           <div
             className="w-full h-full bg-cover bg-center relative"
             style={{ backgroundImage: `url(${slide.image})` }}
@@ -100,13 +104,6 @@ export default function Hero() {
               </p>
               <Link
                 to="/contact"
-                onClick={(e) => {
-                  if (e.ctrlKey || e.metaKey) {
-                    e.preventDefault();
-                    window.open("/contact", "_blank", "noopener,noreferrer");
-                    return;
-                  }
-                }}
                 className="bg-white text-[#E2004F] px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
               >
                 {t("home.cta_explore")}

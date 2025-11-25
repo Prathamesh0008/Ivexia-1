@@ -7,8 +7,13 @@
   "mag": "イヴェクシアマガジン",
   "mag_news": "ニュース",
   "mag_health": "健康マガジン",
-  "contact": "お問い合わせ"
+  "contact": "お問い合わせ",
+
+  "offerings": "提供サービス",
+  "overview": "概要",
+  "otc": "一般用医薬品（OTC）"
 }
+
 ,
   "search": {
     "placeholder": "製品・記事・ニュースを検索..."
@@ -263,11 +268,13 @@
     "results": "{{total}} 件の結果",
     "results_plural": "{{total}} 件の結果"
   },
-  "ingredientGrid": {
-    "noResults": "結果がありません。別のフィルターを試してください。",
-    "prev": "‹ 前へ",
-    "next": "次へ ›"
-  },
+ "ingredientGrid": {
+  "name": "名称",
+  "category": "カテゴリ",
+  "dosageForms": "剤形",
+  "noResults": "結果がありません。別のフィルターを試してください。"
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "同義語",
@@ -293,18 +300,23 @@
   "customerStrip": {
     "title": "私たちの顧客"
   },
+  
   "productDetail": {
     "notFoundTitle": "製品が見つかりません",
     "notFoundText": "この API はポートフォリオに見つかりませんでした。",
     "backToApis": "← 有効成分（API）一覧に戻る",
+
     "cas": "CAS",
     "synonyms": "別名",
     "dosageForms": "剤形",
+
     "descriptionLine1": "この有効成分 API は、完全なバッチ追跡が可能な管理された GMP 条件下で製造されています。",
     "descriptionLine2": "{{category}} の治療分野における製剤開発および商業供給に適しています。",
+
     "requestQuote": "見積もりを依頼する",
     "modalTitle": "見積もり依頼",
     "modalSubtitle": "製品",
+
     "modalInfo": "詳細を入力すると、担当者がご連絡いたします。",
     "fullName": "氏名",
     "company": "会社名",
@@ -314,10 +326,13 @@
     "messagePlaceholder": "要件を簡単にご記入ください...",
     "cancel": "キャンセル",
     "submit": "送信",
+
     "suggestedExplore": "さらに見る",
     "suggestedTitle": "おすすめ製品",
     "suggestedSubtitle": "現在の選択に関連するその他の API。"
   },
+
+
   "ingredients": {
     "categories": {
       "cardiology": "心臓病学",
@@ -1070,22 +1085,123 @@
       { "q": "注意して使用すべき人は？", "a": "慢性疾患のある患者や多剤併用の患者は、使用前に医師に相談してください。" },
       { "q": "考えられる副作用", "a": "軽度の消化器症状、頭痛、めまいが生じることがあります。症状が続く場合は医師に相談してください。" }
     ],
-    "pharmacies": ["提携薬局1", "提携薬局2", "病院薬局", "オンラインパートナー"]
+    "pharmacies": [
+  "Ivexia ヘルスストア – デリー",
+  "Ivexia ファーマポイント – ムンバイ",
+  "Ivexia グローバル薬局 – ロンドン",
+  "Ivexia 医薬品ハブ – スペイン",
+  "Ivexia ウェルネスショップ – フランス",
+  "Ivexia ケア薬局 – 北マケドニア"
+]
+
   },
   "productTabs": {
     "introduction": "導入",
     "indications": "適応",
     "maintenance": "保管・管理"
   },
-  "productDetail": {
+  "finalProductDetail": {
     "dosageForm": "製剤形態",
     "requestQuote": "見積もりを依頼する",
     "importantInformation": "重要な情報",
     "precautionsHeading": "注意事項と副作用",
     "pharmaciesTitle": "薬局一覧",
     "onlineShopping": "オンラインショッピング"
+  },
+  
+  "offerings": {
+    "heroTitle": "私たちの提供内容",
+    "intro": "Ivexia が提供する医薬ソリューション — API から製剤、OTC 医薬品、科学コンテンツまで、すべてが高品質と国際基準に基づいて開発されています。",
+
+    "apiTitle": "有効医薬成分（API）",
+    "apiDesc": "厳格な GMP 基準のもとで製造された高品質 API。",
+    "apiBtn": "API を見る",
+
+    "productsTitle": "医薬品製剤",
+    "productsDesc": "錠剤、カプセル、注射剤、経口液など幅広い製品ライン。",
+    "productsBtn": "製品一覧",
+
+    "otcTitle": "OTC 医薬品",
+    "otcDesc": "日常の健康維持に役立つ安全で使いやすい OTC 医薬品。",
+    "otcBtn": "OTC を見る",
+
+    "magTitle": "Ivexia マガジン",
+    "magDesc": "医療、科学、製薬業界のニュースと洞察。",
+    "magBtn": "記事を読む",
+
+    "companyTitle": "Ivexia について",
+    "companyDesc": "精密さ・純度・革新性を追求するグローバル製薬企業。",
+    "companyBtn": "詳細を見る"
+  },
+
+  "otcPage": {
+    "title": "OTC 医薬品",
+    "subtitle": "日常の健康を支える信頼できる OTC ソリューション。",
+
+    "desc1": "Ivexia の OTC 製品は、高い精度で国際的な医療基準に基づいて開発されています。",
+    "desc2": "鎮痛から消化ケアまで、毎日の健康をサポートします。",
+
+    "features": {
+      "science": "科学に基づく設計",
+      "scienceDesc": "先進的な製薬技術で開発。",
+      "quality": "品質と安全性",
+      "qualityDesc": "WHO-GMP 認証工場で製造。",
+      "wellness": "総合ウェルネス",
+      "wellnessDesc": "消化・免疫・水分補給・活力をサポート。"
+    },
+
+    "categoriesTitle": "OTC カテゴリー",
+
+    "categories": {
+      "pain": "鎮痛",
+      "painDesc": "素早く痛みを和らげる処方",
+
+      "allergy": "アレルギーケア",
+      "allergyDesc": "アレルギー症状を抑える高品質抗ヒスタミン薬",
+
+      "digestive": "消化ケア",
+      "digestiveDesc": "胃酸・ガス・消化不良などを改善する OTC 製品",
+
+      "cold": "咳・風邪",
+      "coldDesc": "風邪・インフルエンザ・呼吸器不快症状に効果的な薬"
+    },
+
+    "sidebarTitle": "このセクション",
+
+    "sidebar": {
+      "products": "医薬品製剤",
+      "overview": "概要",
+      "api": "有効医薬成分",
+      "otc": "OTC 医薬品"
+    }
+  },
+  "productsPage": {
+  "title": "製品検索",
+  "subtitle": "医薬品製剤を検索・フィルタリングする",
+  "pdfTitle": "Ivexia 医薬品製品リスト",
+  "pdfButton": "ダウンロード",
+  "searchPlaceholder": "製品名 / カテゴリ / CAS ID で検索",
+  "filterCategory": "カテゴリ",
+  "filterForm": "剤形",
+  "filterDosage": "強度 / 用量",
+  "filterSearch": "検索",
+  "filterClear": "クリア",
+  "noResults": "一致する製品が見つかりません。",
+  "table": {
+    "name": "名称",
+    "form": "剤形",
+    "category": "カテゴリ",
+    "dosage": "強度 / 用量",
+    "packSize": "包装サイズ",
+    "formulationType": "製剤タイプ",
+    "casId": "CAS ID",
+    "pharmSpec": "医薬規格"
   }
 }
+
+}
+
+
 
 
 

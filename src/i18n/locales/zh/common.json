@@ -7,8 +7,13 @@
   "mag": "Ivexia 杂志",
   "mag_news": "新闻",
   "mag_health": "健康杂志",
-  "contact": "联系我们"
+  "contact": "联系我们",
+
+  "offerings": "我们的产品与服务",
+  "overview": "概览",
+  "otc": "非处方药 (OTC)"
 }
+
 ,
 
   "search": {
@@ -244,12 +249,13 @@
     "results": "{{total}} 结果",
     "results_plural": "{{total}} 结果"
   },
-
-  "ingredientGrid": {
-    "noResults": "没有结果。请尝试其他筛选条件。",
-    "prev": "‹ 上一页",
-    "next": "下一页 ›"
-  },
+"ingredientGrid": {
+  "name": "名称",
+  "category": "类别",
+  "dosageForms": "剂型",
+  "noResults": "没有找到结果。请尝试使用其他筛选条件。"
+}
+,
 
   "ingredientCard": {
     "cas": "CAS",
@@ -279,18 +285,23 @@
     "title": "我们的客户"
   },
 
+  
   "productDetail": {
     "notFoundTitle": "未找到产品",
     "notFoundText": "我们在产品目录中找不到此 API。",
     "backToApis": "← 返回活性药物成分（API）",
+
     "cas": "CAS",
     "synonyms": "别名",
     "dosageForms": "剂型",
+
     "descriptionLine1": "该 API 在受控的 GMP 条件下生产，并具有完整的批次追溯能力。",
     "descriptionLine2": "适用于 {{category}} 相关治疗领域的制剂开发与商业供应。",
+
     "requestQuote": "请求报价",
     "modalTitle": "请求报价",
     "modalSubtitle": "产品",
+
     "modalInfo": "请填写信息，我们的团队会与您联系。",
     "fullName": "姓名",
     "company": "公司",
@@ -300,10 +311,13 @@
     "messagePlaceholder": "请简要描述您的需求...",
     "cancel": "取消",
     "submit": "提交请求",
+
     "suggestedExplore": "查看更多",
     "suggestedTitle": "推荐产品",
     "suggestedSubtitle": "其他与当前选择相关的 API。"
   },
+
+
 
   "ingredients": {
     "categories": {
@@ -1040,22 +1054,123 @@
       { "q": "谁应谨慎使用？", "a": "慢性病患者或服用多种药物的患者应在使用前咨询医生。" },
       { "q": "可能的不良反应", "a": "可能出现轻度胃肠不适、头痛或头晕。如症状持续，请停用并就医。" }
     ],
-    "pharmacies": ["合作药房1", "合作药房2", "医院药房", "在线合作伙伴"]
+    "pharmacies": [
+  "Ivexia 健康商店 – 德里",
+  "Ivexia 药品中心 – 孟买",
+  "Ivexia 全球药房 – 伦敦",
+  "Ivexia 药品中心 – 西班牙",
+  "Ivexia 健康店 – 法国",
+  "Ivexia 护理药房 – 北马其顿"
+]
+
   },
   "productTabs": {
     "introduction": "简介",
     "indications": "适应症",
     "maintenance": "储存与维护"
   },
-  "productDetail": {
+  "finalProductDetail": {
     "dosageForm": "剂型",
     "requestQuote": "索取报价",
     "importantInformation": "重要信息",
     "precautionsHeading": "注意事项与不良反应",
     "pharmaciesTitle": "药房列表",
     "onlineShopping": "在线购物"
+  },
+  
+  "offerings": {
+    "heroTitle": "我们的产品",
+    "intro": "了解 Ivexia 全系列医药解决方案——从原料药（API）到成品制剂、OTC 药物以及科学内容，一切均遵循严格的质量与国际标准。",
+
+    "apiTitle": "活性药物成分（API）",
+    "apiDesc": "符合 GMP 标准生产的高质量 API。",
+    "apiBtn": "查看 API",
+
+    "productsTitle": "药品制剂",
+    "productsDesc": "包括片剂、胶囊、注射剂和口服液在内的广泛产品组合。",
+    "productsBtn": "查看所有产品",
+
+    "otcTitle": "非处方药（OTC）",
+    "otcDesc": "安全、易获得的 OTC 产品，用于日常健康管理。",
+    "otcBtn": "查看 OTC",
+
+    "magTitle": "Ivexia 杂志",
+    "magDesc": "科学、健康与制药行业的最新资讯与深度内容。",
+    "magBtn": "阅读文章",
+
+    "companyTitle": "关于 Ivexia",
+    "companyDesc": "一家致力于精准、纯净与创新的全球制药公司。",
+    "companyBtn": "了解更多"
+  },
+
+  "otcPage": {
+    "title": "非处方药（OTC）",
+    "subtitle": "值得信赖的 OTC 产品，为日常健康保驾护航。",
+
+    "desc1": "Ivexia 的 OTC 产品遵循严格的研发标准，与国际健康法规保持一致。",
+    "desc2": "从止痛到消化支持，我们的产品帮助提升日常健康。",
+
+    "features": {
+      "science": "科学驱动",
+      "scienceDesc": "采用先进的制药技术开发。",
+      "quality": "质量与安全",
+      "qualityDesc": "在 WHO-GMP 认证的工厂生产。",
+      "wellness": "全面健康支持",
+      "wellnessDesc": "支持消化、免疫、补水与活力提升。"
+    },
+
+    "categoriesTitle": "OTC 分类",
+
+    "categories": {
+      "pain": "止痛",
+      "painDesc": "快速缓解疼痛的高效配方",
+
+      "allergy": "抗过敏",
+      "allergyDesc": "高质量抗组胺药，用于缓解过敏症状",
+
+      "digestive": "消化健康",
+      "digestiveDesc": "缓解胃酸、胀气及消化不良的 OTC 产品",
+
+      "cold": "感冒咳嗽",
+      "coldDesc": "有效缓解感冒、流感和呼吸道不适的药物"
+    },
+
+    "sidebarTitle": "本栏目",
+
+    "sidebar": {
+      "products": "药品制剂",
+      "overview": "概览",
+      "api": "活性药物成分",
+      "otc": "非处方药"
+    }
+  },
+  "productsPage": {
+  "title": "产品搜索器",
+  "subtitle": "搜索并筛选我们的药物制剂",
+  "pdfTitle": "Ivexia 药品产品列表",
+  "pdfButton": "下载",
+      "searchPlaceholder": "按产品名称 / 类别 / CAS 号搜索",
+  "filterCategory": "类别",
+  "filterForm": "剂型",
+  "filterDosage": "强度 / 剂量",
+  "filterSearch": "搜索",
+  "filterClear": "清除",
+  "noResults": "未找到匹配的产品。",
+  "table": {
+    "name": "名称",
+    "form": "剂型",
+    "category": "类别",
+    "dosage": "强度 / 剂量",
+    "packSize": "包装规格",
+    "formulationType": "制剂类型",
+    "casId": "CAS 号",
+    "pharmSpec": "药典标准"
   }
 }
+
+}
+
+
 
 
 

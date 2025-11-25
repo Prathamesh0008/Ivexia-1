@@ -1,33 +1,81 @@
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import Globe from "react-globe.gl";
 import { useTranslation } from "react-i18next";
-import globe from '../assets/globe/globe.png'
 
 export default function AccordSection() {
   const { t } = useTranslation("common");
+  const globeRef = useRef();
+  const [countries, setCountries] = useState([]);
+
+  const GEOJSON_URL =
+    "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
+
+  // Countries to highlight
+  const highlightList = [
+    "France","Spain","Germany","Italy","United Kingdom",
+    "Portugal","Greece","Poland","Netherlands","Sweden",
+    "Finland","Norway","Austria","Switzerland","Czech Republic",
+    "Belgium","Denmark","Ireland","Hungary","Croatia","North Macedonia","India"
+  ];
+
+  const pins = [
+    { lat: 19.07, lng: 72.87, size: 2, color: "red", name: "India" },
+    { lat: 41.99, lng: 21.43, size: 1.6, color: "red", name: "North Macedonia" },
+    { lat: 40.41, lng: -3.70, size: 1.6, color: "#FF7A00", name: "Spain" },
+    { lat: 48.85, lng: 2.35, size: 1.6, color: "#19a6b5", name: "France" },
+    { lat: 51.51, lng: -0.13, size: 1.6, color: "#19a6b5", name: "United Kingdom" }
+  ];
+
+  useEffect(() => {
+    fetch(GEOJSON_URL)
+      .then(res => res.json())
+      .then(setCountries)
+      .catch((err) => {
+        console.warn("Failed to load GEOJSON:", err);
+      });
+
+    if (!globeRef.current) return;
+    const controls = globeRef.current.controls();
+    if (controls) {
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.4;
+      controls.enableZoom = false;
+    }
+  }, []);
+
+  // 3D pin
+  const pinGeometry = new THREE.ConeGeometry(0.4, 1.2, 6);
+  const createPinObject = (d) => {
+    const material = new THREE.MeshLambertMaterial({ color: d.color || "red" });
+    const mesh = new THREE.Mesh(pinGeometry, material);
+    mesh.scale.setScalar(d.size);
+    mesh.lookAt(new THREE.Vector3(0, 0, 0));
+    return mesh;
+  };
 
   return (
-    <section className="bg-[#0d2d47] h-180 py-20 md:py-24 px-6 md:px-16">
+    <section className="bg-white py-20 md:py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
-
-        {/* LEFT */}
+        {/* === Left Text === */}
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#eee7e7] leading-snug mb-5">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#222] leading-snug mb-5">
             {t("accord.title_line1")}
             <br />
             <span className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] bg-clip-text text-transparent">
               {t("accord.title_highlight")}
             </span>
           </h2>
-
-          <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-6 max-w-lg mx-auto md:mx-0">
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-lg mx-auto md:mx-0">
             {t("accord.paragraph")}
           </p>
-
           <a
             href="/about"
             onClick={(e) => {
               if (e.ctrlKey || e.metaKey) {
                 e.preventDefault();
                 window.open("/about", "_blank", "noopener,noreferrer");
+                return;
               }
             }}
             className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
@@ -36,21 +84,40 @@ export default function AccordSection() {
           </a>
         </div>
 
-        {/* RIGHT - GLOBE */}
+        {/* === Right Globe === */}
         <div className="w-full md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
           <div className="relative w-full flex justify-center">
-            <div className="mx-auto w-[20vw] sm:w-[30vw] md:w-[500px] lg:w-[600px] xl:w-[750px] flex justify-center">
-
-              <img
-                src={globe}
-                alt="globe"
-                className="w-full h-full object-contain max-w-[600px] drop-shadow-2xl"
-              />
-
+            <div className="aspect-square mx-auto w-[95vw] sm:w-[80vw] md:w-[600px] lg:w-[750px] xl:w-[900px] flex justify-center">
+              {/* Enable the Globe by uncommenting below if react-globe.gl & three are installed */}
+              {/* <Globe
+                ref={globeRef}
+                globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                backgroundColor="rgba(255,255,255,0)"
+                polygonsData={countries.features}
+                polygonCapColor={(d) =>
+                  highlightList.includes(d.properties.name)
+                    ? "rgba(226,0,79,0.5)"
+                    : "rgba(255,255,255,0.05)"
+                }
+                polygonSideColor={() => "rgba(255,255,255,0.1)"}
+                polygonStrokeColor={(d) =>
+                  highlightList.includes(d.properties.name) ? "#E2004F" : "#aaaaaa"
+                }
+                polygonLabel={(d) => d.properties.name}
+                objectsData={pins}
+                objectLat="lat"
+                objectLng="lng"
+                objectAltitude={() => 0.1}
+                objectThreeObject={createPinObject}
+                atmosphereColor="#19a6b5"
+                atmosphereAltitude={0.25}
+                width={900}
+                height={900}
+              /> */}
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

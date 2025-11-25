@@ -7,7 +7,7 @@ import INGREDIENTS from "../../data/ingredients";
 import capsuleImg from "../../assets/logo/capsuleimage.jpg";
 
 export default function ProductDetail() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   const { slug } = useParams();
 
   const product = INGREDIENTS.find((p) => p.slug === slug);
@@ -216,7 +216,7 @@ export default function ProductDetail() {
                     <img
                       src={p.image || capsuleImg}
                       alt={t(p.nameKey)}
-                      className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                      className="w-32 h-32 md:w-40 md:h-40 object-contain"
                     />
                   </div>
 

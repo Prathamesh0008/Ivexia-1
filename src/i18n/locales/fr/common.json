@@ -1,5 +1,5 @@
 {
-  "nav": {
+ "nav": {
   "home": "Accueil",
   "api": "Ingrédients Pharmaceutiques Actifs",
   "products": "Produits Pharmaceutiques",
@@ -7,8 +7,13 @@
   "mag": "Magazine Ivexia",
   "mag_news": "Actualités",
   "mag_health": "Magazine Santé",
-  "contact": "Contactez-nous"
+  "contact": "Contactez-nous",
+
+  "offerings": "Nos Offres",
+  "overview": "Aperçu",
+  "otc": "Médicaments en Vente Libre"
 }
+
 ,
   "search": {
     "placeholder": "Rechercher des produits, articles, actualités..."
@@ -75,71 +80,31 @@
     "paragraph": "L'Accord d'Ivexia pour un monde en meilleure santé relie les continents grâce à la science, l'innovation et la compassion — avec une empreinte croissante en Europe et en Asie.",
     "cta": "En savoir plus sur notre Accord"
   },
+  
   "leadership": {
-  "heading": "Leadership et Vision",
-  "subheading": "«Chez Ivexia, nous ne faisons pas que fabriquer des médicaments — nous créons la confiance. Nos collaborateurs sont notre fondation, notre science est notre force, et notre vision est notre promesse.»",
-
-  "ceo": {
-    "name": "Dr. Avinaash Badal",
-    "title": "Directeur Général"
+    "heading": "Leadership et Vision",
+    "subheading": "Chez Ivexia, nous ne faisons pas que fabriquer des médicaments — nous créons la confiance. Nos collaborateurs sont notre fondation, notre science est notre force, et notre vision est notre promesse.",
+    "ceo": {
+      "name": "Dr. Avinaash Badal",
+      "title": "Directeur Général"
+    },
+    "team_heading": "Notre équipe de direction",
+    "team_sub": "La force motrice derrière l'innovation, l'intégrité et l'impact d'Ivexia.",
+    "team": [
+      { "name": "Shoaib Khan", "role": "Directeur — Stratégie", "quote": "Nous dirigeons avec innovation et intégrité." },
+      { "name": "Mohamed Kader", "role": "Directeur — Opérations", "quote": "Notre vision est de façonner les soins de santé mondiaux." },
+      { "name": "Amélie Laurent", "role": "Responsable — Assurance Qualité", "quote": "La qualité définit la confiance chez Ivexia." },
+      { "name": "Jean Dupont", "role": "Responsable — Production", "quote": "Efficacité et précision au quotidien." },
+      { "name": "Claire Moreau", "role": "RH & Développement des personnes", "quote": "Nous grandissons ensemble avec un but." },
+      { "name": "Dr. Élodie Martin", "role": "Scientifique R&D", "quote": "L'innovation est dans notre ADN." },
+      { "name": "Yanis Boulard", "role": "Affaires réglementaires", "quote": "La conformité inspire confiance." },
+      { "name": "Thomas Bernard", "role": "Finance & Stratégie", "quote": "Croissance durable par une finance intelligente." },
+      { "name": "Lucie Girard", "role": "Responsable Marketing", "quote": "Chaque produit raconte une histoire." },
+      { "name": "Nicolas Caron", "role": "Responsable Systèmes Digitaux", "quote": "La technologie favorise la transparence." }
+    ]
   },
 
-  "teamHeading": "Notre équipe de direction",
-  "teamSubheading": "La force motrice derrière l'innovation, l'intégrité et l'impact d'Ivexia.",
 
-  "team": {
-    "0": {
-      "name": "Shoaib Khan",
-      "role": "Directeur – Stratégie",
-      "quote": "Nous dirigeons avec innovation et intégrité."
-    },
-    "1": {
-      "name": "Mohamed Kader",
-      "role": "Directeur – Opérations",
-      "quote": "Notre vision est de façonner les soins de santé mondiaux."
-    },
-    "2": {
-      "name": "Amélie Laurent",
-      "role": "Responsable – Assurance Qualité",
-      "quote": "La qualité définit la confiance chez Ivexia."
-    },
-    "3": {
-      "name": "Jean Dupont",
-      "role": "Responsable – Production",
-      "quote": "Efficacité et précision au quotidien."
-    },
-    "4": {
-      "name": "Claire Moreau",
-      "role": "RH & Développement des personnes",
-      "quote": "Nous grandissons ensemble avec un but."
-    },
-    "5": {
-      "name": "Dr. Élodie Martin",
-      "role": "Scientifique R&D",
-      "quote": "L'innovation est dans notre ADN."
-    },
-    "6": {
-      "name": "Yanis Boulard",
-      "role": "Affaires réglementaires",
-      "quote": "La conformité inspire confiance."
-    },
-    "7": {
-      "name": "Thomas Bernard",
-      "role": "Finance & Stratégie",
-      "quote": "Croissance durable par une finance intelligente."
-    },
-    "8": {
-      "name": "Lucie Girard",
-      "role": "Responsable Marketing",
-      "quote": "Chaque produit raconte une histoire."
-    },
-    "9": {
-      "name": "Nicolas Caron",
-      "role": "Responsable Systèmes Digitaux",
-      "quote": "La technologie favorise la transparence."
-    }
-  }
-},
   "researchManufacturing": {
     "tabs": {
       "research": "Recherche & Innovation",
@@ -274,10 +239,12 @@
     "results_plural": "{{total}} résultats"
   },
   "ingredientGrid": {
-    "noResults": "Aucun résultat. Essayez d'autres filtres.",
-    "prev": "‹ Précédent",
-    "next": "Suivant ›"
-  },
+  "name": "Nom",
+  "category": "Catégorie",
+  "dosageForms": "Formes posologiques",
+  "noResults": "Aucun résultat. Essayez d'autres filtres."
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "Synonymes",
@@ -303,18 +270,23 @@
   "customerStrip": {
     "title": "Nos Clients"
   },
+ 
   "productDetail": {
     "notFoundTitle": "Produit introuvable",
     "notFoundText": "Nous n'avons pas trouvé cet API dans notre portefeuille.",
     "backToApis": "← Retour aux Ingrédients Pharmaceutiques Actifs",
+
     "cas": "CAS",
     "synonyms": "Synonymes",
     "dosageForms": "Formes pharmaceutiques",
+
     "descriptionLine1": "Cet ingrédient pharmaceutique actif est fabriqué dans des conditions GMP contrôlées avec une traçabilité complète des lots.",
     "descriptionLine2": "Il est adapté au développement de formulations et à la fourniture commerciale dans les domaines thérapeutiques {{category}}.",
+
     "requestQuote": "Demander un devis",
     "modalTitle": "Demander un devis",
     "modalSubtitle": "Produit",
+
     "modalInfo": "Partagez quelques détails et notre équipe vous contactera.",
     "fullName": "Nom complet",
     "company": "Entreprise",
@@ -324,10 +296,13 @@
     "messagePlaceholder": "Décrivez brièvement votre besoin...",
     "cancel": "Annuler",
     "submit": "Envoyer la demande",
+
     "suggestedExplore": "Voir plus",
     "suggestedTitle": "Produits suggérés",
     "suggestedSubtitle": "Autres APIs liés à votre sélection actuelle."
   },
+
+
   "ingredients": {
     "categories": {
       "cardiology": "Cardiologie",
@@ -1057,19 +1032,120 @@
       { "q": "Qui doit l'utiliser avec prudence ?", "a": "Les patients atteints de maladies chroniques ou sous plusieurs médicaments doivent consulter leur médecin avant usage." },
       { "q": "Effets secondaires possibles", "a": "Des troubles gastro-intestinaux bénins, maux de tête ou vertiges peuvent survenir. Arrêtez et consultez si les symptômes persistent." }
     ],
-    "pharmacies": ["Pharmacie partenaire 1", "Pharmacie partenaire 2", "Pharmacie hospitalière", "Partenaire en ligne"]
+    "pharmacies": [
+  "Boutique Santé Ivexia – Delhi",
+  "Ivexia Pharma Point – Mumbai",
+  "Pharmacie Globale Ivexia – Londres",
+  "Centre Médicaments Ivexia – Espagne",
+  "Ivexia Boutique Bien-être – France",
+  "Pharmacie de Soin Ivexia – Macédoine du Nord"
+]
+
   },
   "productTabs": {
     "introduction": "Introduction",
     "indications": "Indications",
     "maintenance": "Entretien"
   },
-  "productDetail": {
+  "finalProductDetail": {
     "dosageForm": "Forme posologique",
     "requestQuote": "Demander un devis",
     "importantInformation": "Informations importantes",
     "precautionsHeading": "Précautions et effets indésirables",
     "pharmaciesTitle": "Liste des pharmacies",
     "onlineShopping": "Achat en ligne"
+  },
+  
+  "offerings": {
+    "heroTitle": "Nos Offres",
+    "intro": "Découvrez la gamme complète de solutions pharmaceutiques d’Ivexia — des API aux formulations finies, médicaments OTC et contenus scientifiques.",
+
+    "apiTitle": "Ingrédients Pharmaceutiques Actifs (APIs)",
+    "apiDesc": "APIs de haute qualité fabriqués sous conformité GMP.",
+    "apiBtn": "Explorer les APIs",
+
+    "productsTitle": "Produits Pharmaceutiques",
+    "productsDesc": "Large gamme de comprimés, capsules, injections et solutions orales.",
+    "productsBtn": "Voir Tous les Produits",
+
+    "otcTitle": "Médicaments OTC",
+    "otcDesc": "Formulations OTC sûres et accessibles pour le bien-être général.",
+    "otcBtn": "Explorer OTC",
+
+    "magTitle": "Magazine Ivexia",
+    "magDesc": "Actualités et analyses sur la santé, la science et l’industrie pharmaceutique.",
+    "magBtn": "Lire les Articles",
+
+    "companyTitle": "À propos d’Ivexia",
+    "companyDesc": "Entreprise pharmaceutique mondiale axée sur la précision, la pureté et le progrès.",
+    "companyBtn": "En Savoir Plus"
+  },
+
+  "otcPage": {
+    "title": "Médicaments OTC",
+    "subtitle": "Solutions OTC fiables pour un bien-être quotidien.",
+
+    "desc1": "La gamme OTC d’Ivexia est développée avec précision et conforme aux normes internationales.",
+    "desc2": "Du soulagement de la douleur au bien-être digestif, nos formulations soutiennent la santé au quotidien.",
+
+    "features": {
+      "science": "Basé sur la Science",
+      "scienceDesc": "Développé avec des technologies pharmaceutiques avancées.",
+      "quality": "Qualité et Sécurité",
+      "qualityDesc": "Fabriqué dans des installations certifiées WHO-GMP.",
+      "wellness": "Bien-Être Complet",
+      "wellnessDesc": "Soutient la digestion, l’immunité, l’hydratation et la vitalité."
+    },
+
+    "categoriesTitle": "Nos Catégories OTC",
+
+    "categories": {
+      "pain": "Soulagement de la Douleur",
+      "painDesc": "Formulations analgésiques à action rapide",
+
+      "allergy": "Allergies",
+      "allergyDesc": "Antihistaminiques efficaces pour les allergies",
+
+      "digestive": "Bien-Être Digestif",
+      "digestiveDesc": "Solutions contre l’acidité, les gaz et les troubles digestifs",
+
+      "cold": "Toux & Rhume",
+      "coldDesc": "Médicaments efficaces contre le rhume, la grippe et les symptômes respiratoires"
+    },
+
+    "sidebarTitle": "Dans cette section",
+
+    "sidebar": {
+      "products": "Produits Pharmaceutiques",
+      "overview": "Aperçu",
+      "api": "Ingrédients Pharmaceutiques Actifs",
+      "otc": "OTC"
+    }
+  },
+  "productsPage": {
+  "title": "Recherche de Produits",
+  "subtitle": "Recherchez et filtrez nos formulations pharmaceutiques",
+  "pdfTitle": "Liste des Produits Pharmaceutiques Ivexia",
+  "pdfButton": "Télécharger",
+  "searchPlaceholder": "Rechercher par nom, catégorie ou ID CAS",
+  "filterCategory": "Catégorie",
+  "filterForm": "Forme",
+  "filterDosage": "Dosage / Force",
+  "filterSearch": "Rechercher",
+  "filterClear": "Effacer",
+  "noResults": "Aucun produit correspondant trouvé.",
+  "table": {
+    "name": "Nom",
+    "form": "Forme",
+    "category": "Catégorie",
+    "dosage": "Dosage / Force",
+    "packSize": "Taille du paquet",
+    "formulationType": "Type de formulation",
+    "casId": "ID CAS",
+    "pharmSpec": "Spécification pharmaceutique"
   }
 }
+
+}
+
+

@@ -7,8 +7,13 @@
   "mag": "Ivexia Magazin",
   "mag_news": "Nachrichten",
   "mag_health": "Gesundheitsmagazin",
-  "contact": "Kontakt"
+  "contact": "Kontakt",
+
+  "offerings": "Unsere Angebote",
+  "overview": "Übersicht",
+  "otc": "Rezeptfreie Produkte"
 }
+
 ,
 
   "search": {
@@ -289,10 +294,12 @@
   },
 
   "ingredientGrid": {
-    "noResults": "Keine Ergebnisse. Bitte andere Filter ausprobieren.",
-    "prev": "‹ Zurück",
-    "next": "Weiter ›"
-  },
+  "name": "Name",
+  "category": "Kategorie",
+  "dosageForms": "Darreichungsformen",
+  "noResults": "Keine Ergebnisse. Versuche andere Filter."
+}
+,
 
   "ingredientCard": {
     "cas": "CAS",
@@ -322,6 +329,7 @@
     "title": "Unsere Kunden"
   },
 
+  
   "productDetail": {
     "notFoundTitle": "Produkt nicht gefunden",
     "notFoundText": "Wir konnten dieses API nicht in unserem Portfolio finden.",
@@ -352,6 +360,7 @@
     "suggestedTitle": "Vorgeschlagene Produkte",
     "suggestedSubtitle": "Andere APIs, die zu Ihrer aktuellen Auswahl passen."
   },
+
 
   "ingredients": {
     "categories": {
@@ -558,10 +567,28 @@
     "card2Title": "Molekulare F&E-Innovation",
     "card3Title": "Globale Qualitätskonformität"
   },
+  
   "leadership": {
-    "title": "Führung bei Ivexia",
-    "cardName": "Führungskraft {{index}}",
-    "cardDept": "Abteilung"
+    "heading": "Führung bei Ivexia",
+    "subheading": "Bei Ivexia stellen wir nicht nur Medikamente her – wir schaffen Vertrauen. Unsere Mitarbeitenden sind unser Fundament, unsere Wissenschaft unsere Stärke und unsere Vision unser Versprechen.",
+    "ceo": {
+      "name": "Dr. Avinaash Badal",
+      "title": "Chief Executive Officer"
+    },
+    "team_heading": "Unser Führungsteam",
+    "team_sub": "Die treibende Kraft hinter Ivexias Innovation, Integrität und Wirkung.",
+    "team": [
+      { "name": "Shoaib Khan", "role": "Direktor – Strategie", "quote": "Wir führen mit Innovation und Integrität." },
+      { "name": "Miguel Torres", "role": "Direktor – Operationen", "quote": "Unsere Vision formt die globale Gesundheitsversorgung." },
+      { "name": "Ana Morales", "role": "Leiterin – Qualitätssicherung", "quote": "Qualität definiert Vertrauen bei Ivexia." },
+      { "name": "Javier Ruiz", "role": "Leiter – Produktion", "quote": "Effizienz trifft täglich auf Präzision." },
+      { "name": "Lucía Fernández", "role": "HR & Personalentwicklung", "quote": "Wir wachsen gemeinsam mit Zielstrebigkeit." },
+      { "name": "Dra. Laura Pérez", "role": "F&E Wissenschaftlerin", "quote": "Innovation ist in unserer DNA verankert." },
+      { "name": "Hassan Ali", "role": "Regulatorische Angelegenheiten", "quote": "Compliance schafft Vertrauen." },
+      { "name": "Carlos Blanco", "role": "Finanzen & Strategie", "quote": "Nachhaltiges Wachstum durch kluge Finanzen." },
+      { "name": "María Gómez", "role": "Marketingleiterin", "quote": "Jedes Produkt erzählt eine Geschichte." },
+      { "name": "Pablo Navarro", "role": "Digital Systems Lead", "quote": "Technologie stärkt Transparenz." }
+    ]
   },
   "timeline": {
     "title": "Unser Weg nach vorn",
@@ -573,6 +600,8 @@
       "2030": "Globale Produktion für Onkologie und Biotech beginnt."
     }
   },
+
+
   "certifications": {
     "title": "Globale Zertifizierungen & Standards",
     "items": ["EU-GMP", "WHO-GMP", "ISO 9001", "ISO 14001", "PIC/S", "HACCP"]
@@ -1200,22 +1229,123 @@
       { "q": "Wer sollte vorsichtig sein?", "a": "Patienten mit chronischen Erkrankungen oder mehreren Medikamenten sollten vor der Anwendung ihren Arzt konsultieren." },
       { "q": "Mögliche Nebenwirkungen", "a": "Leichte Magen-Darm-Beschwerden, Kopfschmerzen oder Schwindel können auftreten. Bei anhaltenden Beschwerden Arzt aufsuchen." }
     ],
-    "pharmacies": ["Partner-Apotheke 1", "Partner-Apotheke 2", "Krankenhausapotheke", "Online-Partner"]
+    "pharmacies": [
+  "Ivexia Gesundheitsladen – Delhi",
+  "Ivexia Pharma Punkt – Mumbai",
+  "Ivexia Globale Apotheke – London",
+  "Ivexia Arzneimittelzentrum – Spanien",
+  "Ivexia Wellness Shop – Frankreich",
+  "Ivexia Pflegeapotheke – Nordmazedonien"
+]
+
   },
   "productTabs": {
     "introduction": "Einleitung",
     "indications": "Anwendungsgebiete",
     "maintenance": "Lagerung & Pflege"
   },
-  "productDetail": {
+  "finalProductDetail": {
     "dosageForm": "Darreichungsform",
     "requestQuote": "Angebot anfordern",
     "importantInformation": "Wichtige Informationen",
     "precautionsHeading": "Vorsichtsmaßnahmen und Nebenwirkungen",
     "pharmaciesTitle": "Apothekenliste",
     "onlineShopping": "Online-Shop"
+  },
+  
+  "offerings": {
+    "heroTitle": "Unsere Angebote",
+    "intro": "Entdecken Sie das vollständige Sortiment an pharmazeutischen Lösungen von Ivexia — von APIs über Fertigformulierungen bis zu OTC-Produkten und wissenschaftlichen Einblicken.",
+
+    "apiTitle": "Aktive Pharmazeutische Wirkstoffe (APIs)",
+    "apiDesc": "Hochwertige APIs, hergestellt gemäß strengen GMP-Standards.",
+    "apiBtn": "APIs Erkunden",
+
+    "productsTitle": "Pharmazeutische Produkte",
+    "productsDesc": "Umfangreiche Auswahl an Tabletten, Kapseln, Injektionen und Lösungen.",
+    "productsBtn": "Alle Produkte Anzeigen",
+
+    "otcTitle": "OTC-Medikamente",
+    "otcDesc": "Sichere und zugängliche OTC-Formulierungen für das tägliche Wohlbefinden.",
+    "otcBtn": "OTC Erkunden",
+
+    "magTitle": "Ivexia Magazin",
+    "magDesc": "Neuigkeiten und Analysen zu Wissenschaft, Gesundheit und Pharmaindustrie.",
+    "magBtn": "Artikel Lesen",
+
+    "companyTitle": "Über Ivexia",
+    "companyDesc": "Ein globales Pharmaunternehmen, das für Präzision, Reinheit und Fortschritt steht.",
+    "companyBtn": "Mehr Erfahren"
+  },
+
+  "otcPage": {
+    "title": "OTC-Medikamente",
+    "subtitle": "Zuverlässige OTC-Lösungen für das tägliche Wohlbefinden.",
+
+    "desc1": "Das OTC-Portfolio von Ivexia wird präzise entwickelt und erfüllt internationale Gesundheitsstandards.",
+    "desc2": "Von Schmerzmitteln bis Verdauungsunterstützung — unsere Produkte fördern tägliche Gesundheit.",
+
+    "features": {
+      "science": "Wissenschaftsbasiert",
+      "scienceDesc": "Mit fortschrittlicher pharmazeutischer Technologie entwickelt.",
+      "quality": "Qualität & Sicherheit",
+      "qualityDesc": "Hergestellt in WHO-GMP-zertifizierten Anlagen.",
+      "wellness": "Ganzheitliches Wohlbefinden",
+      "wellnessDesc": "Unterstützt Verdauung, Immunität, Hydration und Vitalität."
+    },
+
+    "categoriesTitle": "Unsere OTC-Kategorien",
+
+    "categories": {
+      "pain": "Schmerzmittel",
+      "painDesc": "Schnell wirkende Analgetika für effektive Schmerzlinderung",
+
+      "allergy": "Allergiebehandlung",
+      "allergyDesc": "Wirksame Antihistaminika gegen Allergiesymptome",
+
+      "digestive": "Verdauungswohlbefinden",
+      "digestiveDesc": "Lösungen gegen Säure, Gas und Verdauungsstörungen",
+
+      "cold": "Husten & Erkältung",
+      "coldDesc": "Wirksame Medikamente gegen Erkältung, Grippe und Atemwegsbeschwerden"
+    },
+
+    "sidebarTitle": "In diesem Abschnitt",
+
+    "sidebar": {
+      "products": "Pharmazeutische Produkte",
+      "overview": "Übersicht",
+      "api": "Aktive Wirkstoffe",
+      "otc": "OTC"
+    }
+  },
+  "productsPage": {
+  "title": "Produktfinder",
+  "subtitle": "Durchsuchen und filtern Sie unsere pharmazeutischen Formulierungen",
+  "pdfTitle": "Ivexia Pharma Produktliste",
+  "pdfButton": "Hier herunterladen",
+  "searchPlaceholder": "Nach Produktname / Kategorie / CAS-ID suchen",
+  "filterCategory": "Kategorie",
+  "filterForm": "Darreichungsform",
+  "filterDosage": "Stärke / Dosierung",
+  "filterSearch": "Suchen",
+  "filterClear": "Zurücksetzen",
+  "noResults": "Keine passenden Produkte gefunden.",
+  "table": {
+    "name": "Name",
+    "form": "Form",
+    "category": "Kategorie",
+    "dosage": "Stärke / Dosierung",
+    "packSize": "Packungsgröße",
+    "formulationType": "Formulierungstyp",
+    "casId": "CAS-ID",
+    "pharmSpec": "Pharma-Spezifikation"
   }
 }
+
+}
+
+
 
 
 

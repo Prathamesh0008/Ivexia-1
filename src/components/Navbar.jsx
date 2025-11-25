@@ -1,10 +1,11 @@
 // src/components/Navbar.jsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import logo from "../assets/logo/ivexiaa-logoo.png";
-import FINISHED_PRODUCTS from "../data/finishedProducts"; // ✅ import products
+import FINISHED_PRODUCTS from "../data/finishedProducts";
+import INGREDIENTS from "../data/ingredients"; 
 
 export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
@@ -12,14 +13,18 @@ export default function Navbar() {
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
   const [topBarHeight, setTopBarHeight] = useState(0);
   const [showLanguages, setShowLanguages] = useState(false);
-
-  // search text
   const [searchTerm, setSearchTerm] = useState("");
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [magOpen, setMagOpen] = useState(false);
 
   const navigate = useNavigate();
   const { t, i18n } = useTranslation("common");
-
   const [language, setLanguage] = useState("English");
+
+  const productsRef = useRef(null);
+  const magRef = useRef(null);
+  const langRef = useRef(null);
+  const searchRef = useRef(null);
 
   const languages = [
     { code: "en", label: "English", flag: "🇬🇧" },
@@ -33,12 +38,11 @@ export default function Navbar() {
     { code: "ar", label: "Arabic", flag: "🇸🇦" },
   ];
 
-  // ✅ Unique categories from FINISHED_PRODUCTS
   const productCategories = Array.from(
     new Set(FINISHED_PRODUCTS.map((p) => p.category).filter(Boolean))
   );
 
-  // === Detect TopBar height dynamically ===
+  // Detect TopBar height
   useEffect(() => {
     const topBar = document.getElementById("topbar");
     if (topBar) {
@@ -49,7 +53,7 @@ export default function Navbar() {
     }
   }, []);
 
-  // === Track TopBar visibility ===
+  // Header animation on scroll
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
@@ -64,6 +68,33 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown/search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (productsRef.current && !productsRef.current.contains(event.target)) {
+        setProductsOpen(false);
+      }
+      if (magRef.current && !magRef.current.contains(event.target)) {
+        setMagOpen(false);
+      }
+      if (langRef.current && !langRef.current.contains(event.target)) {
+        setShowLanguages(false);
+      }
+
+      // Close search ONLY if input empty
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target) &&
+        !event.target.closest(".search-icon")
+      ) {
+        if (!searchTerm) setShowSearch(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [searchTerm]);
+
   const goTo = (path) => {
     navigate(path);
     setMenuOpen(false);
@@ -77,15 +108,39 @@ export default function Navbar() {
     setShowLanguages(false);
   };
 
-  // 🔎 SEARCH HANDLER – goes to /search?q=...
+  // SEARCH — redirect to product/ingredient
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const q = searchTerm.trim();
+    const q = searchTerm.trim().toLowerCase();
     if (!q) return;
 
-    navigate(`/search?q=${encodeURIComponent(q)}`);
-    setShowSearch(false);
-    setMenuOpen(false);
+    const product = FINISHED_PRODUCTS.find((p) =>
+      p.name.toLowerCase().includes(q)
+    );
+
+    if (product) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate(`/products/${product.slug}`);
+      setSearchTerm("");
+      setShowSearch(false);
+      return;
+    }
+
+    const ingredient = INGREDIENTS.find(
+      (i) =>
+        i.id.toLowerCase().includes(q) ||
+        i.slug.toLowerCase().includes(q)
+    );
+
+    if (ingredient) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate(`/ingredients/${ingredient.slug}`);
+      setSearchTerm("");
+      setShowSearch(false);
+      return;
+    }
+
+    alert("No product or ingredient found!");
   };
 
   return (
@@ -94,11 +149,9 @@ export default function Navbar() {
       style={{ top: isTopBarVisible ? `${topBarHeight}px` : "0px" }}
     >
       <div className="flex justify-between items-center px-4 md:px-8 h-16">
+        
         {/* LOGO */}
-        <div
-          className="flex items-center cursor-pointer"
-          onClick={() => goTo("/")}
-        >
+        <div className="flex items-center cursor-pointer" onClick={() => goTo("/")}>
           <img
             src={logo}
             alt="Ivexia Logo"
@@ -107,125 +160,106 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP MENU */}
-        <ul className=" hidden lg:flex gap-8 font-bold text-gray-800 items-center">
+        <ul className="hidden lg:flex gap-8 font-bold text-gray-800 items-center">
 
-          <li
-            onClick={() => goTo("/")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.home")}
           </li>
 
-          <li
-            onClick={() => goTo("/products/ingredient")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
-            {t("nav.api")}
-          </li>
+         {/* OUR OFFERINGS DROPDOWN */}
+<li
+  ref={productsRef}
+  className="relative cursor-pointer hover:text-[#0d2d47]"
+  onClick={() => setProductsOpen((prev) => !prev)}
+>
+  <span className="inline-flex items-center gap-1">
+    {t("nav.offerings")} ▾
+  </span>
 
-          {/* PHARMACEUTICAL PRODUCTS DROPDOWN */}
-          <li className="relative group hover:text-[#0d2d47] cursor-pointer">
-            {/* Button / label */}
-            <span
-              onClick={() => goTo("/products")}
-              className="inline-flex items-center gap-1"
-            >
-              {t("nav.products")} ▾
-            </span>
+  {productsOpen && (
+    <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-64 font-normal z-40">
 
-            {/* Dropdown menu – REAL categories + FORCED vertical scroll */}
-            <ul
-              className="
-                absolute right-0 mt-2 
-                bg-white shadow-md rounded-md w-64 font-normal z-40
-                opacity-0 translate-y-1 pointer-events-none
-                group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-                transition-all duration-150
-              "
-              style={{
-                maxHeight: "250px",    // limit height
-                overflowY: "scroll",   // force vertical scrollbar
-                overflowX: "hidden",
-              }}
-            >
-              <li
-                onClick={() => goTo("/products")}
-                className="px-4 py-2 hover:bg-gray-100 text-sm"
-              >
-                All Products
-              </li>
+      <li
+        onClick={() => goTo("/offerings-overview")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.overview")}
+      </li>
 
-              {productCategories.map((cat) => (
-                <li
-                  key={cat}
-                  onClick={() =>
-                    goTo(`/products?category=${encodeURIComponent(cat)}`)
-                  }
-                  className="px-4 py-2 hover:bg-gray-100 text-sm"
-                >
-                  {cat}
-                </li>
-              ))}
-            </ul>
-          </li>
+      <li
+        onClick={() => goTo("/products/ingredient")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.api")}
+      </li>
 
-          <li
-            onClick={() => goTo("/about")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+      <li
+        onClick={() => goTo("/products")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.products")}
+      </li>
+
+      <li
+        onClick={() => goTo("/OTC")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.otc")}
+      </li>
+
+    </ul>
+  )}
+</li>
+
+
+          <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.about")}
           </li>
 
-          {/* IVEXIA MAGAZINE DROPDOWN */}
-          <li className="relative group hover:text-[#0d2d47] cursor-pointer">
-            <span
-              onClick={() => goTo("/ivexia-mag")}
-              className="inline-flex items-center gap-1"
-            >
+          {/* MAGAZINE DROPDOWN */}
+          <li
+            ref={magRef}
+            className="relative cursor-pointer hover:text-[#0d2d47]"
+            onClick={() => setMagOpen((prev) => !prev)}
+          >
+            <span className="inline-flex items-center gap-1">
               {t("nav.mag")} ▾
             </span>
 
-            <ul
-              className="
-                absolute right-0 mt-2 
-                bg-white shadow-md rounded-md w-56 font-normal z-40
-                opacity-0 translate-y-1 pointer-events-none
-                group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-                transition-all duration-150
-              "
-            >
-              <li
-                onClick={() => goTo("/ivexia-mag?category=news")}
-                className="px-4 py-2 hover:bg-gray-100 text-sm"
-              >
-                {t("nav.mag_news")}
-              </li>
-              <li
-                onClick={() => goTo("/ivexia-mag?category=health")}
-                className="px-4 py-2 hover:bg-gray-100 text-sm"
-              >
-                {t("nav.mag_health")}
-              </li>
-            </ul>
+            {magOpen && (
+              <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-56 font-normal z-40">
+                <li
+                  onClick={() => goTo("/ivexia-mag?category=news")}
+                  className="px-4 py-2 hover:bg-gray-100 text-sm"
+                >
+                  {t("nav.mag_news")}
+                </li>
+                <li
+                  onClick={() => goTo("/ivexia-mag?category=health")}
+                  className="px-4 py-2 hover:bg-gray-100 text-sm"
+                >
+                  {t("nav.mag_health")}
+                </li>
+              </ul>
+            )}
           </li>
 
-          <li
-            onClick={() => goTo("/contact")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.contact")}
           </li>
         </ul>
 
-        {/* RIGHT SIDE: SEARCH + LANGUAGE + MOBILE TOGGLE */}
+        {/* RIGHT SIDE ICONS */}
         <div className="flex items-center gap-4 relative">
+
+          {/* SEARCH ICON */}
           <FaSearch
-            className="cursor-pointer text-gray-600 hover:text-[#0d2d47]"
+            className="cursor-pointer search-icon text-gray-600 hover:text-[#0d2d47]"
             onClick={() => setShowSearch((s) => !s)}
           />
 
-          {/* LANGUAGE SELECTOR */}
-          <div className="relative">
+          {/* LANGUAGE BUTTON */}
+          <div ref={langRef} className="relative">
             <div
               className="flex items-center gap-1 cursor-pointer text-gray-600 hover:text-[#0d2d47]"
               onClick={() => setShowLanguages(!showLanguages)}
@@ -233,6 +267,7 @@ export default function Navbar() {
               <FaGlobe />
               <span className="text-sm">{language}</span>
             </div>
+
             {showLanguages && (
               <ul className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-md text-sm font-medium z-50">
                 {languages.map((lng) => (
@@ -249,7 +284,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* MOBILE MENU ICON */}
+          {/* MOBILE MENU TOGGLE */}
           <div className="lg:hidden">
             {menuOpen ? (
               <FaTimes
@@ -266,9 +301,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* SEARCH BAR (WORKING) */}
+      {/* SEARCH BAR */}
       {showSearch && (
-        <div className="px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200">
+        <div ref={searchRef} className="px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200">
           <form onSubmit={handleSearchSubmit}>
             <input
               type="text"
@@ -284,42 +319,25 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {menuOpen && (
         <ul className="lg:hidden flex flex-col gap-4 bg-white shadow-md border-t border-gray-100 px-6 py-4 font-medium text-gray-800">
-          <li
-            onClick={() => goTo("/")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.home")}
           </li>
-          <li
-            onClick={() => goTo("/products/ingredient")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/products/ingredient")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.api")}
           </li>
-          <li
-            onClick={() => goTo("/products")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/products")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.products")}
           </li>
-          <li
-            onClick={() => goTo("/about")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.about")}
           </li>
-          <li
-            onClick={() => goTo("/ivexia-mag")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/ivexia-mag")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.mag")}
           </li>
-          <li
-            onClick={() => goTo("/contact")}
-            className="hover:text-[#0d2d47] cursor-pointer"
-          >
+          <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.contact")}
           </li>
+          
         </ul>
       )}
     </nav>

@@ -31,7 +31,7 @@ const LANGUAGE_MAP = {
 
 function AccordionItem({ item, isOpen, onToggle }) {
   return (
-    <div className="rounded-md overflow-hidden  border-transparent bg-[#edf4ff] transition-all duration-300">
+    <div className="rounded-md overflow-hidden border border-transparent bg-[#edf4ff] transition-all duration-300">
       <button
         type="button"
         onClick={onToggle}
@@ -219,27 +219,54 @@ export default function FinishedProductDetail() {
       </section>
 
       {/* PHARMACIES */}
-      <section className="bg-[#FFF8F5] py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0d2d47] text-center mb-8">{t("productDetail.pharmaciesTitle", "List of Pharmacies")}</h2>
+<section className="bg-[#FFF8F5] py-12 md:py-16">
+  <div className="max-w-7xl mx-auto px-6 md:px-16">
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0d2d47] text-center mb-8">
+      {t("productDetail.pharmaciesTitle", "List of Pharmacies")}
+    </h2>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {(Array.isArray(pharmacies) ? pharmacies : []).map((ph, idx) => (
-              <div key={idx} className="bg-white border border-gray-100 shadow-sm p-5 md:p-6 flex flex-col items-center text-center">
-                <div className="w-14 h-14 flex items-center justify-center mb-3">
-                  <img src={capsuleIcon} alt="Capsule Icon" className="w-10 h-10 object-contain" />
-                </div>
+    {(() => {
+      // real pharmacies list
+      let list = Array.isArray(pharmacies) ? pharmacies : [];
 
-                <p className="font-semibold text-[#0d2d47] mb-2 text-sm md:text-base">{typeof ph === "string" ? ph : ph.name}</p>
+      // ❗ if less than 6 → repeat items so always 6 visible
+      while (list.length < 6 && list.length > 0) {
+        list = [...list, ...list];
+      }
 
-                <button type="button" className="text-xs md:text-sm font-semibold px-4 py-2 rounded-full border border-[#19a6b5] text-[#19a6b5] hover:bg-[#19a6b5] hover:text-white transition">
-                  {t("productDetail.onlineShopping", "Online Shopping")}
-                </button>
+      // now take only first 6
+      const sixItems = list.slice(0, 6);
+
+      return (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {sixItems.map((ph, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-gray-100 shadow-sm p-5 md:p-6 flex flex-col items-center text-center"
+            >
+              <div className="w-14 h-14 flex items-center justify-center mb-3">
+                <img src={capsuleIcon} alt="Capsule Icon" className="w-10 h-10 object-contain" />
               </div>
-            ))}
-          </div>
+
+              <p className="font-semibold text-[#0d2d47] mb-2 text-sm md:text-base">
+                {typeof ph === "string" ? ph : ph.name}
+              </p>
+
+              <button
+                type="button"
+                className="text-xs md:text-sm font-semibold px-4 py-2 rounded-full border border-[#19a6b5] text-[#19a6b5] hover:bg-[#19a6b5] hover:text-white transition"
+              >
+                {t("productDetail.onlineShopping", "Online Shopping")}
+              </button>
+            </div>
+          ))}
         </div>
-      </section>
+      );
+    })()}
+  </div>
+</section>
+
+
     </>
   );
 }

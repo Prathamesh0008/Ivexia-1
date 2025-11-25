@@ -24,6 +24,11 @@ import IvexiaMag from "./pages/Products/IvexiaMag.jsx";
 import IvexiaMagArticle from "./pages/Products/IvexiaMagArticle.jsx";
 import SearchResults from "./pages/SearchResults.jsx";
 import Breadcrumbs from "./components/Breadcrumbs";
+import NotFound from "./pages/NotFound";
+import OTC from "./pages/OTC";
+import OfferingsOverview from "./pages/OfferingsOverview";
+
+
 
 // scroll to top on route change
 function ScrollToTop() {
@@ -61,6 +66,14 @@ function Layout() {
           <Route path="/ivexia-mag" element={<IvexiaMag />} />
           <Route path="/ivexia-mag/:slug" element={<IvexiaMagArticle />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/otc" element={<OTC />} />
+          <Route path="/offerings-overview" element={<OfferingsOverview />} />
+           <Route path="*" element={<NotFound />} />
+          
+
+          
+
+
 
           {/* Standalone full-page routes */}
           <Route
