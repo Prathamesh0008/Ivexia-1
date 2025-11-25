@@ -318,28 +318,95 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {menuOpen && (
-        <ul className="lg:hidden flex flex-col gap-4 bg-white shadow-md border-t border-gray-100 px-6 py-4 font-medium text-gray-800">
-          <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.home")}
-          </li>
-          <li onClick={() => goTo("/products/ingredient")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.api")}
-          </li>
-          <li onClick={() => goTo("/products")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.products")}
-          </li>
-          <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.about")}
-          </li>
-          <li onClick={() => goTo("/ivexia-mag")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.mag")}
-          </li>
-          <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.contact")}
-          </li>
-          
-        </ul>
-      )}
+  <ul className="lg:hidden flex flex-col gap-4 bg-white shadow-md border-t border-gray-100 px-6 py-4 font-medium text-gray-800">
+
+    <li onClick={() => goTo("/")} className="hover:text-[#0d2d47] cursor-pointer">
+      {t("nav.home")}
+    </li>
+
+    {/* OFFERINGS DROPDOWN FOR MOBILE */}
+    <li className="cursor-pointer">
+  <details className="group">
+    <summary className="flex justify-between items-center py-2 text-[#0d2d47] cursor-pointer">
+      <span>{t("nav.offerings")}</span>
+
+      {/* ▼ Arrow Icon */}
+      <span className="transition-transform group-open:rotate-180">
+        ▾
+      </span>
+    </summary>
+
+    <div className="ml-4 mt-1 flex flex-col gap-2 text-gray-700 text-sm">
+      <span onClick={() => goTo("/offerings-overview")} className="hover:text-[#0d2d47] cursor-pointer">
+        {t("nav.overview")}
+      </span>
+
+      <span onClick={() => goTo("/products/ingredient")} className="hover:text-[#0d2d47] cursor-pointer">
+        {t("nav.api")}
+      </span>
+
+      <span onClick={() => goTo("/products")} className="hover:text-[#0d2d47] cursor-pointer">
+        {t("nav.products")}
+      </span>
+
+      <span onClick={() => goTo("/OTC")} className="hover:text-[#0d2d47] cursor-pointer">
+        {t("nav.otc")}
+      </span>
+    </div>
+  </details>
+</li>
+
+
+    <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
+      {t("nav.about")}
+    </li>
+
+    {/* MAG DROPDOWN FOR MOBILE */}
+    <li className="cursor-pointer">
+      <details className="group">
+        <summary className="flex justify-between items-center py-2 text-[#0d2d47]">
+          {t("nav.mag")}
+        </summary>
+
+        <div className="ml-4 mt-1 flex flex-col gap-2 text-gray-700 text-sm">
+          <span onClick={() => goTo("/ivexia-mag?category=news")} className="hover:text-[#0d2d47] cursor-pointer">
+            {t("nav.mag_news")}
+          </span>
+
+          <span onClick={() => goTo("/ivexia-mag?category=health")} className="hover:text-[#0d2d47] cursor-pointer">
+            {t("nav.mag_health")}
+          </span>
+        </div>
+      </details>
+    </li>
+
+    <li onClick={() => goTo("/contact")} className="hover:text-[#0d2d47] cursor-pointer">
+      {t("nav.contact")}
+    </li>
+
+    {/* LANGUAGE SELECT MOBILE */}
+    <li className="cursor-pointer">
+      <details>
+        <summary className="py-2 text-[#0d2d47]">
+          🌍 {language}
+        </summary>
+        <div className="ml-4 mt-2 flex flex-col gap-2 text-gray-700 text-sm">
+          {languages.map((lng) => (
+            <span
+              key={lng.code}
+              onClick={() => selectLanguage(lng.code, lng.label)}
+              className="flex items-center gap-2 hover:text-[#0d2d47] cursor-pointer"
+            >
+              {lng.flag} {lng.label}
+            </span>
+          ))}
+        </div>
+      </details>
+    </li>
+
+  </ul>
+)}
+
     </nav>
   );
 }

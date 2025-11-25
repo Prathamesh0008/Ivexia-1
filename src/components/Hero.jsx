@@ -74,8 +74,8 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative w-full h-[90vh] md:h-[75vh] overflow-hidden"
-      style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
+      className="relative w-full h-[80vh] md:h-[55vh] overflow-hidden"
+      // style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
