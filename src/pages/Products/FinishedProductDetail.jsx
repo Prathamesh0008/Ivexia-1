@@ -31,7 +31,7 @@ const LANGUAGE_MAP = {
 
 function AccordionItem({ item, isOpen, onToggle }) {
   return (
-    <div className="rounded-md overflow-hidden border border-transparent bg-[#edf4ff] transition-all duration-300">
+    <div className="rounded-md overflow-hidden  border-transparent bg-[#edf4ff] transition-all duration-300">
       <button
         type="button"
         onClick={onToggle}
