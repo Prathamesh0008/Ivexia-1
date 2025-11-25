@@ -7,8 +7,13 @@
   "mag": "Ivexia Magazine",
   "mag_news": "News",
   "mag_health": "Health Magazine",
-  "contact": "Contact"
+  "contact": "Contact",
+
+  "offerings": "Our Offerings",
+  "overview": "Overview",
+  "otc": "Over-the-Counter"
 }
+
 ,
 
   "search": {
@@ -256,10 +261,12 @@
   },
 
   "ingredientGrid": {
-    "noResults": "No results. Try different filters.",
-    "prev": "‹ Prev",
-    "next": "Next ›"
-  },
+  "name": "Name",
+  "category": "Category",
+  "dosageForms": "Dosage Forms",
+  "noResults": "No results. Try different filters."
+}
+,
 
   "ingredientCard": {
     "cas": "CAS",
@@ -1072,9 +1079,102 @@
     "precautionsHeading": "Precautions and Side Effects",
     "pharmaciesTitle": "List of Pharmacies",
     "onlineShopping": "Online Shopping"
+  },
+  
+  "offerings": {
+    "heroTitle": "Our Offerings",
+    "intro": "Discover Ivexia’s complete range of pharmaceutical solutions — from APIs to finished formulations, OTC medicines, and scientific insights. Each segment is crafted with strict quality, innovation, and global compliance.",
+
+    "apiTitle": "Active Pharmaceutical Ingredients (APIs)",
+    "apiDesc": "High-quality APIs manufactured under strict GMP compliance.",
+    "apiBtn": "Explore APIs",
+
+    "productsTitle": "Pharmaceutical Products",
+    "productsDesc": "A wide portfolio of tablets, capsules, injections, and oral liquids.",
+    "productsBtn": "View All Products",
+
+    "otcTitle": "Over-the-Counter Medicines",
+    "otcDesc": "Safe, accessible OTC formulations for general wellness.",
+    "otcBtn": "Explore OTC",
+
+    "magTitle": "Ivexia Magazine",
+    "magDesc": "Insights and updates on pharma, science, and healthcare.",
+    "magBtn": "Read Articles",
+
+    "companyTitle": "About Ivexia",
+    "companyDesc": "A global pharmaceutical company delivering precision, purity, and progress.",
+    "companyBtn": "About Us"
+  },
+
+  "otcPage": {
+    "title": "Over-the-Counter (OTC)",
+    "subtitle": "Trusted OTC healthcare solutions for everyday wellness.",
+
+    "desc1": "Ivexia’s OTC portfolio is crafted with precision and aligned with global healthcare standards.",
+    "desc2": "From pain relief to digestive comfort, our formulations support health and wellness.",
+
+    "features": {
+      "science": "Science-Driven",
+      "scienceDesc": "Developed with advanced pharmaceutical technologies.",
+      "quality": "Quality & Safety",
+      "qualityDesc": "Manufactured in WHO-GMP certified facilities.",
+      "wellness": "Complete Wellness",
+      "wellnessDesc": "Supporting digestion, immunity, hydration & daily vitality."
+    },
+
+    "categoriesTitle": "Our OTC Categories",
+
+    "categories": {
+      "pain": "Pain Relief",
+      "painDesc": "Fast-acting analgesic formulations for effective pain relief",
+
+      "allergy": "Allergy Care",
+      "allergyDesc": "High-quality antihistamines for allergy symptoms",
+
+      "digestive": "Digestive Wellness",
+      "digestiveDesc": "OTC solutions for acidity, gas, and digestive balance",
+
+      "cold": "Cough & Cold",
+      "coldDesc": "Effective medicines for cold, flu, and respiratory care"
+    },
+
+    "sidebarTitle": "In this section",
+
+    "sidebar": {
+      "products": "Pharmaceutical Products",
+      "overview": "Overview",
+      "api": "Active Pharmaceutical Ingredients",
+      "otc": "Over-the-Counter"
+    }
+  },
+  "productsPage": {
+  "title": "Product Finder",
+  "subtitle": "Search and filter our pharmaceutical formulations",
+  "pdfTitle": "Ivexia Pharmaceutical Product List",
+  "pdfButton": "Download here",
+  "searchPlaceholder": "Search by Product Name / Category / CAS ID",
+  "filterCategory": "Category",
+  "filterForm": "Form",
+  "filterDosage": "Strength / Dosage",
+  "filterSearch": "Search",
+  "filterClear": "Clear",
+  "noResults": "No matching products found.",
+  "table": {
+    "name": "Name",
+    "form": "Form",
+    "category": "Category",
+    "dosage": "Strength / Dosage",
+    "packSize": "Pack Size",
+    "formulationType": "Type of Formulation",
+    "casId": "CAS ID",
+    "pharmSpec": "Pharm Spec"
   }
+}
 
 }
+
+
+
 
 
 

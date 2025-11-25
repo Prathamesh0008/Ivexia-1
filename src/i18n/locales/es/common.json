@@ -7,8 +7,13 @@
   "mag": "Revista Ivexia",
   "mag_news": "Noticias",
   "mag_health": "Revista de Salud",
-  "contact": "Contacto"
+  "contact": "Contacto",
+
+  "offerings": "Nuestros Servicios",
+  "overview": "Visión General",
+  "otc": "Medicamentos sin Receta"
 }
+
 ,
   "search": {
     "placeholder": "Buscar productos, artículos, noticias..."
@@ -234,10 +239,12 @@
     "results_plural": "{{total}} resultados"
   },
   "ingredientGrid": {
-    "noResults": "Sin resultados. Prueba con otros filtros.",
-    "prev": "‹ Anterior",
-    "next": "Siguiente ›"
-  },
+  "name": "Nombre",
+  "category": "Categoría",
+  "dosageForms": "Formas de dosificación",
+  "noResults": "Sin resultados. Prueba con otros filtros."
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "Sinónimos",
@@ -1060,8 +1067,101 @@
     "precautionsHeading": "Precauciones y efectos secundarios",
     "pharmaciesTitle": "Lista de farmacias",
     "onlineShopping": "Compra en línea"
+  },
+  
+  "offerings": {
+    "heroTitle": "Nuestras Ofertas",
+    "intro": "Descubra la gama completa de soluciones farmacéuticas de Ivexia — desde APIs hasta formulaciones terminadas, medicamentos OTC y artículos científicos, todo desarrollado con calidad, innovación y cumplimiento global.",
+
+    "apiTitle": "Ingredientes Farmacéuticos Activos (APIs)",
+    "apiDesc": "APIs de alta calidad fabricados bajo estrictas normas GMP.",
+    "apiBtn": "Explorar APIs",
+
+    "productsTitle": "Productos Farmacéuticos",
+    "productsDesc": "Amplio portafolio de tabletas, cápsulas, inyecciones y soluciones orales.",
+    "productsBtn": "Ver Todos los Productos",
+
+    "otcTitle": "Medicamentos de Venta Libre",
+    "otcDesc": "Formulaciones OTC seguras y accesibles para el bienestar general.",
+    "otcBtn": "Explorar OTC",
+
+    "magTitle": "Revista Ivexia",
+    "magDesc": "Noticias y análisis sobre ciencia, salud y la industria farmacéutica.",
+    "magBtn": "Leer Artículos",
+
+    "companyTitle": "Sobre Ivexia",
+    "companyDesc": "Una empresa farmacéutica global que ofrece precisión, pureza y progreso.",
+    "companyBtn": "Conócenos"
+  },
+
+  "otcPage": {
+    "title": "Medicamentos de Venta Libre (OTC)",
+    "subtitle": "Soluciones OTC confiables para el bienestar diario.",
+
+    "desc1": "El portafolio OTC de Ivexia está diseñado con precisión y alineado con los estándares globales de salud.",
+    "desc2": "Desde el alivio del dolor hasta el bienestar digestivo, nuestras formulaciones apoyan la salud diaria.",
+
+    "features": {
+      "science": "Basado en Ciencia",
+      "scienceDesc": "Desarrollado con tecnologías farmacéuticas avanzadas.",
+      "quality": "Calidad y Seguridad",
+      "qualityDesc": "Fabricado en instalaciones certificadas por WHO-GMP.",
+      "wellness": "Bienestar Completo",
+      "wellnessDesc": "Apoyando digestión, inmunidad, hidratación y vitalidad diaria."
+    },
+
+    "categoriesTitle": "Nuestras Categorías OTC",
+
+    "categories": {
+      "pain": "Alivio del Dolor",
+      "painDesc": "Formulaciones analgésicas de acción rápida",
+
+      "allergy": "Cuidado de Alergias",
+      "allergyDesc": "Antihistamínicos efectivos para los síntomas de alergia",
+
+      "digestive": "Bienestar Digestivo",
+      "digestiveDesc": "Soluciones para acidez, gases y equilibrio digestivo",
+
+      "cold": "Tos y Resfriado",
+      "coldDesc": "Medicamentos efectivos para resfriados, gripe y molestias respiratorias"
+    },
+
+    "sidebarTitle": "En esta sección",
+
+    "sidebar": {
+      "products": "Productos Farmacéuticos",
+      "overview": "Descripción General",
+      "api": "Ingredientes Farmacéuticos Activos",
+      "otc": "Venta Libre"
+    }
+  },
+  "productsPage": {
+  "title": "Buscador de Productos",
+  "subtitle": "Busca y filtra nuestras formulaciones farmacéuticas",
+  "pdfTitle": "Lista de Productos Farmacéuticos Ivexia",
+  "pdfButton": "Descargar",
+  "searchPlaceholder": "Buscar por nombre, categoría o ID CAS",
+  "filterCategory": "Categoría",
+  "filterForm": "Forma",
+  "filterDosage": "Fuerza / Dosificación",
+  "filterSearch": "Buscar",
+  "filterClear": "Limpiar",
+  "noResults": "No se encontraron productos coincidentes.",
+  "table": {
+    "name": "Nombre",
+    "form": "Forma",
+    "category": "Categoría",
+    "dosage": "Fuerza / Dosificación",
+    "packSize": "Tamaño del paquete",
+    "formulationType": "Tipo de formulación",
+    "casId": "ID CAS",
+    "pharmSpec": "Especificación farmacéutica"
   }
 }
+
+}
+
+
 
 
 

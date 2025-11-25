@@ -166,38 +166,51 @@ export default function Navbar() {
             {t("nav.home")}
           </li>
 
-          <li onClick={() => goTo("/products/ingredient")} className="hover:text-[#0d2d47] cursor-pointer">
-            {t("nav.api")}
-          </li>
+         {/* OUR OFFERINGS DROPDOWN */}
+<li
+  ref={productsRef}
+  className="relative cursor-pointer hover:text-[#0d2d47]"
+  onClick={() => setProductsOpen((prev) => !prev)}
+>
+  <span className="inline-flex items-center gap-1">
+    {t("nav.offerings")} ▾
+  </span>
 
-          {/* PRODUCTS DROPDOWN */}
-          <li
-            ref={productsRef}
-            className="relative cursor-pointer hover:text-[#0d2d47]"
-            onMouseEnter={() => setProductsOpen(true)}
-            onMouseLeave={() => setProductsOpen(false)}
-          >
-            <span className="inline-flex items-center gap-1">
-              {t("nav.products")} ▾
-            </span>
+  {productsOpen && (
+    <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-64 font-normal z-40">
 
-            {productsOpen && (
-              <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-64 font-normal z-40 max-h-[250px] overflow-y-scroll">
-                <li onClick={() => goTo("/products")} className="px-4 py-2 hover:bg-gray-100 text-sm">
-                  All Products
-                </li>
-                {productCategories.map((cat) => (
-                  <li
-                    key={cat}
-                    onClick={() => goTo(`/products?category=${encodeURIComponent(cat)}`)}
-                    className="px-4 py-2 hover:bg-gray-100 text-sm"
-                  >
-                    {cat}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+      <li
+        onClick={() => goTo("/offerings-overview")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.overview")}
+      </li>
+
+      <li
+        onClick={() => goTo("/products/ingredient")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.api")}
+      </li>
+
+      <li
+        onClick={() => goTo("/products")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.products")}
+      </li>
+
+      <li
+        onClick={() => goTo("/OTC")}
+        className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+      >
+        {t("nav.otc")}
+      </li>
+
+    </ul>
+  )}
+</li>
+
 
           <li onClick={() => goTo("/about")} className="hover:text-[#0d2d47] cursor-pointer">
             {t("nav.about")}
@@ -207,8 +220,7 @@ export default function Navbar() {
           <li
             ref={magRef}
             className="relative cursor-pointer hover:text-[#0d2d47]"
-            onMouseEnter={() => setMagOpen(true)}
-            onMouseLeave={() => setMagOpen(false)}
+            onClick={() => setMagOpen((prev) => !prev)}
           >
             <span className="inline-flex items-center gap-1">
               {t("nav.mag")} ▾

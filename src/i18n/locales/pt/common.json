@@ -7,8 +7,13 @@
   "mag": "Revista Ivexia",
   "mag_news": "Notícias",
   "mag_health": "Revista de Saúde",
-  "contact": "Contato"
+  "contact": "Contato",
+
+  "offerings": "Ofertas",
+  "overview": "Visão Geral",
+  "otc": "Medicamentos OTC"
 }
+
 
 ,
   "search": {
@@ -265,10 +270,12 @@
     "results_plural": "{{total}} resultados"
   },
   "ingredientGrid": {
-    "noResults": "Sem resultados. Tente outros filtros.",
-    "prev": "‹ Anterior",
-    "next": "Próximo ›"
-  },
+  "name": "Nome",
+  "category": "Categoria",
+  "dosageForms": "Formas de dosagem",
+  "noResults": "Nenhum resultado. Tente outros filtros."
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "Sinônimos",
@@ -1083,8 +1090,101 @@
     "precautionsHeading": "Precauções e efeitos secundários",
     "pharmaciesTitle": "Lista de farmácias",
     "onlineShopping": "Compra online"
+  },
+  
+  "offerings": {
+    "heroTitle": "Nossas Ofertas",
+    "intro": "Descubra a linha completa de soluções farmacêuticas da Ivexia — desde APIs até produtos acabados, medicamentos OTC e insights científicos.",
+
+    "apiTitle": "Ingredientes Farmacêuticos Ativos (APIs)",
+    "apiDesc": "APIs de alta qualidade fabricados sob rígidas normas GMP.",
+    "apiBtn": "Explorar APIs",
+
+    "productsTitle": "Produtos Farmacêuticos",
+    "productsDesc": "Portfólio amplo de comprimidos, cápsulas, injetáveis e soluções orais.",
+    "productsBtn": "Ver Todos os Produtos",
+
+    "otcTitle": "Medicamentos OTC",
+    "otcDesc": "Formulações OTC seguras e acessíveis para o bem-estar geral.",
+    "otcBtn": "Explorar OTC",
+
+    "magTitle": "Revista Ivexia",
+    "magDesc": "Notícias e análises sobre ciência, saúde e indústria farmacêutica.",
+    "magBtn": "Ler Artigos",
+
+    "companyTitle": "Sobre a Ivexia",
+    "companyDesc": "Uma empresa farmacêutica global que entrega precisão, pureza e progresso.",
+    "companyBtn": "Sobre Nós"
+  },
+
+  "otcPage": {
+    "title": "Medicamentos OTC",
+    "subtitle": "Soluções OTC confiáveis para o bem-estar diário.",
+
+    "desc1": "O portfólio OTC da Ivexia é desenvolvido com precisão e segue padrões globais de saúde.",
+    "desc2": "Do alívio da dor ao bem-estar digestivo, nossas formulações apoiam a saúde diária.",
+
+    "features": {
+      "science": "Baseado em Ciência",
+      "scienceDesc": "Desenvolvido com tecnologias farmacêuticas avançadas.",
+      "quality": "Qualidade e Segurança",
+      "qualityDesc": "Produzido em instalações certificadas pela WHO-GMP.",
+      "wellness": "Bem-Estar Completo",
+      "wellnessDesc": "Apoia a digestão, imunidade, hidratação e vitalidade diária."
+    },
+
+    "categoriesTitle": "Nossas Categorias OTC",
+
+    "categories": {
+      "pain": "Alívio da Dor",
+      "painDesc": "Formulações analgésicas de ação rápida",
+
+      "allergy": "Cuidados com Alergias",
+      "allergyDesc": "Antihistamínicos eficazes para sintomas de alergia",
+
+      "digestive": "Bem-Estar Digestivo",
+      "digestiveDesc": "Soluções para acidez, gases e equilíbrio digestivo",
+
+      "cold": "Tosse e Resfriado",
+      "coldDesc": "Medicamentos eficazes para resfriados, gripes e cuidados respiratórios"
+    },
+
+    "sidebarTitle": "Nesta seção",
+
+    "sidebar": {
+      "products": "Produtos Farmacêuticos",
+      "overview": "Visão Geral",
+      "api": "Ingredientes Farmacêuticos Ativos",
+      "otc": "OTC"
+    }
+  },
+  "productsPage": {
+  "title": "Localizador de Produtos",
+  "subtitle": "Pesquise e filtre nossas formulações farmacêuticas",
+  "pdfTitle": "Lista de Produtos Farmacêuticos Ivexia",
+  "pdfButton": "Baixar",
+  "searchPlaceholder": "Pesquisar por nome, categoria ou ID CAS",
+  "filterCategory": "Categoria",
+  "filterForm": "Forma",
+  "filterDosage": "Força / Dosagem",
+  "filterSearch": "Pesquisar",
+  "filterClear": "Limpar",
+  "noResults": "Nenhum produto correspondente encontrado.",
+  "table": {
+    "name": "Nome",
+    "form": "Forma",
+    "category": "Categoria",
+    "dosage": "Força / Dosagem",
+    "packSize": "Tamanho da embalagem",
+    "formulationType": "Tipo de formulação",
+    "casId": "ID CAS",
+    "pharmSpec": "Especificação farmacêutica"
   }
 }
+
+}
+
+
 
 
 

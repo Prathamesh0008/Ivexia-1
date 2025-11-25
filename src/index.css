@@ -22,7 +22,6 @@ body {
 }
 
 /* === EXISTING STYLES === */
-
 @keyframes spin-slow {
   0% {
     transform: rotateY(0deg);
@@ -32,7 +31,7 @@ body {
   }
 }
 
-/* in index.css */
+/* Globe shadow styling */
 .globe canvas {
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(226, 0, 79, 0.25);
@@ -41,4 +40,63 @@ body {
 .globe-container canvas {
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(226, 0, 79, 0.25);
+}
+
+/* ========================================================= */
+/* 🔥 PRODUCT PAGE RESPONSIVE FIXES */
+/* ========================================================= */
+
+/* Prevent breadcrumbs from hiding under navbar */
+body {
+  padding-top: 80px !important;
+}
+
+/* Ensure table never overflows weirdly on mobile */
+.responsive-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.responsive-table-wrapper table {
+  min-width: 900px; /* Enough for 8 columns */
+}
+
+/* Search bar: keep the icon inside */
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper input {
+  padding-right: 50px !important;
+}
+
+.search-wrapper button {
+  right: 10px !important;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+/* Filter layout fixes for mobile */
+@media (max-width: 640px) {
+  .filter-box {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .filter-box select {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .filter-buttons button {
+    flex: 1;
+  }
 }

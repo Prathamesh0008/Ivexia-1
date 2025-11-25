@@ -1,5 +1,5 @@
 {
-  "nav": {
+ "nav": {
   "home": "Startpagina",
   "api": "Actieve Farmaceutische Ingrediënten",
   "products": "Farmaceutische Producten",
@@ -7,8 +7,13 @@
   "mag": "Ivexia Magazine",
   "mag_news": "Nieuws",
   "mag_health": "Gezondheidsmagazine",
-  "contact": "Contact"
+  "contact": "Contact",
+
+  "offerings": "Aanbod",
+  "overview": "Overzicht",
+  "otc": "OTC Geneesmiddelen"
 }
+
 ,
   "search": {
     "placeholder": "Zoek naar producten, artikelen, nieuws..."
@@ -264,10 +269,12 @@
     "results_plural": "{{total}} resultaten"
   },
   "ingredientGrid": {
-    "noResults": "Geen resultaten. Probeer andere filters.",
-    "prev": "‹ Vorige",
-    "next": "Volgende ›"
-  },
+  "name": "Naam",
+  "category": "Categorie",
+  "dosageForms": "Dosageervormen",
+  "noResults": "Geen resultaten. Probeer andere filters."
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "Synoniemen",
@@ -1083,8 +1090,101 @@
     "precautionsHeading": "Voorzorgsmaatregelen en bijwerkingen",
     "pharmaciesTitle": "Lijst met apotheken",
     "onlineShopping": "Online winkelen"
+  },
+  
+  "offerings": {
+    "heroTitle": "Onze Aanbiedingen",
+    "intro": "Ontdek Ivexia’s volledige assortiment farmaceutische oplossingen — van API’s tot eindproducten, OTC-geneesmiddelen en wetenschappelijke inzichten.",
+
+    "apiTitle": "Actieve Farmaceutische Ingrediënten (API’s)",
+    "apiDesc": "Hoogwaardige API’s geproduceerd volgens strikte GMP-normen.",
+    "apiBtn": "API’s Bekijken",
+
+    "productsTitle": "Farmaceutische Producten",
+    "productsDesc": "Een breed assortiment tabletten, capsules, injecties en orale oplossingen.",
+    "productsBtn": "Alle Producten Bekijken",
+
+    "otcTitle": "OTC-Geneesmiddelen",
+    "otcDesc": "Veilige, toegankelijke OTC-formules voor algemeen welzijn.",
+    "otcBtn": "OTC Bekijken",
+
+    "magTitle": "Ivexia Magazine",
+    "magDesc": "Artikelen en inzichten over wetenschap, gezondheid en farma.",
+    "magBtn": "Artikelen Lezen",
+
+    "companyTitle": "Over Ivexia",
+    "companyDesc": "Een wereldwijd farmaceutisch bedrijf gebaseerd op precisie, zuiverheid en vooruitgang.",
+    "companyBtn": "Meer Info"
+  },
+
+  "otcPage": {
+    "title": "OTC-Geneesmiddelen",
+    "subtitle": "Betrouwbare OTC-oplossingen voor dagelijks welzijn.",
+
+    "desc1": "Ivexia’s OTC-portfolio is nauwkeurig ontwikkeld volgens internationale gezondheidsnormen.",
+    "desc2": "Van pijnstilling tot spijsverteringsondersteuning — onze producten bevorderen dagelijks welzijn.",
+
+    "features": {
+      "science": "Wetenschappelijk Onderbouwd",
+      "scienceDesc": "Ontwikkeld met geavanceerde farmaceutische technologie.",
+      "quality": "Kwaliteit & Veiligheid",
+      "qualityDesc": "Geproduceerd in WHO-GMP-gecertificeerde faciliteiten.",
+      "wellness": "Volledig Welzijn",
+      "wellnessDesc": "Ondersteunt spijsvertering, immuniteit, hydratatie en vitaliteit."
+    },
+
+    "categoriesTitle": "Onze OTC-Categorieën",
+
+    "categories": {
+      "pain": "Pijnstilling",
+      "painDesc": "Snelwerkende pijnstillers voor directe verlichting",
+
+      "allergy": "Allergiezorg",
+      "allergyDesc": "Effectieve antihistaminica voor allergieklachten",
+
+      "digestive": "Spijsvertering",
+      "digestiveDesc": "Oplossingen voor brandend maagzuur, gas en spijsverteringsbalans",
+
+      "cold": "Hoest & Verkoudheid",
+      "coldDesc": "Effectieve middelen voor verkoudheid, griep en ademhalingsklachten"
+    },
+
+    "sidebarTitle": "In deze sectie",
+
+    "sidebar": {
+      "products": "Farmaceutische Producten",
+      "overview": "Overzicht",
+      "api": "Actieve Ingrediënten",
+      "otc": "OTC"
+    }
+  },
+  "productsPage": {
+  "title": "Productzoeker",
+  "subtitle": "Zoek en filter onze farmaceutische formuleringen",
+  "pdfTitle": "Ivexia Farmaceutische Productlijst",
+  "pdfButton": "Downloaden",
+  "searchPlaceholder": "Zoek op productnaam / categorie / CAS-ID",
+  "filterCategory": "Categorie",
+  "filterForm": "Vorm",
+  "filterDosage": "Sterkte / Dosering",
+  "filterSearch": "Zoeken",
+  "filterClear": "Wissen",
+  "noResults": "Geen overeenkomende producten gevonden.",
+  "table": {
+    "name": "Naam",
+    "form": "Vorm",
+    "category": "Categorie",
+    "dosage": "Sterkte / Dosering",
+    "packSize": "Verpakkingsgrootte",
+    "formulationType": "Type formulering",
+    "casId": "CAS-ID",
+    "pharmSpec": "Farmaceutische specificatie"
   }
 }
+
+}
+
+
 
 
 

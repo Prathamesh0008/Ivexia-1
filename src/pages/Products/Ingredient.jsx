@@ -1,3 +1,4 @@
+//src\pages\Products\Ingredient.jsx
 import { useMemo, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -60,51 +61,48 @@ export default function Ingredient() {
 
   // Final filtering
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+  const q = query.trim().toLowerCase();
 
-    let list = INGREDIENTS.filter((i) => {
-      const name = t(i.nameKey).toLowerCase();
-      const desc = t(i.descKey).toLowerCase();
+  let list = INGREDIENTS.filter((i) => {
+    const name = t(i.nameKey).toLowerCase();
+    const desc = t(i.descKey).toLowerCase();
 
-      const byQuery =
-        !q ||
-        name.includes(q) ||
-        desc.includes(q) ||
-        (i.cas && i.cas.toLowerCase().includes(q));
+    const matchQuery =
+      !q ||
+      name.includes(q) ||
+      desc.includes(q) ||
+      (i.cas && i.cas.toLowerCase().includes(q));
 
-      const byCat = category === "All" || i.categoryKey === category;
+    // IMPORTANT FIX → use raw keys
+    const matchCategory =
+      category === "All" || i.categoryKey === category;
 
-      const byDos =
-        dosage === "All" || i.dosageKeys.includes(dosage);
+    const matchDosage =
+      dosage === "All" || i.dosageKeys.includes(dosage);
 
-      return byQuery && byCat && byDos;
-    });
+    return matchQuery && matchCategory && matchDosage;
+  });
 
-    // Sorting
-    switch (sortBy) {
-      case "name-asc":
-        list.sort((a, b) =>
+  // SORTING
+  switch (sortBy) {
+    case "name-asc":
+      list.sort((a, b) => t(a.nameKey).localeCompare(t(b.nameKey)));
+      break;
+    case "name-desc":
+      list.sort((a, b) => t(b.nameKey).localeCompare(t(a.nameKey)));
+      break;
+    case "category":
+      list.sort(
+        (a, b) =>
+          t(a.categoryKey).localeCompare(t(b.categoryKey)) ||
           t(a.nameKey).localeCompare(t(b.nameKey))
-        );
-        break;
-      case "name-desc":
-        list.sort((a, b) =>
-          t(b.nameKey).localeCompare(t(a.nameKey))
-        );
-        break;
-      case "category":
-        list.sort(
-          (a, b) =>
-            t(a.categoryKey).localeCompare(t(b.categoryKey)) ||
-            t(a.nameKey).localeCompare(t(b.nameKey))
-        );
-        break;
-      default:
-        break;
-    }
+      );
+      break;
+  }
 
-    return list;
-  }, [query, category, dosage, sortBy, t]);
+  return list;
+}, [query, category, dosage, sortBy, t]);
+
 
   const totalPages = Math.max(
     1,

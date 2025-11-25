@@ -335,26 +335,37 @@ export default function AboutUs() {
       </section>
 
       {/* =======================
-          8. CERTIFICATIONS
-      ======================= */}
-      <section className="py-20 bg-[#f8fafc] px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-12">
-          {t("aboutPage.certifications.title")}
-        </h2>
+    8. CERTIFICATIONS
+======================= */}
+<section className="py-20 bg-[#f8fafc] px-6">
+  <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0d2d47] mb-12">
+    {t("aboutPage.certifications.title")}
+  </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
-          {t("aboutPage.certifications.items", { returnObjects: true }).map(
-            (text, idx) => (
-              <div
-                key={idx}
-                className="px-6 py-4 bg-white shadow-md border border-gray-200 text-center text-sm md:text-base font-medium text-[#0d2d47]"
-              >
-                {text}
-              </div>
-            )
-          )}
-        </div>
-      </section>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
+    {[
+      { img: "/src/assets/logo/EU-GMP.jpg", alt: "EU GMP" },
+      { img: "/src/assets/logo/HACCP.jpg", alt: "HACCP" },
+      { img: "/src/assets/logo/ISO 9001.jpg", alt: "ISO 9001" },
+      { img: "/src/assets/logo/ISO 14001.jpg", alt: "ISO 14001" },
+      { img: "/src/assets/logo/PIclogo.jpg", alt: "PIC/S" },
+      { img: "/src/assets/logo/WHO-GMP.jpg", alt: "WHO GMP" },
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="bg-white shadow-md border border-gray-200 rounded-xl 
+                   flex items-center justify-center p-4 hover:shadow-xl transition"
+      >
+        <img
+          src={item.img}
+          alt={item.alt}
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* =======================
           9. BIG STATEMENT

@@ -1,5 +1,5 @@
 {
-  "nav": {
+ "nav": {
   "home": "Accueil",
   "api": "Ingrédients Pharmaceutiques Actifs",
   "products": "Produits Pharmaceutiques",
@@ -7,8 +7,13 @@
   "mag": "Magazine Ivexia",
   "mag_news": "Actualités",
   "mag_health": "Magazine Santé",
-  "contact": "Contactez-nous"
+  "contact": "Contactez-nous",
+
+  "offerings": "Nos Offres",
+  "overview": "Aperçu",
+  "otc": "Médicaments en Vente Libre"
 }
+
 ,
   "search": {
     "placeholder": "Rechercher des produits, articles, actualités..."
@@ -234,10 +239,12 @@
     "results_plural": "{{total}} résultats"
   },
   "ingredientGrid": {
-    "noResults": "Aucun résultat. Essayez d'autres filtres.",
-    "prev": "‹ Précédent",
-    "next": "Suivant ›"
-  },
+  "name": "Nom",
+  "category": "Catégorie",
+  "dosageForms": "Formes posologiques",
+  "noResults": "Aucun résultat. Essayez d'autres filtres."
+}
+,
   "ingredientCard": {
     "cas": "CAS",
     "synonyms": "Synonymes",
@@ -1047,5 +1054,98 @@
     "precautionsHeading": "Précautions et effets indésirables",
     "pharmaciesTitle": "Liste des pharmacies",
     "onlineShopping": "Achat en ligne"
+  },
+  
+  "offerings": {
+    "heroTitle": "Nos Offres",
+    "intro": "Découvrez la gamme complète de solutions pharmaceutiques d’Ivexia — des API aux formulations finies, médicaments OTC et contenus scientifiques.",
+
+    "apiTitle": "Ingrédients Pharmaceutiques Actifs (APIs)",
+    "apiDesc": "APIs de haute qualité fabriqués sous conformité GMP.",
+    "apiBtn": "Explorer les APIs",
+
+    "productsTitle": "Produits Pharmaceutiques",
+    "productsDesc": "Large gamme de comprimés, capsules, injections et solutions orales.",
+    "productsBtn": "Voir Tous les Produits",
+
+    "otcTitle": "Médicaments OTC",
+    "otcDesc": "Formulations OTC sûres et accessibles pour le bien-être général.",
+    "otcBtn": "Explorer OTC",
+
+    "magTitle": "Magazine Ivexia",
+    "magDesc": "Actualités et analyses sur la santé, la science et l’industrie pharmaceutique.",
+    "magBtn": "Lire les Articles",
+
+    "companyTitle": "À propos d’Ivexia",
+    "companyDesc": "Entreprise pharmaceutique mondiale axée sur la précision, la pureté et le progrès.",
+    "companyBtn": "En Savoir Plus"
+  },
+
+  "otcPage": {
+    "title": "Médicaments OTC",
+    "subtitle": "Solutions OTC fiables pour un bien-être quotidien.",
+
+    "desc1": "La gamme OTC d’Ivexia est développée avec précision et conforme aux normes internationales.",
+    "desc2": "Du soulagement de la douleur au bien-être digestif, nos formulations soutiennent la santé au quotidien.",
+
+    "features": {
+      "science": "Basé sur la Science",
+      "scienceDesc": "Développé avec des technologies pharmaceutiques avancées.",
+      "quality": "Qualité et Sécurité",
+      "qualityDesc": "Fabriqué dans des installations certifiées WHO-GMP.",
+      "wellness": "Bien-Être Complet",
+      "wellnessDesc": "Soutient la digestion, l’immunité, l’hydratation et la vitalité."
+    },
+
+    "categoriesTitle": "Nos Catégories OTC",
+
+    "categories": {
+      "pain": "Soulagement de la Douleur",
+      "painDesc": "Formulations analgésiques à action rapide",
+
+      "allergy": "Allergies",
+      "allergyDesc": "Antihistaminiques efficaces pour les allergies",
+
+      "digestive": "Bien-Être Digestif",
+      "digestiveDesc": "Solutions contre l’acidité, les gaz et les troubles digestifs",
+
+      "cold": "Toux & Rhume",
+      "coldDesc": "Médicaments efficaces contre le rhume, la grippe et les symptômes respiratoires"
+    },
+
+    "sidebarTitle": "Dans cette section",
+
+    "sidebar": {
+      "products": "Produits Pharmaceutiques",
+      "overview": "Aperçu",
+      "api": "Ingrédients Pharmaceutiques Actifs",
+      "otc": "OTC"
+    }
+  },
+  "productsPage": {
+  "title": "Recherche de Produits",
+  "subtitle": "Recherchez et filtrez nos formulations pharmaceutiques",
+  "pdfTitle": "Liste des Produits Pharmaceutiques Ivexia",
+  "pdfButton": "Télécharger",
+  "searchPlaceholder": "Rechercher par nom, catégorie ou ID CAS",
+  "filterCategory": "Catégorie",
+  "filterForm": "Forme",
+  "filterDosage": "Dosage / Force",
+  "filterSearch": "Rechercher",
+  "filterClear": "Effacer",
+  "noResults": "Aucun produit correspondant trouvé.",
+  "table": {
+    "name": "Nom",
+    "form": "Forme",
+    "category": "Catégorie",
+    "dosage": "Dosage / Force",
+    "packSize": "Taille du paquet",
+    "formulationType": "Type de formulation",
+    "casId": "ID CAS",
+    "pharmSpec": "Spécification pharmaceutique"
   }
 }
+
+}
+
+
