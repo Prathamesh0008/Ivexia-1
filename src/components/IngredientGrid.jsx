@@ -1,25 +1,28 @@
 // src/components/IngredientGrid.jsx
 import { useTranslation } from "react-i18next";
 
-export default function IngredientGrid({ items }) {
+export default function IngredientGrid({ items = [] }) {
   const { t } = useTranslation();
+
+  const goToItem = (slug) => {
+    window.location.href = `/portfolio/${slug}`;
+  };
 
   return (
     <div className="w-full">
 
-      {/* DESKTOP TABLE */}
-      <div className="hidden md:block bg-white border border-gray-300 shadow-sm overflow-x-auto">
+      {/* =========================
+          DESKTOP / TABLET TABLE
+      ========================= */}
+      <div className="hidden md:block bg-white border border-gray-300 shadow-sm overflow-x-auto rounded-lg">
         <table className="min-w-full text-sm">
           <thead className="bg-[#0d2d47] text-white sticky top-0 z-10">
             <tr>
               <th className="px-4 py-3 font-semibold border-r border-gray-500 text-left">
                 {t("ingredientGrid.name")}
               </th>
-              <th className="px-4 py-3 font-semibold border-r border-gray-500 text-left">
-                {t("ingredientGrid.category")}
-              </th>
               <th className="px-4 py-3 font-semibold text-left">
-                {t("ingredientGrid.dosageForms")}
+                {t("ingredientGrid.category")}
               </th>
             </tr>
           </thead>
@@ -28,8 +31,8 @@ export default function IngredientGrid({ items }) {
             {items.length === 0 ? (
               <tr>
                 <td
-                  colSpan={3}
-                  className="text-center py-10 text-gray-600 border border-gray-300"
+                  colSpan={2}
+                  className="text-center py-10 text-gray-600 border-t"
                 >
                   {t("ingredientGrid.noResults")}
                 </td>
@@ -38,32 +41,15 @@ export default function IngredientGrid({ items }) {
               items.map((i, index) => (
                 <tr
                   key={i.id}
-                  onClick={() =>
-                    (window.location.href = `/portfolio/${i.slug}`)
-                  }
-                  className={`cursor-pointer transition hover:bg-[#FFF8F5] ${
-                    index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                  }`}
+                  onClick={() => goToItem(i.slug)}
+                  className={`cursor-pointer transition hover:bg-[#FFF8F5]
+                    ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
                 >
-                  <td className="px-4 py-3 border border-gray-300 font-semibold text-[#0d2d47]">
+                  <td className="px-4 py-3 border-t border-r font-semibold text-[#0d2d47]">
                     {t(i.nameKey)}
                   </td>
-
-                  <td className="px-4 py-3 border border-gray-300">
+                  <td className="px-4 py-3 border-t">
                     {t(i.categoryKey)}
-                  </td>
-
-                  <td className="px-4 py-3 border border-gray-300">
-                    <div className="flex flex-wrap gap-2">
-                      {i.dosageKeys.map((d) => (
-                        <span
-                          key={d}
-                          className="px-2 py-1 text-xs bg-gray-200 rounded-full"
-                        >
-                          {t(d)}
-                        </span>
-                      ))}
-                    </div>
                   </td>
                 </tr>
               ))
@@ -72,43 +58,38 @@ export default function IngredientGrid({ items }) {
         </table>
       </div>
 
-      {/* MOBILE CARDS */}
-      <div className="md:hidden flex flex-col gap-4">
+      {/* =========================
+          MOBILE CARDS
+      ========================= */}
+      <div className="md:hidden space-y-4">
         {items.length === 0 ? (
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 py-10">
             {t("ingredientGrid.noResults")}
           </p>
         ) : (
           items.map((i) => (
-            <div
+            <button
               key={i.id}
-              onClick={() => (window.location.href = `/portfolio/${i.slug}`)}
-              className="bg-white border border-gray-300 p-4 shadow-sm active:scale-[0.98] transition"
+              onClick={() => goToItem(i.slug)}
+              className="
+                w-full text-left
+                bg-white border border-gray-300 rounded-xl
+                p-4 shadow-sm
+                active:scale-[0.98]
+                transition
+              "
             >
-              <p className="font-bold text-[#0d2d47] mb-2">
+              <p className="text-base font-semibold text-[#0d2d47] leading-snug">
                 {t(i.nameKey)}
               </p>
 
-              <p className="text-sm text-gray-700">
-                <strong>{t("ingredientGrid.category")}:</strong>{" "}
+              <div className="mt-2 text-sm text-gray-700">
+                <span className="font-medium">
+                  {t("ingredientGrid.category")}:
+                </span>{" "}
                 {t(i.categoryKey)}
-              </p>
-
-              <p className="text-sm text-gray-700 mt-1">
-                <strong>{t("ingredientGrid.dosageForms")}:</strong>
-              </p>
-
-              <div className="flex flex-wrap gap-2 mt-1">
-                {i.dosageKeys.map((d) => (
-                  <span
-                    key={d}
-                    className="px-2 py-1 text-xs bg-gray-200 rounded-full"
-                  >
-                    {t(d)}
-                  </span>
-                ))}
               </div>
-            </div>
+            </button>
           ))
         )}
       </div>
