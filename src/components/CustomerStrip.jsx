@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import actoverco from "../assets/logo/customers/actoverco.png";
 import abidi from "../assets/logo/customers/abidi.png";
-import kharazmi from "../assets/logo/customers/kharazmi1.png";
+import kharazmi from "../assets/logo/customers/Kharazmi1.png";
 import varian from "../assets/logo/customers/Varian1.png";
 
 const customers = [
