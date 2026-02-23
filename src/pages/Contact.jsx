@@ -255,7 +255,7 @@ await emailjs.send(
                 </span>
                 <div>
                   <p className="font-semibold text-[#0d2d47]">{t("contactPage.email")}</p>
-                  <p>	edwebshop18@gmail.com</p>
+                  <p>	info@ivexiapharma.com</p>
                 </div>
               </div>
 
