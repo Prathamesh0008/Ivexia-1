@@ -85,11 +85,6 @@ function Layout() {
             element={<div className="p-20 text-center">Register Page</div>}
           />
 
-          {/* 404 */}
-          <Route
-            path="*"
-            element={<div className="p-20 text-center">404 - Page Not Found</div>}
-          />
         </Routes>
       </main>
 
