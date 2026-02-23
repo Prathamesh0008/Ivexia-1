@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import aboutVideo from "../assets/logo/aboutvideo.mp4";
+import { Link } from "react-router-dom";
 export default function AboutVideo() {
   const { t } = useTranslation("common");
 
@@ -35,19 +36,12 @@ export default function AboutVideo() {
             {t("about.video.paragraph")}
           </p>
 
-          <a
-            href="/ivexia-mag"
-            onClick={(e) => {
-              if (e.ctrlKey || e.metaKey) {
-                e.preventDefault();
-                window.open("/ivexia-mag", "_blank", "noopener,noreferrer");
-                return;
-              }
-            }}
-            className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all shadow-lg inline-block"
-          >
-            {t("about.video.cta")}
-          </a>
+          <Link
+  to="/ivexia-mag"
+  className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all shadow-lg inline-block"
+>
+  {t("about.video.cta")}
+</Link>
         </div>
       </div>
     </section>

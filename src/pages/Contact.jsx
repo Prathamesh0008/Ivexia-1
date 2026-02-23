@@ -179,7 +179,7 @@ await emailjs.send(
     text-white
     shadow-md hover:opacity-90 hover:translate-y-[1px]
     transition
-    disabled:opacity-60 disabled:cursor-not-allowed
+    disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer
   "
 >
   {loading ? "Sending..." : t("contactPage.submit")}
