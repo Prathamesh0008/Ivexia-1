@@ -1,5 +1,5 @@
 // src/pages/Contact.jsx
-import React from "react";
+
 import {
   FaInstagram,
   FaWhatsapp,
@@ -9,18 +9,65 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-
+import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import contactHero from "../assets/logo/ivexia-factory1.jpg";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const ADMIN_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID;
+const USER_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_USER_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const [loading, setLoading] = useState(false);
+const [success, setSuccess] = useState(false);
+const [error, setError] = useState("");
   const { t } = useTranslation();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // later: connect to backend / email service
-    console.log("Contact form submitted");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setSuccess(false);
+  setError("");
+
+  const form = e.target;
+
+  const formData = {
+    from_name: form.from_name.value,
+    from_email: form.from_email.value,
+    phone: form.phone.value,
+    subject: form.subject.value,
+    message: form.message.value,
+    time: new Date().toLocaleString(),
   };
+
+  try {
+  // Send to Admin
+await emailjs.send(
+  SERVICE_ID,
+  ADMIN_TEMPLATE_ID,
+  formData
+);
+
+// Send Auto Reply to User
+await emailjs.send(
+  SERVICE_ID,
+  USER_TEMPLATE_ID,
+  formData
+);
+
+    setSuccess(true);
+    form.reset();
+
+  } catch (err) {
+    console.error(err);
+    setError("Failed to send message. Please try again.");
+  }
+
+  setLoading(false);
+};
 
   return (
     <div className="bg-[#FFF8F5] min-h-screen pt-16 md:pt-20">
@@ -53,8 +100,9 @@ export default function Contact() {
                   {t("contactPage.email")} <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="email"
-                  required
+  name="from_email"
+  type="email"
+  required
                   className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm md:text-base
                              focus:outline-none focus:ring-2 focus:ring-[#19a6b5] focus:border-[#19a6b5]"
                   placeholder={t("contactPage.emailPlaceholder")}
@@ -67,8 +115,9 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-[#0d2d47] mb-1.5">
                     {t("contactPage.fullName")}
                   </label>
-                  <input
-                    type="text"
+                 <input
+  name="from_name"
+  type="text"
                     className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm md:text-base
                                focus:outline-none focus:ring-2 focus:ring-[#19a6b5] focus:border-[#19a6b5]"
                     placeholder={t("contactPage.fullNamePlaceholder")}
@@ -79,7 +128,8 @@ export default function Contact() {
                     {t("contactPage.phone")}
                   </label>
                   <input
-                    type="tel"
+  name="phone"
+  type="tel"
                     className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm md:text-base
                                focus:outline-none focus:ring-2 focus:ring-[#19a6b5] focus:border-[#19a6b5]"
                     placeholder={t("contactPage.phonePlaceholder")}
@@ -93,7 +143,8 @@ export default function Contact() {
                   {t("contactPage.subject")}
                 </label>
                 <input
-                  type="text"
+  name="subject"
+  type="text"
                   className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm md:text-base
                              focus:outline-none focus:ring-2 focus:ring-[#19a6b5] focus:border-[#19a6b5]"
                   placeholder={t("contactPage.subjectPlaceholder")}
@@ -105,8 +156,9 @@ export default function Contact() {
                 <label className="block text-sm font-medium text-[#0d2d47] mb-1.5">
                   {t("contactPage.message")}
                 </label>
-                <textarea
-                  rows={5}
+              <textarea
+  name="message"
+  rows={5}
                   className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm md:text-base
                              focus:outline-none focus:ring-2 focus:ring-[#19a6b5] focus:border-[#19a6b5] resize-y"
                   placeholder={t("contactPage.messagePlaceholder")}
@@ -116,20 +168,33 @@ export default function Contact() {
               {/* BUTTON */}
               <div className="pt-2">
                 <button
-                  type="submit"
-                  className="
-                    inline-flex items-center justify-center
-                    px-7 md:px-9 py-2.5 md:py-3
-                    text-sm md:text-base font-semibold
-                    rounded-full
-                    bg-gradient-to-r from-[#0d2d47] to-[#19a6b5]
-                    text-white
-                    shadow-md hover:opacity-90 hover:translate-y-[1px]
-                    transition
-                  "
-                >
-                  {t("contactPage.submit")}
-                </button>
+  type="submit"
+  disabled={loading}
+  className="
+    inline-flex items-center justify-center
+    px-7 md:px-9 py-2.5 md:py-3
+    text-sm md:text-base font-semibold
+    rounded-full
+    bg-gradient-to-r from-[#0d2d47] to-[#19a6b5]
+    text-white
+    shadow-md hover:opacity-90 hover:translate-y-[1px]
+    transition
+    disabled:opacity-60 disabled:cursor-not-allowed
+  "
+>
+  {loading ? "Sending..." : t("contactPage.submit")}
+</button>
+{success && (
+  <p className="text-green-600 mt-3">
+    Message sent successfully!
+  </p>
+)}
+
+{error && (
+  <p className="text-red-600 mt-3">
+    {error}
+  </p>
+)}
               </div>
             </form>
           </div>

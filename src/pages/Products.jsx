@@ -138,15 +138,15 @@ export default function Products() {
             {t("productsPage.pdfTitle")}
           </p>
 
-          <a
-            href="/Larksois Pharma Product List 1.pdf"
-            download="Larksois Pharma Product List.pdf"
-            className="px-5 py-2 rounded-full text-white font-semibold text-sm
-              bg-gradient-to-r from-[#FF7A00] to-[#E2004F]
-              shadow-md hover:opacity-90 transition"
-          >
-            {t("productsPage.pdfButton")}
-          </a>
+       <a
+  href="/LarksoisPharmaproduct.json"
+  download="Larksois Pharma Product List.json"
+  className="px-5 py-2 rounded-full text-white font-semibold text-sm
+  bg-gradient-to-r from-[#FF7A00] to-[#E2004F]
+  shadow-md hover:opacity-90 transition"
+>
+  {t("productsPage.pdfButton")}
+</a>
         </div>
 
         {/* SEARCH + FILTERS */}
