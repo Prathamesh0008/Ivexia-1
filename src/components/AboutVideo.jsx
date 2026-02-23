@@ -36,7 +36,7 @@ export default function AboutVideo() {
             {t("about.video.paragraph")}
           </p>
 
-          <Link
+     <Link
   to="/ivexia-mag"
   className="bg-gradient-to-r from-[#FF7A00] to-[#E2004F] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all shadow-lg inline-block"
 >
