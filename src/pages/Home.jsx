@@ -13,7 +13,7 @@ export default function Home() {
   const { t } = useTranslation("common");
 
   return (
-    <div className="pt-6">
+    <div className="pt-8">
       
       <Hero />
       <IvexiaNumbers />
