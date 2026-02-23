@@ -159,7 +159,7 @@ export default function Products() {
               onKeyDown={handleSearchKeyDown}
               placeholder={t("productsPage.searchPlaceholder")}
               className="w-full rounded-full border border-gray-300 bg-white px-6 py-3 pr-16 
-              text-sm shadow-sm focus:outline-none"
+              text-sm shadow-sm focus:outline-none cursor-pointer"
             />
 
             <button
@@ -168,7 +168,7 @@ export default function Products() {
               className="absolute right-2 top-1/2 -translate-y-1/2
                 w-11 h-11 rounded-full flex items-center justify-center
                 text-black 
-                shadow-md"
+                shadow-md cursor-pointer"
             >
               <FaSearch className="text-sm" />
             </button>
@@ -216,7 +216,7 @@ export default function Products() {
               type="button"
               onClick={applySearch}
               className="px-6 py-2 rounded-full text-white font-semibold text-sm 
-              bg-gradient-to-r from-[#FF7A00] to-[#E2004F]"
+              bg-gradient-to-r from-[#FF7A00] to-[#E2004F] cursor-pointer"
             >
               {t("productsPage.filterSearch")}
             </button>
@@ -224,7 +224,7 @@ export default function Products() {
             <button
               type="button"
               onClick={handleClear}
-              className="px-6 py-2 rounded-full bg-[#0d2d47] text-white font-semibold text-sm"
+              className="px-6 py-2 rounded-full bg-[#0d2d47] text-white font-semibold text-sm cursor-pointer"
             >
               {t("productsPage.filterClear")}
             </button>

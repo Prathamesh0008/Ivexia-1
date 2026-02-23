@@ -85,7 +85,7 @@ export default function OfferingsOverview() {
 
                 <button
                   onClick={() => navigate(s.link)}
-                  className="mt-3 inline-block px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#FF7A00] to-[#E2004F] shadow-md"
+                  className="mt-3 inline-block px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#FF7A00] to-[#E2004F] shadow-md cursor-pointer"
                 >
                   {s.btn}
                 </button>

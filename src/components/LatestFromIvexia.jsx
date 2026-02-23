@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\LatestFromIvexia.jsx
 import { motion } from "framer-motion";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,11 @@ export default function LatestFromIvexia() {
 
   // Make sure returnObjects is true
   const posts = t("latestNews.posts", { returnObjects: true });
+  const imageMap = {
+  1: "/images/R&D.jpg",
+  2: "/images/Manufacturing.jpg",
+  3: "/images/Oncology.jpg",
+};
 
   // Debug: check if posts are loaded correctly
   console.log("Posts loaded:", posts);
@@ -39,9 +45,9 @@ export default function LatestFromIvexia() {
           >
             {/* Image */}
             <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden">
-              <img
-                src={post.image}
-                alt={post.title}
+             <img
+  src={imageMap[post.id]}
+  alt={post.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-40 hover:opacity-20 transition"></div>

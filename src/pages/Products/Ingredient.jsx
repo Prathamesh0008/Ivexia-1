@@ -24,7 +24,7 @@ export default function Ingredient() {
   // Responsive sizing
   const [pageSize, setPageSize] = useState(12);
 
-  useEffect(() => {
+  useEffect(() => { 
     function updatePageSize() {
       const w = window.innerWidth;
       if (w < 640) setPageSize(4);

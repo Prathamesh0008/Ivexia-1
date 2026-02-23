@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import actoverco from "../assets/logo/customers/actoverco.png";
 import abidi from "../assets/logo/customers/abidi.png";
-import kharazmi from "../assets/logo/customers/kharazmi.png";
-import varian from "../assets/logo/customers/varian.png";
+import kharazmi from "../assets/logo/customers/kharazmi1.png";
+import varian from "../assets/logo/customers/varian1.png";
 
 const customers = [
   { name: "Actoverco", logo: actoverco },

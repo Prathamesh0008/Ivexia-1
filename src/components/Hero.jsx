@@ -73,8 +73,8 @@ export default function Hero() {
 
   return (
     <section
-      ref={heroRef}
-      className="relative w-full h-[80vh] md:h-[55vh] overflow-hidden"
+  ref={heroRef}
+  className="relative w-full h-[75vh] md:h-[70vh] overflow-hidden pt-16"
       // style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

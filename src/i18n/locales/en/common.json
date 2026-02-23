@@ -144,7 +144,7 @@
         "title": "Ivexia Expands R&D in Biotech",
         "date": "November 10, 2025",
         "category": "Research & Development",
-        "image": "https://images.unsplash.com/photo-1581090467727-9737c1b1a83b?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1581091012184-7c2d2c7b4c2d?auto=format&fit=crop&w=800&q=80",
         "excerpt": "Ivexia strengthens its innovation footprint by expanding R&D capabilities in advanced biologics and biosimilar research."
       },
       {
@@ -152,7 +152,7 @@
         "title": "Sustainability in Pharma Manufacturing",
         "date": "October 28, 2025",
         "category": "Corporate Responsibility",
-        "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+        "image":"https://images.unsplash.com/photo-1581090700227-4c4f50b4b6a9?auto=format&fit=crop&w=800&q=80",
         "excerpt": "Our facilities are moving toward full Zero Liquid Discharge (ZLD) compliance, ensuring a greener tomorrow for healthcare manufacturing."
       },
       {
@@ -160,7 +160,7 @@
         "title": "New Oncology Line Launch 2026",
         "date": "October 15, 2025",
         "category": "Product Innovation",
-        "image": "https://images.unsplash.com/photo-1579154204601-01588f351e56?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1580281658629-8a7e2d6c5a3e?auto=format&fit=crop&w=800&q=80",
         "excerpt": "Ivexia announces the upcoming launch of its oncology formulations line, focusing on affordable and high-efficacy cancer care."
       }
     ]
@@ -454,11 +454,27 @@
     "card2Title": "Molecular R&D Innovation",
     "card3Title": "Global Quality Compliance"
   },
-  "leadership": {
-    "title": "Leadership at Ivexia",
-    "cardName": "Leader {{index}}",
-    "cardDept": "Department"
-  },
+ "leadership": {
+  "title": "Leadership at Ivexia",
+  "members": [
+    {
+      "name": "Dr. Mansur Khalifah",
+      "department": "Director & Global Strategy"
+    },
+    {
+      "name": "Avinaash Badal",
+      "department": "Operations & Manufacturing"
+    },
+    {
+      "name": "Elena Petrova",
+      "department": "Biotech Research"
+    },
+    {
+      "name": "Rahul Mehta",
+      "department": "Regulatory Affairs"
+    }
+  ]
+},
   "timeline": {
     "title": "Our Journey Forward",
     "items": {

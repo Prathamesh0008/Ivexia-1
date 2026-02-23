@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-
+import aboutVideo from "../assets/logo/aboutvideo.mp4";
 export default function AboutVideo() {
   const { t } = useTranslation("common");
 
@@ -13,10 +13,7 @@ export default function AboutVideo() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source
-          src="https://media.istockphoto.com/id/2177598227/video/young-ethnic-male-scientist-working-in-laboratory.mp4?s=mp4-640x640-is&k=20&c=a5Lcz9T_kwa71NzxltuOllEahyFefYydLbe3uSNaGC0="
-          type="video/mp4"
-        />
+      <source src={aboutVideo} type="video/mp4" />
         {t("about.video.fallback")}
       </video>
 

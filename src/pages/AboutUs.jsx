@@ -5,6 +5,12 @@ import LazyImage from "../components/LazyImage";
 import factoryImg from "../assets/logo/ivexia-factory1.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import aboutVideo from "../assets/logo/aboutvideo.mp4";
+import lab1 from "../assets/logo/lab1.jpg";
+import lab2 from "../assets/logo/lab2.jpg";
+import lab3 from "../assets/logo/lab3.jpg";
+import lab4 from "../assets/logo/lab4.jpg";
+import lab5 from "../assets/logo/lab5.jpg";
 
 // =========================
 // AUTO SCROLL COMPONENT
@@ -14,6 +20,8 @@ function AutoScrollLabs() {
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  const labImages = [lab1, lab2, lab3, lab4, lab5];
+
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -22,12 +30,12 @@ function AutoScrollLabs() {
 
     const startScroll = () => {
       scrollInterval = setInterval(() => {
-        container.scrollLeft += 1; // scroll speed
+        container.scrollLeft += 1;
         if (
           container.scrollLeft + container.clientWidth >=
           container.scrollWidth
         ) {
-          container.scrollLeft = 0; // loop back
+          container.scrollLeft = 0;
         }
       }, 15);
     };
@@ -42,40 +50,21 @@ function AutoScrollLabs() {
       ref={scrollRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="
-        flex 
-        items-start
-        gap-6 
-        overflow-x-auto 
-        pb-4 
-        snap-x 
-        snap-mandatory 
-        scrollbar-hide 
-        scroll-smooth
-      "
+      className="flex items-start gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide scroll-smooth"
     >
-      {[1, 2, 3, 4, 5].map((i) => (
+      {labImages.map((img, i) => (
         <div
           key={i}
-          className="
-            min-w-[260px] 
-            md:min-w-[350px] 
-            snap-start 
-            rounded-2xl 
-            overflow-hidden
-            shadow-lg 
-            bg-white
-            flex-shrink-0
-          "
+          className="min-w-[260px] md:min-w-[350px] snap-start rounded-2xl overflow-hidden shadow-lg bg-white flex-shrink-0"
         >
           <LazyImage
-            src={`https://source.unsplash.com/600x400/?laboratory,science,${i}`}
+            src={img}
             className="w-full h-[180px] md:h-[230px] object-cover"
           />
 
           <div className="p-4 bg-white">
             <h3 className="font-semibold text-[#0d2d47]">
-              {t("aboutPage.labs.cardTitle", { index: i })}
+              {t("aboutPage.labs.cardTitle", { index: i + 1 })}
             </h3>
             <p className="text-gray-600 text-sm mt-1">
               {t("aboutPage.labs.cardText")}
@@ -100,13 +89,14 @@ export default function AboutUs() {
       ======================= */}
       <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://media.istockphoto.com/id/1479305023/video/closeup-research-and-hands-with-pipette-medical-and-health-with-breakthrough-cure-and.mp4?s=mp4-640x640-is&k=20&c=-K_N_NbZze7i9voLpX-1hBsbsZA_CEZ5vU8RbryyQ3w="
-        />
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src={aboutVideo} type="video/mp4" />
+</video>
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d2d47]/70 via-[#E2004F]/30 to-transparent" />
 
@@ -246,9 +236,9 @@ export default function AboutUs() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {[{ key: "card1Title", img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=900" },
-            { key: "card2Title", img: "https://images.unsplash.com/photo-1581091012184-7c54c3c50c82?q=80&w=900" },
-            { key: "card3Title", img: "https://images.unsplash.com/photo-1576765607935-3a83dfb1f3a2?q=80&w=900" }].map((card, i) => (
+          {[{ key: "card1Title", img: "/images/R&D.jpg" },
+  { key: "card2Title", img: "/images/Manufacturing.jpg" },
+  { key: "card3Title", img: "/images/Oncology.jpg" }].map((card, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -270,36 +260,44 @@ export default function AboutUs() {
       </section>
 
       {/* =======================
-          6. LEADERSHIP
-      ======================= */}
-      <section className="py-32 bg-gray-50 px-6 md:px-16">
-        <h2 className="text-4xl font-bold text-center text-[#0d2d47] mb-12">
-          {t("aboutPage.leadership.title")}
-        </h2>
+    6. LEADERSHIP
+======================= */}
+<section className="py-32 bg-gray-50 px-6 md:px-16">
+  <h2 className="text-4xl font-bold text-center text-[#0d2d47] mb-12">
+    {t("aboutPage.leadership.title")}
+  </h2>
 
-        <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
-          {[21, 22, 23, 24].map((id, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg 
-                p-6 w-[220px] text-center hover:shadow-xl transition"
-            >
-              <LazyImage
-                src={`https://randomuser.me/api/portraits/men/${id}.jpg`}
-                className="w-24 h-24 mx-auto object-cover mb-4 border-4 border-[#19a6b5]"
-              />
-              <h4 className="font-semibold text-[#0d2d47] text-lg">
-                {t("aboutPage.leadership.cardName", { index: i + 1 })}
-              </h4>
-              <p className="text-xs text-gray-500">
-                {t("aboutPage.leadership.cardDept")}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+  {(() => {
+    const members = t("aboutPage.leadership.members", { returnObjects: true });
+
+    return (
+      <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
+        {members.map((member, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg 
+              p-6 w-[220px] text-center hover:shadow-xl transition"
+          >
+            <LazyImage
+           src={`/images/leader${i + 1}.jpg`}
+              className="w-24 h-24 mx-auto object-cover mb-4 border-4 border-[#19a6b5]"
+            />
+
+            <h4 className="font-semibold text-[#0d2d47] text-lg">
+              {member.name}
+            </h4>
+
+            <p className="text-xs text-gray-500">
+              {member.department}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    );
+  })()}
+</section>
 
       {/* =======================
           7. TIMELINE

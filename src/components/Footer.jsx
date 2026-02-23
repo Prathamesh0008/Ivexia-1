@@ -1,5 +1,5 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from "../assets/logo/ivexiaa-logoo.png";
+import logo from "../assets/logo/Websiteivexia1.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -15,8 +15,8 @@ export default function Footer() {
       {/* === Top Accent Line === */}
       <div className="w-full h-1 bg-gradient-to-r from-[#FF7A00] via-[#E2004F] to-[#19a6b5]" />
 
-      {/* === Radial Glow Behind Logo === */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-br from-[#19a6b5]/10 via-[#E2004F]/5 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none" />
+    
+      
 
       {/* === Main Footer === */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 relative z-10">
@@ -24,14 +24,11 @@ export default function Footer() {
           
           {/* === Column 1: Logo + Brand === */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#19a6b5]/40 to-[#FF7A00]/30 blur-lg rounded-full" />
-              <img
-                src={logo}
-                alt={t("footer.logoAlt")}
-                className="relative w-[12vh] md:w-[22vh] h-auto object-contain mx-auto md:mx-0 drop-shadow-lg"
-              />
-            </div>
+           <img
+  src={logo}
+  alt={t("footer.logoAlt")}
+  className="w-[12vh] md:w-[22vh] h-auto object-contain mx-auto md:mx-0"
+/>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
               <span className="font-semibold text-white">{t("footer.companyName")}</span>

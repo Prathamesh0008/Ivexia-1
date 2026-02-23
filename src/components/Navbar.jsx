@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo/ivexiaa-logoo.png";
+import logo from "../assets/logo/Websiteivexia.png";
 import FINISHED_PRODUCTS from "../data/finishedProducts";
 import INGREDIENTS from "../data/ingredients"; 
 
@@ -155,7 +155,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Ivexia Logo"
-            className="w-auto h-[70px] md:h-[80px] object-contain transition-transform hover:scale-105"
+           className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
 

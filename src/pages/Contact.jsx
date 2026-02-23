@@ -16,10 +16,10 @@ import { useTranslation } from "react-i18next";
 
 export default function Contact() {
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const ADMIN_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID;
-const USER_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_USER_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const SERVICE_ID = "service_1z6v6jt";
+const ADMIN_TEMPLATE_ID = "template_pwsxd64";
+const USER_TEMPLATE_ID ="template_mjc6q7n";
+const PUBLIC_KEY = "ta8Q-yyT_dFz4z1SE";
 
 const [loading, setLoading] = useState(false);
 const [success, setSuccess] = useState(false);
@@ -44,18 +44,18 @@ const [error, setError] = useState("");
   };
 
   try {
-  // Send to Admin
 await emailjs.send(
   SERVICE_ID,
   ADMIN_TEMPLATE_ID,
-  formData
+  formData,
+  PUBLIC_KEY
 );
 
-// Send Auto Reply to User
 await emailjs.send(
   SERVICE_ID,
   USER_TEMPLATE_ID,
-  formData
+  formData,
+  PUBLIC_KEY
 );
 
     setSuccess(true);
@@ -255,7 +255,7 @@ await emailjs.send(
                 </span>
                 <div>
                   <p className="font-semibold text-[#0d2d47]">{t("contactPage.email")}</p>
-                  <p>info@ivexiapharma.com</p>
+                  <p>	edwebshop18@gmail.com</p>
                 </div>
               </div>
 
