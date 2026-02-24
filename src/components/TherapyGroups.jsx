@@ -50,11 +50,12 @@ export default function TherapyGroups() {
       </div>
 
       {/* Cards Wrapper */}
-      <div className="flex flex-wrap justify-center items-stretch gap-8 px-6 md:px-20">
+     <div className="grid grid-cols-2 gap-6 px-6 md:px-20 
+                lg:flex lg:flex-wrap lg:justify-center lg:items-stretch lg:gap-8">
         {therapies.map((item, i) => (
           <div
             key={i}
-            className="group relative bg-white rounded-2xl w-[280px] sm:w-[260px] md:w-[280px] lg:w-[300px] xl:w-[320px] p-8 text-center shadow-md hover:shadow-xl border border-gray-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2"
+            className="group relative bg-white rounded-2xl w-full lg:w-[300px] xl:w-[320px] p-8 text-center shadow-md hover:shadow-xl border border-gray-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2"
           >
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A00]/10 to-[#E2004F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>

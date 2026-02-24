@@ -74,7 +74,7 @@ export default function LeadershipSection() {
   </p>
 </div>
 
-        <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {team.map((member, i) => (
             <motion.div
               key={i}
@@ -82,7 +82,7 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05, duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 backdrop-blur-lg p-5 rounded-2xl text-center w-[180px] md:w-[200px] shadow-lg hover:shadow-2xl transition-all hover:bg-white/20"
+             className="bg-white/10 backdrop-blur-lg p-5 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all hover:bg-white/20"
             >
               <img
                 src={member.img}

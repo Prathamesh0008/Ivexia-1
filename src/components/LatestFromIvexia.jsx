@@ -74,7 +74,7 @@ export default function LatestFromIvexia() {
                 </div>
                 <button
                   onClick={() => navigate(`/news/${post.id}`, { state: post })}
-                  className="text-[#E2004F] font-medium flex items-center gap-1 hover:gap-2 transition-all duration-300"
+                  className="text-[#E2004F] font-medium flex items-center gap-1 hover:gap-2 transition-all duration-300  cursor-pointer"
                 >
                   {t("latestNews.readMore")} <ArrowRight size={14} />
                 </button>
