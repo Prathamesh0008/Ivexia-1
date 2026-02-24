@@ -16,10 +16,10 @@ import { useTranslation } from "react-i18next";
 
 export default function Contact() {
 
-  const SERVICE_ID = "service_1z6v6jt";
-const ADMIN_TEMPLATE_ID = "template_pwsxd64";
-const USER_TEMPLATE_ID ="template_mjc6q7n";
-const PUBLIC_KEY = "ta8Q-yyT_dFz4z1SE";
+  const SERVICE_ID = "service_d413ytq";
+const ADMIN_TEMPLATE_ID = "template_nh2iyu5";
+const USER_TEMPLATE_ID ="template_8e1weya";
+const PUBLIC_KEY = "QGGp40v8O40-464My";
 
 const [loading, setLoading] = useState(false);
 const [success, setSuccess] = useState(false);
@@ -45,19 +45,24 @@ const [error, setError] = useState("");
 
   try {
 await emailjs.send(
-  SERVICE_ID,
-  ADMIN_TEMPLATE_ID,
-  formData,
-  PUBLIC_KEY
-);
+    SERVICE_ID,
+    ADMIN_TEMPLATE_ID,
+    formData,
+    PUBLIC_KEY
+  );
 
-await emailjs.send(
-  SERVICE_ID,
-  USER_TEMPLATE_ID,
-  formData,
-  PUBLIC_KEY
-);
-
+// await emailjs.send(
+//   SERVICE_ID,
+//   USER_TEMPLATE_ID,   // ✅ CORRECT
+//   {
+//     to_email: form.from_email.value,
+//     from_name: form.from_name.value,
+//     subject: form.subject.value,
+//     message: form.message.value,
+//     time: new Date().toLocaleString(),
+//   },
+//   PUBLIC_KEY
+// );
     setSuccess(true);
     form.reset();
 
