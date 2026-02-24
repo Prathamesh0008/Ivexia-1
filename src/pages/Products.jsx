@@ -81,11 +81,11 @@ export default function Products() {
 
       const matchSearch =
         !q ||
-        p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.form.toLowerCase().includes(q) ||
-        p.dosage.toLowerCase().includes(q) ||
-        String(p["CAS-ID"]).toLowerCase().includes(q);
+    (p.name || "").toLowerCase().includes(q) ||
+(p.category || "").toLowerCase().includes(q) ||
+(p.form || "").toLowerCase().includes(q) ||
+(p.dosage || "").toLowerCase().includes(q) ||
+String(p["CAS-ID"] || "").toLowerCase().includes(q);
 
       return matchCategory && matchForm && matchDosage && matchSearch;
     });
@@ -105,16 +105,14 @@ export default function Products() {
   // ---------------------------
   // APPLY SEARCH (button + Enter)
   // ---------------------------
-  const applySearch = () => {
-    setSearchTerm(pendingSearch);
-  };
-
-  const handleSearchKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      applySearch();
-    }
-  };
+ useEffect(() => {
+  setSearchTerm(pendingSearch);
+}, [pendingSearch]);
+ const handleSearchKeyDown = (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+  }
+};
 
   return (
     <div className="pt-16 bg-[#FFF8F5] min-h-screen">
@@ -154,17 +152,19 @@ export default function Products() {
           {/* SEARCH BAR */}
           <div className="relative max-w-4xl mx-auto">
             <input
-              value={pendingSearch}
-              onChange={(e) => setPendingSearch(e.target.value)}
-              onKeyDown={handleSearchKeyDown}
-              placeholder={t("productsPage.searchPlaceholder")}
-              className="w-full rounded-full border border-gray-300 bg-white px-6 py-3 pr-16 
-              text-sm shadow-sm focus:outline-none cursor-pointer"
-            />
+  value={pendingSearch}
+  onChange={(e) => {
+    setPendingSearch(e.target.value);
+  }}
+  onKeyDown={handleSearchKeyDown}
+  placeholder={t("productsPage.searchPlaceholder")}
+  className="w-full rounded-full border border-gray-300 bg-white px-6 py-3 pr-16 
+  text-sm shadow-sm focus:outline-none cursor-pointer"
+/>
 
             <button
               type="button"
-              onClick={applySearch}
+             onClick={() => {}}
               className="absolute right-2 top-1/2 -translate-y-1/2
                 w-11 h-11 rounded-full flex items-center justify-center
                 text-black 
@@ -172,6 +172,7 @@ export default function Products() {
             >
               <FaSearch className="text-sm" />
             </button>
+ 
           </div>
 
           {/* FILTER ROW */}
@@ -214,7 +215,7 @@ export default function Products() {
 
             <button
               type="button"
-              onClick={applySearch}
+              onClick={() => {}}
               className="px-6 py-2 rounded-full text-white font-semibold text-sm 
               bg-gradient-to-r from-[#FF7A00] to-[#E2004F] cursor-pointer"
             >

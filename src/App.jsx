@@ -48,7 +48,7 @@ function Layout() {
 
   return (
     <>
-      {!hideLayout && <TopBar />}
+      {/* {!hideLayout && <TopBar />} */}
       {!hideLayout && <Navbar />}
       {!hideLayout && <Breadcrumbs />}
 

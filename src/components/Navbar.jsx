@@ -14,6 +14,7 @@ export default function Navbar() {
   const [topBarHeight, setTopBarHeight] = useState(0);
   const [showLanguages, setShowLanguages] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
   const [productsOpen, setProductsOpen] = useState(false);
   const [magOpen, setMagOpen] = useState(false);
 
@@ -177,7 +178,7 @@ export default function Navbar() {
   </span>
 
   {productsOpen && (
-    <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-64 font-normal z-40">
+    <ul className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-md w-64 font-normal z-40">
 
       <li
         onClick={() => goTo("/offerings-overview")}
@@ -206,8 +207,17 @@ export default function Navbar() {
       >
         {t("nav.otc")}
       </li>
-
+<button
+  onClick={(e) => {
+    e.stopPropagation();   // VERY IMPORTANT
+    setProductsOpen(false);
+  }}
+  className="absolute top-2 right-2 text-gray-500 hover:text-black"
+>
+  <FaTimes />
+</button>
     </ul>
+    
   )}
 </li>
 
@@ -227,7 +237,7 @@ export default function Navbar() {
             </span>
 
             {magOpen && (
-              <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-56 font-normal z-40">
+             <ul className="absolute right-0 mt-2 bg-white shadow-md rounded-md w-56 font-normal z-40 relative">
                 <li
                   onClick={() => goTo("/ivexia-mag?category=news")}
                   className="px-4 py-2 hover:bg-gray-100 text-sm"
@@ -303,16 +313,88 @@ export default function Navbar() {
 
       {/* SEARCH BAR */}
       {showSearch && (
-        <div ref={searchRef} className="px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200">
-          <form onSubmit={handleSearchSubmit}>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder={t("search.placeholder")}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#0d2d47]"
-            />
-          </form>
+        <div ref={searchRef} className="relative px-4 md:px-8 py-2 bg-gray-50 border-t border-gray-200">
+         <form onSubmit={handleSearchSubmit}>
+  <div className="flex items-center relative">
+
+    <input
+      type="text"
+      value={searchTerm}
+      onChange={(e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+
+        if (!value.trim()) {
+          setSuggestions([]);
+          return;
+        }
+
+        const q = value.toLowerCase();
+
+        const productMatches = FINISHED_PRODUCTS
+          .filter((p) => p.name.toLowerCase().includes(q))
+          .slice(0, 5)
+          .map((p) => ({
+            type: "product",
+            name: p.name,
+            slug: p.slug,
+          }));
+
+        const ingredientMatches = INGREDIENTS
+          .filter((i) =>
+            i.slug.toLowerCase().includes(q) ||
+            i.id.toLowerCase().includes(q)
+          )
+          .slice(0, 5)
+          .map((i) => ({
+            type: "ingredient",
+            name: i.slug,
+            slug: i.slug,
+          }));
+
+        setSuggestions([...productMatches, ...ingredientMatches]);
+      }}
+      placeholder={t("search.placeholder")}
+      className="w-full border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:border-[#0d2d47]"
+    />
+
+    {/* CLOSE ICON */}
+    <button
+      type="button"
+      onClick={() => {
+        setShowSearch(false);
+        setSearchTerm("");
+        setSuggestions([]);
+      }}
+      className="absolute right-3 text-gray-500 hover:text-black"
+    >
+      <FaTimes />
+    </button>
+
+  </div>
+</form>
+          {suggestions.length > 0 && (
+  <div className="absolute left-4 right-4 bg-white shadow-lg border border-gray-200 mt-2 rounded-md z-50 max-h-60 overflow-y-auto">
+    {suggestions.map((item, index) => (
+      <div
+        key={index}
+        onClick={() => {
+          if (item.type === "product") {
+            navigate(`/products/${item.slug}`);
+          } else {
+            navigate(`/ingredients/${item.slug}`);
+          }
+          setSearchTerm("");
+          setSuggestions([]);
+          setShowSearch(false);
+        }}
+        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+      >
+        {item.name}
+      </div>
+    ))}
+  </div>
+)}
         </div>
       )}
 
