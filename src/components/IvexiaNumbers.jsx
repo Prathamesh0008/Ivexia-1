@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\IvexiaNumbers.jsx
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 

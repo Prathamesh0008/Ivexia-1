@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\IngredientStats.jsx
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 

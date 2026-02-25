@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\AccordSection.jsx
 import { useTranslation } from "react-i18next";
 import globe from "../assets/globe/globe.png";
 

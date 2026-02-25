@@ -1,3 +1,4 @@
+//Ivexia-1\src\pages\OfferingsOverview.jsx
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 

@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\LeadershipSection.jsx
 import { motion } from "framer-motion";
 import ceo from "../assets/Leadership/ceo.jpeg";
 import { useTranslation } from "react-i18next";

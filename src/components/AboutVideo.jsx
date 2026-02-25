@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\AboutVideo.jsx
 import { useTranslation } from "react-i18next";
 import aboutVideo from "../assets/logo/aboutvideo.mp4";
 import { Link } from "react-router-dom";

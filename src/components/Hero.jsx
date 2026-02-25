@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\Hero.jsx
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -74,7 +75,7 @@ export default function Hero() {
   return (
     <section
   ref={heroRef}
-  className="relative w-full h-[75vh] md:h-[70vh] overflow-hidden pt-16"
+  className="relative w-full h-[75vh] md:h-[70vh] overflow-hidden "
       // style={{ marginTop: `${navbarHeight}px` }} // dynamically push below navbar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

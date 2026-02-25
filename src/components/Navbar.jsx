@@ -146,7 +146,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed left-0 right-0 bg-white/95 backdrop-blur-md shadow-md border-t border-gray-200 z-30 transition-all duration-500 ease-in-out"
+     className="fixed left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-30 transition-all duration-500 ease-in-out"
       style={{ top: isTopBarVisible ? `${topBarHeight}px` : "0px" }}
     >
       <div className="flex justify-between items-center px-4 md:px-8 h-16">

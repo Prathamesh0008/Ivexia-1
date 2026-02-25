@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\IngredientHero.jsx
 import { useTranslation } from "react-i18next";
 import heroImg from "../assets/logo/ingredient-hero.jpg";
 

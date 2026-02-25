@@ -6,7 +6,7 @@ const INGREDIENTS = [
   {
     id: "amiodarone",
     nameKey: "ingredients.amiodarone.name",
-    descKey: "ingredients.amiodarone.desc",
+    descKey: "ingredient s.amiodarone.desc",
     categoryKey: "ingredients.categories.cardiology",
     dosageKeys: ["ingredients.forms.tablet"],
     slug: "amiodarone-hcl",

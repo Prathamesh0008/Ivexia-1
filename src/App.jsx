@@ -50,7 +50,7 @@ function Layout() {
     <>
       {/* {!hideLayout && <TopBar />} */}
       {!hideLayout && <Navbar />}
-      {!hideLayout && <Breadcrumbs />}
+ {!hideLayout && location.pathname !== "/" && <Breadcrumbs />}
 
       <main className="flex-grow min-h-screen bg-white text-[#0d2d47]">
         <Routes>

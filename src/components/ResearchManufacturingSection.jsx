@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\ResearchManufacturingSection.jsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaMicroscope, FaIndustry } from "react-icons/fa6";

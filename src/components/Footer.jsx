@@ -1,3 +1,4 @@
+//Ivexia-1\src\components\Footer.jsx
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
 import logo from "../assets/logo/Websiteivexia1.png";
 import { useNavigate } from "react-router-dom";

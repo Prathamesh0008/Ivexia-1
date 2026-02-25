@@ -1,5 +1,5 @@
 // src/components/IngredientGrid.jsx
-import { useTranslation } from "react-i18next";
+
 
 export default function IngredientGrid({ items = [] }) {
   const { t } = useTranslation();
