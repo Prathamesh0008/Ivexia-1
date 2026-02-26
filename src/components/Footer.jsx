@@ -84,10 +84,10 @@ export default function Footer() {
                 <span className="font-semibold text-white">{t("footer.emailLabel")}:</span>{" "}
                 {contact.email}
               </li>
-              <li>
+              {/* <li>
                 <span className="font-semibold text-white">{t("footer.phoneLabel")}:</span>{" "}
                 {contact.phone}
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
