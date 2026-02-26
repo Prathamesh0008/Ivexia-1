@@ -26,7 +26,7 @@ const [success, setSuccess] = useState(false);
 const [error, setError] = useState("");
   const { t } = useTranslation();
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   setLoading(true);
   setSuccess(false);
@@ -44,35 +44,39 @@ const [error, setError] = useState("");
   };
 
   try {
-await emailjs.send(
-    SERVICE_ID,
-    ADMIN_TEMPLATE_ID,
-    formData,
-    PUBLIC_KEY
-  );
+    // 1️⃣ Send email to Admin
+    await emailjs.send(
+      SERVICE_ID,
+      ADMIN_TEMPLATE_ID,
+      formData,
+      PUBLIC_KEY
+    );
 
-// await emailjs.send(
-//   SERVICE_ID,
-//   USER_TEMPLATE_ID,   // ✅ CORRECT
-//   {
-//     to_email: form.from_email.value,
-//     from_name: form.from_name.value,
-//     subject: form.subject.value,
-//     message: form.message.value,
-//     time: new Date().toLocaleString(),
-//   },
-//   PUBLIC_KEY
-// );
+    // 2️⃣ Send confirmation email to User
+    await emailjs.send(
+      SERVICE_ID,
+      USER_TEMPLATE_ID,
+      {
+        to_email: form.from_email.value,
+        from_name: form.from_name.value,
+        subject: form.subject.value,
+        message: form.message.value,
+        time: new Date().toLocaleString(),
+      },
+      PUBLIC_KEY
+    );
+
     setSuccess(true);
     form.reset();
 
   } catch (err) {
     console.error(err);
-    setError("Failed to send message. Please try again.");
+    setError("Failed to send message.");
   }
 
   setLoading(false);
 };
+
 
   return (
     <div className="bg-[#FFF8F5] min-h-screen pt-16 md:pt-20">
@@ -243,7 +247,7 @@ await emailjs.send(
 
             <div className="space-y-4 text-sm md:text-[15px] text-gray-700">
               <div className="flex items-start gap-3">
-                <span className="mt-1 text-[#0d2d47]">
+                {/* <span className="mt-1 text-[#0d2d47]">
                   <FaPhoneAlt />
                 </span>
                 <div>
@@ -251,7 +255,7 @@ await emailjs.send(
                     {t("contactPage.phone")}
                   </p>
                   <p>+91 9998887770</p>
-                </div>
+                </div> */}
               </div>
 
               <div className="flex items-start gap-3">
@@ -285,7 +289,7 @@ await emailjs.send(
           </div>
 
           {/* ADDRESS BLOCK */}
-          <div className="bg-white shadow-sm border border-gray-100 p-5 md:p-6">
+          {/* <div className="bg-white shadow-sm border border-gray-100 p-5 md:p-6">
             <div className="border-l-4 border-[#0d2d47] pl-4 mb-4">
               <h2 className="text-base md:text-lg font-semibold text-[#0d2d47]">
                 {t("contactPage.addressTitle")}
@@ -310,7 +314,7 @@ await emailjs.send(
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

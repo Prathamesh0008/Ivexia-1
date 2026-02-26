@@ -79,7 +79,7 @@ export default function Footer() {
               {t("footer.contactTitle")}
             </h3>
             <ul className="text-gray-300 text-sm leading-relaxed space-y-2">
-              <li>{contact.address}</li>
+              {/* <li>{contact.address}</li> */}
               <li>
                 <span className="font-semibold text-white">{t("footer.emailLabel")}:</span>{" "}
                 {contact.email}
