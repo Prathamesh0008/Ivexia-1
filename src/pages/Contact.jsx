@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Contact() {
 
-  const SERVICE_ID = "service_d413ytq";
+  const SERVICE_ID = "service_gss4j1p";
 const ADMIN_TEMPLATE_ID = "template_nh2iyu5";
 const USER_TEMPLATE_ID ="template_8e1weya";
 const PUBLIC_KEY = "QGGp40v8O40-464My";
@@ -46,16 +46,16 @@ const handleSubmit = async (e) => {
   try {
     // 1️⃣ Send email to Admin
     await emailjs.send(
-      SERVICE_ID,
-      ADMIN_TEMPLATE_ID,
+      "service_gss4j1p",
+      "template_nh2iyu5",
       formData,
-      PUBLIC_KEY
+    "QGGp40v8O40-464My"
     );
 
     // 2️⃣ Send confirmation email to User
     await emailjs.send(
-      SERVICE_ID,
-      USER_TEMPLATE_ID,
+      "service_gss4j1p",
+     "template_8e1weya",
       {
         to_email: form.from_email.value,
         from_name: form.from_name.value,
@@ -63,7 +63,7 @@ const handleSubmit = async (e) => {
         message: form.message.value,
         time: new Date().toLocaleString(),
       },
-      PUBLIC_KEY
+      "QGGp40v8O40-464My"
     );
 
     setSuccess(true);
